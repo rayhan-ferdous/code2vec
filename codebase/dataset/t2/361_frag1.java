@@ -1,0 +1,45 @@
+        protected void handleInformRequest(ACLMessage inform) {
+
+            Predicate predicate = null;
+
+            byte[] data;
+
+            try {
+
+                predicate = (Predicate) _agent.getContentManager().extractContent(inform);
+
+            } catch (Exception e) {
+
+                if (_logger.isLoggable(Logger.SEVERE)) _logger.log(Logger.SEVERE, "SelfProtectedAgent: RequestVerify: " + getName() + ": " + ERR_EXTRACT_CONTENT + e);
+
+            }
+
+            if (predicate != null) {
+
+                if (predicate instanceof InformVerifiedDataPredicate) {
+
+                    data = ((InformVerifiedDataPredicate) predicate).getVerifiedData();
+
+                    if (data != null) {
+
+                        _ds.put(DS_PLAIN_CODE, Base64.decodeBase64(data));
+
+                    } else {
+
+                        if (_logger.isLoggable(Logger.SEVERE)) _logger.log(Logger.SEVERE, "SelfProtectedAgent: RequestVerify: " + getName() + ": " + ERR_NULL_CONTENT);
+
+                    }
+
+                } else {
+
+                    if (_logger.isLoggable(Logger.SEVERE)) _logger.log(Logger.SEVERE, "SelfProtectedAgent: RequestVerify: " + getName() + ": " + ERR_INCORRECT_ACTION);
+
+                }
+
+            } else {
+
+                if (_logger.isLoggable(Logger.SEVERE)) _logger.log(Logger.SEVERE, "SelfProtectedAgent: RequestVerify: " + getName() + ": " + ERR_NULL_ACTION);
+
+            }
+
+        }

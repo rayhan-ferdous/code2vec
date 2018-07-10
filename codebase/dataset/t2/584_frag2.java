@@ -1,0 +1,31 @@
+    public final void onRemoveNoExternalMessages(String channel, String sourceNick, String sourceLogin, String sourceHostname) {
+
+        if (!filterOverride && !modsOverride) super.onRemoveNoExternalMessages(channel, sourceNick, sourceLogin, sourceHostname);
+
+        for (int i = 0; i < objFilters.length; i++) {
+
+            if (objFilters[i].status) {
+
+                String str[] = objFilters[i].onRemoveNoExternalMessages(channel, sourceNick, sourceLogin, sourceHostname);
+
+                channel = str[0];
+
+                sourceNick = str[1];
+
+                sourceLogin = str[2];
+
+                sourceHostname = str[3];
+
+            }
+
+        }
+
+        if (filterOverride && !modsOverride) super.onRemoveNoExternalMessages(channel, sourceNick, sourceLogin, sourceHostname);
+
+        for (int i = 0; i < objMods.length; i++) {
+
+            if (objMods[i].status && modHasChannel(i, channel)) objMods[i].onRemoveNoExternalMessages(channel, sourceNick, sourceLogin, sourceHostname);
+
+        }
+
+    }

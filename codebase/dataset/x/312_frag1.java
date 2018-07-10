@@ -1,0 +1,13 @@
+    public void test88() throws Exception {
+
+        try {
+
+            CsvReader reader = new CsvReader((String) null, ',', Charset.forName("ISO-8859-1"));
+
+        } catch (Exception ex) {
+
+            assertException(new IllegalArgumentException("Parameter fileName can not be null."), ex);
+
+        }
+
+    }

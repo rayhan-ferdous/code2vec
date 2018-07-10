@@ -1,0 +1,39 @@
+    public static Map<String, String> getDirSHA1(File file, boolean listChild) {
+
+        if (!file.isDirectory()) {
+
+            return null;
+
+        }
+
+        Map<String, String> map = new HashMap<String, String>();
+
+        String sha1;
+
+        File files[] = file.listFiles();
+
+        for (int i = 0; i < files.length; i++) {
+
+            File f = files[i];
+
+            if (f.isDirectory() && listChild) {
+
+                map.putAll(getDirSHA1(f, listChild));
+
+            } else {
+
+                sha1 = getFileSHA1(f);
+
+                if (sha1 != null) {
+
+                    map.put(f.getPath(), sha1);
+
+                }
+
+            }
+
+        }
+
+        return map;
+
+    }

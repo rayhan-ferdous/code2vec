@@ -1,0 +1,31 @@
+    public static URL canonicalClassUrl(String path) {
+
+        String canonicalPath;
+
+        URL canonicalUrl;
+
+        canonicalPath = canonicalClassPath(path);
+
+        if (!canonicalPath.endsWith("/")) {
+
+            if (!checkFileExtension(canonicalPath, JAR_EXTENSION) && !checkFileExtension(canonicalPath, ZIP_EXTENSION)) {
+
+                canonicalPath = canonicalPath.concat("/");
+
+            }
+
+        }
+
+        try {
+
+            canonicalUrl = new URL(FILE_URL_PROTOCOL, null, canonicalPath);
+
+            return canonicalUrl;
+
+        } catch (Throwable t) {
+
+            return null;
+
+        }
+
+    }

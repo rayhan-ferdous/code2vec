@@ -1,0 +1,15 @@
+        } catch (NoSuchMethodException nsme) {
+
+            CustomLogger.INSTANCE.log(Level.WARNING, header + "class " + implClass + " does not have the required constructor " + " - " + nsme.getMessage(), nsme);
+
+            throw nsme;
+
+        } catch (SecurityException se) {
+
+            CustomLogger.INSTANCE.log(Level.WARNING, header + "class " + implClass + " does not provide access to the required constructor" + " - " + se.getMessage(), se);
+
+            throw se;
+
+        }
+
+        try {

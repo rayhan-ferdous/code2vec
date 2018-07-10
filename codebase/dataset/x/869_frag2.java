@@ -1,0 +1,13 @@
+                while (iterator.hasNext()) {
+
+                    Element currentElement = (Element) iterator.next();
+
+                    ECAction ecAction = getECAction(currentElement);
+
+                    hashTable.put(new Integer(count), ecAction);
+
+                    count++;
+
+                }
+
+                ecState = new ECState(Name, Comment, x, y, hashTable);

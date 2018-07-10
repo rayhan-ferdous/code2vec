@@ -1,0 +1,21 @@
+    public void write(char c) {
+
+        try {
+
+            FileIOAccounting.startFileIO(FileIOAccountingType.Write);
+
+            m_out.write(c);
+
+            FileIOAccounting.endFileIO();
+
+        } catch (IOException e) {
+
+            FileIOAccounting.endFileIO();
+
+            e.printStackTrace();
+
+            throw new RuntimeException(e);
+
+        }
+
+    }

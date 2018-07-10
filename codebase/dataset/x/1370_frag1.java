@@ -1,0 +1,39 @@
+    private void getAvailableChatRooms() throws ProtocolException {
+
+        try {
+
+            Collection<String> mucServices = MultiUserChat.getServiceNames(connection);
+
+            if (mucServices.isEmpty()) {
+
+                throw new ProtocolException(ProtocolException.ERROR_NO_GROUPCHAT_AVAILABLE, "This server does not support group chats");
+
+            }
+
+            List<HostedRoom> rooms = new ArrayList<HostedRoom>();
+
+            for (String service : mucServices) {
+
+                try {
+
+                    rooms.addAll(MultiUserChat.getHostedRooms(connection, service));
+
+                } catch (XMPPException e) {
+
+                    log(e);
+
+                }
+
+            }
+
+            List<MultiChatRoom> chats = XMPPEntityAdapter.xmppHostedRooms2MultiChatRooms(this, rooms);
+
+            serviceResponse.respond(IAccountServiceResponse.RES_AVAILABLE_CHATS, serviceId, chats);
+
+        } catch (XMPPException e) {
+
+            throw new ProtocolException(e.getLocalizedMessage());
+
+        }
+
+    }

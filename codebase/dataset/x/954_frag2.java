@@ -1,0 +1,23 @@
+    public static double[][] reshape(double[][] a, int n, int m) {
+
+        int cEl = 0;
+
+        int aRows = a.length;
+
+        double[][] res = new double[n][m];
+
+        for (int j = 0; j < m; j++) {
+
+            for (int i = 0; i < n; i++) {
+
+                res[i][j] = a[cEl % aRows][cEl / aRows];
+
+                cEl++;
+
+            }
+
+        }
+
+        return res;
+
+    }

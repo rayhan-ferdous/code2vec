@@ -1,0 +1,19 @@
+                                public void run() {
+
+                                    for (Thread t : monitor) {
+
+                                        try {
+
+                                            t.join();
+
+                                        } catch (InterruptedException e) {
+
+                                            e.printStackTrace();
+
+                                        }
+
+                                    }
+
+                                    JOptionPane.showMessageDialog(model.getGUIManager().getParent(), "Export completed");
+
+                                }

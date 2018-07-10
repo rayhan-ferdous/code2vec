@@ -1,0 +1,33 @@
+    public User getUser(long uid) throws Exception {
+
+        Session s = null;
+
+        try {
+
+            s = HibernateUtils.getSessionFactory().getCurrentSession();
+
+            s.beginTransaction();
+
+            String query = "select R from User R where R.uid=?";
+
+            Query q = s.createQuery(query);
+
+            q.setLong(0, uid);
+
+            User u = (User) q.uniqueResult();
+
+            s.getTransaction().commit();
+
+            return u;
+
+        } catch (Exception e) {
+
+            throw e;
+
+        } finally {
+
+            if (s != null) HibernateUtils.closeSession();
+
+        }
+
+    }

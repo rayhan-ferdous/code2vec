@@ -1,0 +1,5 @@
+        if ("orderID".equals(pColumn)) return new Long(vo.getOrderID());
+
+        if ("cancelID".equals(pColumn)) return new Long(vo.getCancelID());
+
+        if ("dbUser".equals(pColumn)) return vo.getDbUser();

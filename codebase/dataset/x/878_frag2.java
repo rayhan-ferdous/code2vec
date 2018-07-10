@@ -1,0 +1,7 @@
+            width = comp.getPreferredSize().width;
+
+            for (int r = 0; r < table.getRowCount(); r++) {
+
+                renderer = table.getCellRenderer(r, c);
+
+                comp = renderer.getTableCellRendererComponent(table, table.getValueAt(r, c), false, false, r, c);

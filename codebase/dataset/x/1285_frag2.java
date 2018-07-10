@@ -1,0 +1,27 @@
+    private String makeCDATAString(Hashtable cdata) {
+
+        if (cdata == null) return null;
+
+        StringBuffer result = new StringBuffer();
+
+        Enumeration elements = cdata.keys();
+
+        if (elements.hasMoreElements()) {
+
+            result.append((String) elements.nextElement());
+
+            while (elements.hasMoreElements()) {
+
+                String element = (String) elements.nextElement();
+
+                result.append(' ');
+
+                result.append(element);
+
+            }
+
+        }
+
+        return (result.toString());
+
+    }

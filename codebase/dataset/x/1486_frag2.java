@@ -1,0 +1,19 @@
+    protected TransactionalEditingDomain createEditingDomain() {
+
+        String editingDomainID = getEditingDomainID();
+
+        if (editingDomainID != null) {
+
+            TransactionalEditingDomain editingDomain = TransactionalEditingDomain.Registry.INSTANCE.getEditingDomain(editingDomainID);
+
+            if (editingDomain != null) {
+
+                return editingDomain;
+
+            }
+
+        }
+
+        return DiagramEditingDomainFactory.getInstance().createEditingDomain();
+
+    }

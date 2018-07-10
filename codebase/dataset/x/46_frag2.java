@@ -1,0 +1,21 @@
+    private final void includeResourceLocations(String packageName, Map<URL, String> map) {
+
+        try {
+
+            Enumeration<URL> resourceLocations = ClassFinder.class.getClassLoader().getResources(getPackagePath(packageName));
+
+            while (resourceLocations.hasMoreElements()) {
+
+                map.put(resourceLocations.nextElement(), packageName);
+
+            }
+
+        } catch (Exception e) {
+
+            errors.add(e);
+
+            return;
+
+        }
+
+    }

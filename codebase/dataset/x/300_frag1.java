@@ -1,0 +1,37 @@
+        } else if ("09".equals(urlData.getParameter("action"))) {
+
+            outStream.write(renameMatchList(urlData));
+
+            return;
+
+        } else if ("10".equals(urlData.getParameter("action"))) {
+
+            outStream.write(addTextMatch(urlData));
+
+            return;
+
+        } else if ("11".equals(urlData.getParameter("action"))) {
+
+            outStream.write(addSpanMatch(urlData));
+
+            return;
+
+        } else if ("12".equals(urlData.getParameter("action"))) {
+
+            outStream.write(addDayMatch(urlData));
+
+            return;
+
+        } else if ("13".equals(urlData.getParameter("action"))) {
+
+            outStream.write(deleteMatchItem(urlData));
+
+            return;
+
+        } else if ("14".equals(urlData.getParameter("action"))) {
+
+            outStream.write(createAutoAddFromItem(urlData));
+
+            return;
+
+        } else if ("15".equals(urlData.getParameter("action"))) {

@@ -1,0 +1,17 @@
+    private void copyAllFiles() {
+
+        File[] spoolFiles = spoolPath.listFiles();
+
+        try {
+
+            for (int i = 0; i < spoolFiles.length; i++) {
+
+                try {
+
+                    if (spoolFiles[i].isFile()) {
+
+                        this.fileCopy(new File(spoolFiles[i].getName()));
+
+                    }
+
+                } catch (IOException e) {

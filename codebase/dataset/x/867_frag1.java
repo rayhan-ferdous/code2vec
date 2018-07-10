@@ -1,0 +1,15 @@
+    public static byte[] readFile(File file) throws IOException {
+
+        InputStream stream = new FileInputStream(file);
+
+        try {
+
+            return readStream(stream);
+
+        } finally {
+
+            stream.close();
+
+        }
+
+    }

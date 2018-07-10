@@ -1,0 +1,21 @@
+        List<CoMultipleChoiceE3> list = coMultipleChoiceE3DAO.findAll(nRowStart, nMaxResults);
+
+        if (list.size() == 0) {
+
+            serviceResult.setError(true);
+
+            serviceResult.setMessage(bundle.getString("multipleChoice.list.notFound"));
+
+        } else {
+
+            Object[] array = { list.size() };
+
+            serviceResult.setMessage(MessageFormat.format(bundle.getString("multipleChoice.list.success"), array));
+
+            serviceResult.setObjResult(list);
+
+            if ((nRowStart > 0) || (nMaxResults > 0)) serviceResult.setNumResult(coMultipleChoiceE3DAO.findAll().size()); else serviceResult.setNumResult(list.size());
+
+        }
+
+        return serviceResult;

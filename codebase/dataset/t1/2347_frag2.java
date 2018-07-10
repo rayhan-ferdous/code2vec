@@ -1,0 +1,97 @@
+    public void removeCertificate(String pintype, String pin, String basicpin, X509Certificate cert) throws OperationNotSupportedException, TokenException {
+
+        clearCertificateCache();
+
+        Session session = null;
+
+        Token token = (Token) tokens.get(pintype);
+
+        if (token == null) {
+
+            throw new OperationNotSupportedException("PIN type not supported");
+
+        }
+
+        try {
+
+            boolean found = false;
+
+            session = token.openSession(SessionType.SERIAL_SESSION, SessionReadWriteBehavior.RW_SESSION, null, null);
+
+            if (!session.getSessionInfo().getState().toString().equals(State.RW_USER_FUNCTIONS.toString())) {
+
+                session.login(UserType.USER, pin.toCharArray());
+
+            }
+
+            String certFingerprint = CertUtils.getFingerprintAsString(cert);
+
+            session.findObjectsInit(new X509PublicKeyCertificate());
+
+            Object[] objects = session.findObjects(MAXNUMOBJECTS);
+
+            try {
+
+                for (int i = 0; i < objects.length; i++) {
+
+                    X509PublicKeyCertificate tokencert = (X509PublicKeyCertificate) objects[i];
+
+                    try {
+
+                        Hashtable<?, ?> attributes = tokencert.getAttributeTable();
+
+                        ByteArrayAttribute valueAttribute = (ByteArrayAttribute) attributes.get(Attribute.VALUE);
+
+                        byte[] value = valueAttribute.getByteArrayValue();
+
+                        if (value != null) {
+
+                            String thisCertFingerprint = CertUtils.getFingerprintAsString(CertUtils.getCertfromByteArray(value));
+
+                            if (certFingerprint.equals(thisCertFingerprint)) {
+
+                                found = true;
+
+                                session.destroyObject(objects[i]);
+
+                            }
+
+                        }
+
+                    } catch (CertificateException e) {
+
+                        LocalLog.getLogger().log(Level.WARNING, "Corrupt certificate on token");
+
+                        LocalLog.debug(e);
+
+                    }
+
+                }
+
+            } finally {
+
+                session.findObjectsFinal();
+
+            }
+
+            if (!found) {
+
+                throw new TokenException("Error Certificate couldn't be found in the token.");
+
+            }
+
+        } catch (PKCS11Exception e) {
+
+            throw new TokenException(e.getMessage(), e);
+
+        } finally {
+
+            if (session != null) {
+
+                session.closeSession();
+
+            }
+
+        }
+
+    }

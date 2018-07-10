@@ -1,0 +1,33 @@
+    public static Sequence prepareFastaRead(String fastafile) {
+
+        Sequence s = null;
+
+        try {
+
+            BufferedReader is = new BufferedReader(new FileReader(fastafile));
+
+            SequenceIterator si = SeqIOTools.readFastaDNA(is);
+
+            if (si.hasNext()) {
+
+                s = si.nextSequence();
+
+            }
+
+        } catch (BioException ex) {
+
+            ex.printStackTrace();
+
+        } catch (NoSuchElementException ex) {
+
+            ex.printStackTrace();
+
+        } catch (FileNotFoundException ex) {
+
+            ex.printStackTrace();
+
+        }
+
+        return s;
+
+    }

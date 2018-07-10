@@ -1,0 +1,21 @@
+            public void run() {
+
+                try {
+
+                    GeomSSUtil.setInterpreter(_bsh);
+
+                    ResourceBundle resBundle = _app.getResourceBundle();
+
+                    GeomSSBatch.initializeBeanShell(resBundle.getString("appName"), _bsh, new PublicInterface());
+
+                    String path = _app.getPreferences().getLastPath();
+
+                    if (path != null) _bsh.eval("cd(\"" + path + "\");");
+
+                } catch (Exception e) {
+
+                    e.printStackTrace();
+
+                }
+
+            }

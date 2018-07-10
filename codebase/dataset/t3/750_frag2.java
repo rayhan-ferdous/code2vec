@@ -1,0 +1,97 @@
+                        case 73:
+
+                            {
+
+                                @SuppressWarnings("hiding") Token token = new73(getText(accept_length), start_line + 1, start_pos + 1);
+
+                                pushBack(accept_length);
+
+                                this.pos = accept_pos;
+
+                                this.line = accept_line;
+
+                                return token;
+
+                            }
+
+                        case 74:
+
+                            {
+
+                                @SuppressWarnings("hiding") Token token = new74(getText(accept_length), start_line + 1, start_pos + 1);
+
+                                pushBack(accept_length);
+
+                                this.pos = accept_pos;
+
+                                this.line = accept_line;
+
+                                return token;
+
+                            }
+
+                        case 75:
+
+                            {
+
+                                @SuppressWarnings("hiding") Token token = new75(getText(accept_length), start_line + 1, start_pos + 1);
+
+                                pushBack(accept_length);
+
+                                this.pos = accept_pos;
+
+                                this.line = accept_line;
+
+                                return token;
+
+                            }
+
+                        case 76:
+
+                            {
+
+                                @SuppressWarnings("hiding") Token token = new76(getText(accept_length), start_line + 1, start_pos + 1);
+
+                                pushBack(accept_length);
+
+                                this.pos = accept_pos;
+
+                                this.line = accept_line;
+
+                                return token;
+
+                            }
+
+                        case 77:
+
+                            {
+
+                                @SuppressWarnings("hiding") Token token = new77(getText(accept_length), start_line + 1, start_pos + 1);
+
+                                pushBack(accept_length);
+
+                                this.pos = accept_pos;
+
+                                this.line = accept_line;
+
+                                return token;
+
+                            }
+
+                        case 78:
+
+                            {
+
+                                @SuppressWarnings("hiding") Token token = new78(getText(accept_length), start_line + 1, start_pos + 1);
+
+                                pushBack(accept_length);
+
+                                this.pos = accept_pos;
+
+                                this.line = accept_line;
+
+                                return token;
+
+                            }
+
+                    }

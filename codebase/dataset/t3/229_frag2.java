@@ -1,0 +1,15 @@
+    private void createProject() {
+
+        JFileChooser chooser = getFileChooser();
+
+        chooser.setDialogTitle("Choose export directory");
+
+        chooser.setApproveButtonText("Open");
+
+        chooser.setApproveButtonToolTipText("Open the selected directory.");
+
+        chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+        chooser.setFileFilter(null);
+
+        if (chooser.showOpenDialog(getProjectFrame()) == JFileChooser.APPROVE_OPTION) {

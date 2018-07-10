@@ -1,0 +1,81 @@
+package   com  .  nepxion  .  util  .  database  .  pool  .  proxool  ; 
+
+import   java  .  io  .  IOException  ; 
+import   java  .  net  .  MalformedURLException  ; 
+import   java  .  net  .  URL  ; 
+import   java  .  util  .  Properties  ; 
+import   org  .  apache  .  commons  .  logging  .  Log  ; 
+import   org  .  apache  .  commons  .  logging  .  LogFactory  ; 
+import   org  .  logicalcobwebs  .  proxool  .  ProxoolException  ; 
+import   org  .  logicalcobwebs  .  proxool  .  configuration  .  PropertyConfigurator  ; 
+
+public   class   ProxoolContext   implements   ProxoolConstants  { 
+
+private   static   Log   log  =  LogFactory  .  getLog  (  ProxoolContext  .  class  )  ; 
+
+
+
+
+
+public   static   void   register  (  )  throws   ProxoolException  { 
+register  (  CONFIG_FILE_PATH  )  ; 
+} 
+
+
+
+
+
+
+public   static   void   register  (  String   filePath  )  throws   ProxoolException  { 
+log  .  info  (  "---- Proxool Context Initialization Start ---"  )  ; 
+try  { 
+PropertyConfigurator  .  configure  (  filePath  )  ; 
+}  catch  (  ProxoolException   e  )  { 
+log  .  fatal  (  e  )  ; 
+throw   e  ; 
+} 
+log  .  info  (  "----- Proxool Context Initialization End ----"  )  ; 
+} 
+
+
+
+
+
+
+public   static   void   register  (  Properties   properties  )  throws   ProxoolException  { 
+log  .  info  (  "---- Proxool Context Initialization Start ---"  )  ; 
+try  { 
+PropertyConfigurator  .  configure  (  properties  )  ; 
+}  catch  (  ProxoolException   e  )  { 
+log  .  fatal  (  e  )  ; 
+throw   e  ; 
+} 
+log  .  info  (  "---- Proxool Context Initialization Start ---"  )  ; 
+} 
+
+
+
+
+
+
+
+
+public   static   void   register  (  URL   codeBase  )  throws   MalformedURLException  ,  IOException  ,  ProxoolException  { 
+Properties   properties  =  new   Properties  (  )  ; 
+try  { 
+URL   url  =  new   URL  (  codeBase  +  CONFIG_FILE_PATH  )  ; 
+properties  .  load  (  url  .  openStream  (  )  )  ; 
+register  (  properties  )  ; 
+}  catch  (  MalformedURLException   e  )  { 
+log  .  fatal  (  e  )  ; 
+throw   e  ; 
+}  catch  (  IOException   e  )  { 
+log  .  fatal  (  e  )  ; 
+throw   e  ; 
+}  catch  (  ProxoolException   e  )  { 
+log  .  fatal  (  e  )  ; 
+throw   e  ; 
+} 
+} 
+} 
+

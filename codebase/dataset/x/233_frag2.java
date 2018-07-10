@@ -1,0 +1,29 @@
+    private JButton getButtonSalvar() {
+
+        if (buttonSalvar == null) {
+
+            buttonSalvar = new JButton();
+
+            buttonSalvar.setText("4. ¡SALVAR!");
+
+            buttonSalvar.addActionListener(new java.awt.event.ActionListener() {
+
+
+
+                public void actionPerformed(java.awt.event.ActionEvent e) {
+
+                    if (imagen.getNombre().equals("") && imagen.getImagenURL().equals("") && imagen.getSonidoURL().equals("")) {
+
+                        gui.procesadorXML.addImagen(imagen);
+
+                    }
+
+                }
+
+            });
+
+        }
+
+        return buttonSalvar;
+
+    }

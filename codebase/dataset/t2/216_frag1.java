@@ -1,0 +1,13 @@
+    protected int[] readIntArray(DataInputStream dis, int size) throws IOException {
+
+        int[] data = new int[size];
+
+        for (int i = 0; i < size; i++) {
+
+            data[i] = readInt(dis);
+
+        }
+
+        return data;
+
+    }

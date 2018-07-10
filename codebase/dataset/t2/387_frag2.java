@@ -1,0 +1,49 @@
+        if ("bankAccountID".equals(pColumn)) {
+
+            Sorter sorter = new Sorter();
+
+            long[] temp = new long[fTableData.length];
+
+            for (int i = 0; i < temp.length; i++) {
+
+                temp[i] = fTableData[i].getBankAccountID();
+
+            }
+
+            fSortOrder = sorter.sortLong(temp, fSortOrder, up);
+
+        }
+
+        if ("ahvCode".equals(pColumn)) {
+
+            Sorter sorter = new Sorter();
+
+            long[] temp = new long[fTableData.length];
+
+            for (int i = 0; i < temp.length; i++) {
+
+                temp[i] = fTableData[i].getAhvCode();
+
+            }
+
+            fSortOrder = sorter.sortLong(temp, fSortOrder, up);
+
+        }
+
+        if ("alvCode".equals(pColumn)) {
+
+            Sorter sorter = new Sorter();
+
+            long[] temp = new long[fTableData.length];
+
+            for (int i = 0; i < temp.length; i++) {
+
+                temp[i] = fTableData[i].getAlvCode();
+
+            }
+
+            fSortOrder = sorter.sortLong(temp, fSortOrder, up);
+
+        }
+
+        if ("nbuCode".equals(pColumn)) {

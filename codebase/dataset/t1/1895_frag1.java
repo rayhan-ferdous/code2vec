@@ -1,0 +1,83 @@
+        pMenu.add(backGMenu);
+
+        JMenu subMenu = new JMenu("Border");
+
+        JMenuItem eItem = new JMenuItem("Invisible");
+
+        eItem.addActionListener(new ActionListener() {
+
+
+
+            public void actionPerformed(ActionEvent arg0) {
+
+                refBase.setBorderVisible(!refBase.isBorderVisible());
+
+                refBase.repaint();
+
+            }
+
+        });
+
+        subMenu.add(eItem);
+
+        eItem = new JMenuItem("Color");
+
+        eItem.addActionListener(new ActionListener() {
+
+
+
+            public void actionPerformed(ActionEvent arg0) {
+
+                Color c = JColorChooser.showDialog(null, "Select Background Color", Color.WHITE);
+
+                refBase.setBorderColor(c);
+
+                refBase.repaint();
+
+            }
+
+        });
+
+        subMenu.add(eItem);
+
+        eItem = new JMenuItem("Square");
+
+        eItem.addActionListener(new ActionListener() {
+
+
+
+            public void actionPerformed(ActionEvent arg0) {
+
+                refBase.setBorderStyle(0);
+
+                refBase.setBorderVisible(true);
+
+                refBase.repaint();
+
+            }
+
+        });
+
+        subMenu.add(eItem);
+
+        eItem = new JMenuItem("Round");
+
+        eItem.addActionListener(new ActionListener() {
+
+
+
+            public void actionPerformed(ActionEvent arg0) {
+
+                refBase.setBorderStyle(1);
+
+                refBase.setBorderVisible(true);
+
+                refBase.repaint();
+
+            }
+
+        });
+
+        subMenu.add(eItem);
+
+        pMenu.add(subMenu);

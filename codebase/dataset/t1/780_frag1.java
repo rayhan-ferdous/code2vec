@@ -1,0 +1,29 @@
+        this.dirFile = dirfile;
+
+        this.cfg = cfg;
+
+        String rm = replace(cfg.getProperty("readme"), "<none>", null);
+
+        if (rm != null) {
+
+            this.readMeFile = new File(rm);
+
+            this.readMeCharset = replace(cfg.getProperty("readme-charset"), "<none>", null);
+
+        }
+
+        this.id = replace(cfg.getProperty("fs-id", ""), "<none>", "");
+
+        this.uid = replace(cfg.getProperty("fs-uid", ""), "<auto>", "");
+
+        this.maxlen = new Integer(cfg.getProperty("maxlen", "79"));
+
+        this.vallen = new Integer(cfg.getProperty("maxlen", "64"));
+
+        this.skipGroupLen = !"<yes>".equals(cfg.getProperty("grouplen"));
+
+        this.undefSeqLen = !"<yes>".equals(cfg.getProperty("seqlen"));
+
+        this.undefItemLen = !"<yes>".equals(cfg.getProperty("itemlen"));
+
+        this.onlyInUse = "<yes>".equals(cfg.getProperty("onlyInUse"));

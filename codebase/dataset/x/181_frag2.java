@@ -1,0 +1,21 @@
+            throw new RuntimeException(e);
+
+        }
+
+    }
+
+
+
+    public static byte[] serialize(Object obj) {
+
+        try {
+
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+            ObjectOutputStream o = new ObjectOutputStream(new BufferedOutputStream(out));
+
+            o.writeObject(obj);
+
+            o.close();
+
+            return out.toByteArray();

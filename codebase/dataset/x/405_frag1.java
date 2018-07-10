@@ -1,0 +1,13 @@
+                if (strElement.charAt(1) == 'u') {
+
+                    if (isotope == 0) return (massAccuracy == MONOISOTOPIC) ? 62.929601 : 63.545644;
+
+                    if (isotope == 63) return 62.929601;
+
+                    if (isotope == 65) return 64.927794;
+
+                    break;
+
+                }
+
+                break;

@@ -1,0 +1,37 @@
+        Package pkg = getCurrentParentPackage(diagram);
+
+        MetaModelCache cache = MDEPlugin.getDefault().getRuntime().getModelCache();
+
+        if (cache == null) return name;
+
+        String newName = name;
+
+        int i = 1;
+
+        PackageCollection mpkgs = cache.getPackages(pkg);
+
+        boolean hasName = true;
+
+        while (hasName) {
+
+            hasName = false;
+
+            for (Enumeration e = mpkgs.elements(); e.hasMoreElements(); ) {
+
+                Package mpkg = (Package) e.nextElement();
+
+                if (mpkg.getName().equalsIgnoreCase(newName)) {
+
+                    newName = name + (i++);
+
+                    hasName = true;
+
+                    break;
+
+                }
+
+            }
+
+        }
+
+        return newName;

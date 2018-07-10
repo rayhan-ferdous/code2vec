@@ -1,0 +1,15 @@
+                        com.sun.corba.se.PortableActivationIDL.RepositoryPackage.ServerDefHelper.write(out, $result);
+
+                    } catch (com.sun.corba.se.PortableActivationIDL.ServerNotRegistered $ex) {
+
+                        out = $rh.createExceptionReply();
+
+                        com.sun.corba.se.PortableActivationIDL.ServerNotRegisteredHelper.write(out, $ex);
+
+                    }
+
+                    break;
+
+                }
+
+            case 3:

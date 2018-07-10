@@ -1,0 +1,25 @@
+    public Set<Integer> getHashes(Storetype type) {
+
+        Set<Integer> resultSet = new HashSet<Integer>();
+
+        try {
+
+            PreparedStatement statement = GET_HASHES[type.ordinal()];
+
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()) {
+
+                resultSet.add(rs.getInt(1));
+
+            }
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+
+        }
+
+        return resultSet;
+
+    }

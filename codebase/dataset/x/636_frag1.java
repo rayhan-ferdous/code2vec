@@ -1,0 +1,17 @@
+                if (source != null) try {
+
+                    source.close();
+
+                } catch (IOException e) {
+
+                }
+
+                if (destination != null) try {
+
+                    destination.close();
+
+                } catch (IOException e) {
+
+                }
+
+            }

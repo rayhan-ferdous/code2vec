@@ -1,0 +1,27 @@
+            out.write("\n");
+
+            out.write(".uni-form #error-msg ol {\n");
+
+            out.write("}\n");
+
+            out.write("\n");
+
+            out.write(".uni-form #error-msg ol li {\n");
+
+            out.write("}\n");
+
+            out.write("\n");
+
+            out.write(".uni-form .error-field {\n");
+
+            out.write("}\n");
+
+            out.write("\n");
+
+            out.write("/* ########################################################################## */\n");
+
+            out.write("/* Add the following classes to your fieldsets (preferably) if you want columns */\n");
+
+            out.write(".uni-form .col {\n");
+
+            out.write("\tfloat: left;\n");

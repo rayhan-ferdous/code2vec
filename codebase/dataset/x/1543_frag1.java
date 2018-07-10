@@ -1,0 +1,33 @@
+    public void setEnabling() {
+
+        boolean fileavailable = curFile != null;
+
+        boolean pageshown = ((fspp != null) ? fspp.getPage() != null : page.getPage() != null);
+
+        boolean printable = fileavailable && curFile.isPrintable();
+
+        pageField.setEnabled(fileavailable);
+
+        printAction.setEnabled(printable);
+
+        closeAction.setEnabled(fileavailable);
+
+        fullScreenAction.setEnabled(pageshown);
+
+        prevAction.setEnabled(pageshown);
+
+        nextAction.setEnabled(pageshown);
+
+        firstAction.setEnabled(fileavailable);
+
+        lastAction.setEnabled(fileavailable);
+
+        zoomToolAction.setEnabled(pageshown);
+
+        fitInWindowAction.setEnabled(pageshown);
+
+        zoomInAction.setEnabled(pageshown);
+
+        zoomOutAction.setEnabled(pageshown);
+
+    }

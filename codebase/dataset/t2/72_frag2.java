@@ -1,0 +1,21 @@
+    public boolean supportsOutput(ContentType contentType) {
+
+        switch(contentType) {
+
+            case CharStream:
+
+                return true;
+
+            case XML:
+
+            case ByteStream:
+
+            case ResultSet:
+
+            default:
+
+                return false;
+
+        }
+
+    }

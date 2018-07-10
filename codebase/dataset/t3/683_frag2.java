@@ -1,0 +1,37 @@
+    public List<Rewardlog> findRewardlogByHql(String hql, int start, int maxrow) {
+
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+        Transaction tr = null;
+
+        try {
+
+            tr = session.beginTransaction();
+
+            Query query = session.createQuery(hql);
+
+            query.setFirstResult(start);
+
+            query.setMaxResults(maxrow);
+
+            List<Rewardlog> list = query.list();
+
+            tr.commit();
+
+            return list;
+
+        } catch (HibernateException e) {
+
+            if (tr != null) {
+
+                tr.rollback();
+
+            }
+
+            e.printStackTrace();
+
+        }
+
+        return null;
+
+    }

@@ -1,0 +1,23 @@
+    public void delete(RandomAccessFile raf, RandomAccessFile tempRaf) throws IOException, CannotReadException, CannotWriteException {
+
+        VorbisCommentTag tag = null;
+
+        try {
+
+            tag = (VorbisCommentTag) reader.read(raf);
+
+        } catch (CannotReadException e) {
+
+            write(new VorbisCommentTag(), raf, tempRaf);
+
+            return;
+
+        }
+
+        VorbisCommentTag emptyTag = new VorbisCommentTag();
+
+        emptyTag.setVendor(tag.getVendor());
+
+        write(emptyTag, raf, tempRaf);
+
+    }

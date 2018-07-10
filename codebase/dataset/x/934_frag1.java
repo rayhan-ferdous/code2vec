@@ -1,0 +1,49 @@
+    public void processAudioBlock(AudioBuffer buffer) throws Exception {
+
+        if (closed) {
+
+            processAudio(buffer);
+
+            return;
+
+        }
+
+        int n = buffer.getSampleCount();
+
+        while (n + fPtrBytes - audioDataStartBytePtr >= bfis.length()) {
+
+            if (getLengthInFrames() > 0) {
+
+                closed = true;
+
+                break;
+
+            }
+
+            try {
+
+                Thread.sleep(100);
+
+            } catch (InterruptedException e) {
+
+                e.printStackTrace();
+
+            }
+
+        }
+
+        int nBytes = nChannels * 2 * buffer.getSampleCount();
+
+        boolean realTime = buffer.isRealTime();
+
+        if (byteBuff == null || byteBuff.length != nBytes) {
+
+            byteBuff = new byte[nBytes];
+
+        }
+
+        int nread = bfis.read(byteBuff, 0, nBytes, false);
+
+        fill(buffer, 0, n);
+
+    }

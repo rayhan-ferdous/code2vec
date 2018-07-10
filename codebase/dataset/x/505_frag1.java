@@ -1,0 +1,13 @@
+    public TimeSignatureList getTimeSignatureList() {
+
+        if (timeSignitureList == null) {
+
+            timeSignitureList = new TimeSignatureList();
+
+            timeSignitureList.add(0, 4);
+
+        }
+
+        return timeSignitureList;
+
+    }

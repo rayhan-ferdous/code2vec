@@ -1,0 +1,11 @@
+    public void _setFileNameRoot(String rFileNameRoot) {
+
+        if (null == rFileNameRoot) {
+
+            return;
+
+        }
+
+        _setFileNameRoots(new String[] { rFileNameRoot });
+
+    }

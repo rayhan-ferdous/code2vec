@@ -1,0 +1,21 @@
+    public HttpOutgoingTransport(URL url, int httpTimeout, boolean useCompression, int compressionStrategy, int compressionLevel, String basicAuthUsername, String basicAuthPassword, boolean streamOutputEnabled, int streamOutputSize) {
+
+        this.url = url;
+
+        this.httpTimeout = httpTimeout;
+
+        this.useCompression = useCompression;
+
+        this.compressionLevel = compressionLevel;
+
+        this.compressionStrategy = compressionStrategy;
+
+        this.basicAuthUsername = basicAuthUsername;
+
+        this.basicAuthPassword = basicAuthPassword;
+
+        this.streamOutputChunkSize = streamOutputSize;
+
+        this.streamOutputEnabled = streamOutputEnabled;
+
+    }

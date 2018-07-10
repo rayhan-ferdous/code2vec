@@ -1,0 +1,25 @@
+    private void cargar(Connection conn) throws SQLException, ClassNotFoundException, Exception {
+
+        PreparedStatement ms = null;
+
+        registroGrabado = false;
+
+        Date fechaSystem = new Date();
+
+        DateFormat aaaammdd = new SimpleDateFormat("yyyyMMdd");
+
+        int fzafsis = Integer.parseInt(aaaammdd.format(fechaSystem));
+
+        DateFormat hhmmss = new SimpleDateFormat("HHmmss");
+
+        DateFormat sss = new SimpleDateFormat("S");
+
+        String ss = sss.format(fechaSystem);
+
+        if (ss.length() > 2) {
+
+            ss = ss.substring(0, 2);
+
+        }
+
+        int fzahsis = Integer.parseInt(hhmmss.format(fechaSystem) + ss);

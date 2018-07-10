@@ -1,0 +1,71 @@
+        if (!"u".equals(pSortDirection)) {
+
+            up = false;
+
+        }
+
+        if ("id".equals(pColumn)) {
+
+            Sorter sorter = new Sorter();
+
+            long[] temp = new long[fTableData.length];
+
+            for (int i = 0; i < temp.length; i++) {
+
+                temp[i] = fTableData[i].getId();
+
+            }
+
+            fSortOrder = sorter.sortLong(temp, fSortOrder, up);
+
+        }
+
+        if ("orderID".equals(pColumn)) {
+
+            Sorter sorter = new Sorter();
+
+            long[] temp = new long[fTableData.length];
+
+            for (int i = 0; i < temp.length; i++) {
+
+                temp[i] = fTableData[i].getOrderID();
+
+            }
+
+            fSortOrder = sorter.sortLong(temp, fSortOrder, up);
+
+        }
+
+        if ("journalID".equals(pColumn)) {
+
+            Sorter sorter = new Sorter();
+
+            long[] temp = new long[fTableData.length];
+
+            for (int i = 0; i < temp.length; i++) {
+
+                temp[i] = fTableData[i].getJournalID();
+
+            }
+
+            fSortOrder = sorter.sortLong(temp, fSortOrder, up);
+
+        }
+
+        if ("bookDate".equals(pColumn)) {
+
+            fComparator = new DateComparator();
+
+            java.sql.Date[] temp = new java.sql.Date[fTableData.length];
+
+            for (int i = 0; i < temp.length; i++) {
+
+                temp[i] = fTableData[i].getBookDate();
+
+            }
+
+            sort(temp, 0, temp.length - 1, up);
+
+        }
+
+        if ("valueDate".equals(pColumn)) {

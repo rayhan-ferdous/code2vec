@@ -1,0 +1,21 @@
+    public void close() {
+
+        try {
+
+            if (inputStream != null) {
+
+                inputStream.close();
+
+            }
+
+            if (jarFile != null) {
+
+                jarFile.close();
+
+            }
+
+        } catch (Exception e) {
+
+        }
+
+    }

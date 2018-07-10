@@ -1,0 +1,19 @@
+                public void run() {
+
+                    try {
+
+                        if (m_fwk != null) {
+
+                            m_fwk.stop();
+
+                            m_fwk.waitForStop(0);
+
+                        }
+
+                    } catch (Exception ex) {
+
+                        System.err.println("Error stopping framework: " + ex);
+
+                    }
+
+                }

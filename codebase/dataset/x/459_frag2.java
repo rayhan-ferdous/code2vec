@@ -1,0 +1,11 @@
+            hqlSB.append("select count(*) from ");
+
+            hqlSB.append(DoCustomerRelation.class.getName());
+
+            hqlSB.append(getWhereStatement(filters));
+
+            if (filters != null && filters.length != 0) {
+
+                hqlSB.append(" and ");
+
+            } else {

@@ -1,0 +1,25 @@
+            if (inFC != null) {
+
+                try {
+
+                    inFC.close();
+
+                } catch (IOException ex) {
+
+                }
+
+            }
+
+            if (outFC != null) {
+
+                try {
+
+                    outFC.close();
+
+                } catch (IOException ex) {
+
+                }
+
+            }
+
+            to.setLastModified(from.lastModified());

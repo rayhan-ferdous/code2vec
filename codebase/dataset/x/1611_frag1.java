@@ -1,0 +1,23 @@
+    public void softReset() {
+
+        duration = 0;
+
+        drift = 0;
+
+        r = 0;
+
+        s = 0;
+
+        ready = false;
+
+        readStarted = true;
+
+        writeStarted = false;
+
+        readCursor = 0;
+
+        writeCursor = 0;
+
+        lastRtpPackReceivedTimeStamp = 0;
+
+    }

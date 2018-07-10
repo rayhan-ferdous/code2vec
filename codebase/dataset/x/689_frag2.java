@@ -1,0 +1,19 @@
+    public RedirectAction(String channel, String extraChannel, String context, String exten, Integer priority, String extraContext, String extraExten, Integer extraPriority) {
+
+        this.channel = channel;
+
+        this.extraChannel = extraChannel;
+
+        this.context = context;
+
+        this.exten = exten;
+
+        this.priority = priority;
+
+        this.extraContext = extraContext;
+
+        this.extraExten = extraExten;
+
+        this.extraPriority = extraPriority;
+
+    }

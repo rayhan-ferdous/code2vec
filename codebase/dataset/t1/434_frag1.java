@@ -1,0 +1,5 @@
+            if ("id".equals(pColumn)) return new Long(fTotal.getId());
+
+            if ("type".equals(pColumn)) return new Long(fTotal.getType());
+
+            if ("principalID".equals(pColumn)) return new Long(fTotal.getPrincipalID());

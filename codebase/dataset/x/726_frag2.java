@@ -1,0 +1,9 @@
+        pad = (iSz + 4) % 8;
+
+        crc32 = (int) CRC32.getValue(bytes.getBuf(), pad, iSz - pad);
+
+        padSz = iSz + 4 - pad;
+
+        writeInt(crc32);
+
+        padData = bytes.getBuf();

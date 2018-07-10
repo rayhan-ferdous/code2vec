@@ -1,0 +1,9 @@
+        response.addRecord(queryRecord, Section.QUESTION);
+
+        Name name = queryRecord.getName();
+
+        short type = queryRecord.getType();
+
+        short dclass = queryRecord.getDClass();
+
+        if (type == Type.AXFR && s != null) return doAXFR(name, query, s);

@@ -1,0 +1,33 @@
+            protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
+                ProductLine model = createInitialModel();
+
+                attachModelToResource(model, modelResource);
+
+                Diagram diagram = ViewService.createDiagram(model, ProductLineEditPart.MODEL_ID, DrlModelDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+
+                if (diagram != null) {
+
+                    diagramResource.getContents().add(diagram);
+
+                    diagram.setName(diagramName);
+
+                    diagram.setElement(model);
+
+                }
+
+                try {
+
+                    modelResource.save(org.spbu.pldoctoolkit.graph.diagram.productline.part.DrlModelDiagramEditorUtil.getSaveOptions());
+
+                    diagramResource.save(org.spbu.pldoctoolkit.graph.diagram.productline.part.DrlModelDiagramEditorUtil.getSaveOptions());
+
+                } catch (IOException e) {
+
+                    DrlModelDiagramEditorPlugin.getInstance().logError("Unable to store model and diagram resources", e);
+
+                }
+
+                return CommandResult.newOKCommandResult();
+
+            }

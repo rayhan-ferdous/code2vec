@@ -1,0 +1,5 @@
+        if ("currencyID".equals(pColumn)) return new Long(vo.getCurrencyID());
+
+        if ("contactID".equals(pColumn)) return new Long(vo.getContactID());
+
+        if ("mailAddressID".equals(pColumn)) return new Long(vo.getMailAddressID());

@@ -1,0 +1,33 @@
+    public void test_18_40_writeObject() {
+
+        Object objToSave = null;
+
+        try {
+
+            java.io.IOException ex = new java.io.StreamCorruptedException(FOO);
+
+            objToSave = ex;
+
+            if (DEBUG) System.out.println("Obj = " + objToSave);
+
+            dumpAndReload(objToSave);
+
+            assertTrue(MSG_TEST_FAILED + objToSave, true);
+
+        } catch (IOException e) {
+
+            fail("IOException serializing " + objToSave + " : " + e.getMessage());
+
+        } catch (ClassNotFoundException e) {
+
+            fail("ClassNotFoundException reading Object type : " + e.getMessage());
+
+        } catch (Error err) {
+
+            System.out.println("Error when obj = " + objToSave);
+
+            throw err;
+
+        }
+
+    }

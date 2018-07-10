@@ -1,0 +1,27 @@
+    public static Properties loadProperties(String propertyFileName) {
+
+        Properties theProps = null;
+
+        try {
+
+            FileInputStream inStream = new FileInputStream(propertyFileName);
+
+            theProps = new Properties();
+
+            theProps.load(inStream);
+
+            inStream.close();
+
+        } catch (FileNotFoundException fnfe) {
+
+            fnfe.printStackTrace();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return theProps;
+
+    }

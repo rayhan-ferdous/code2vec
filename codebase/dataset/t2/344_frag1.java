@@ -1,0 +1,17 @@
+    public void testRunNormalDTM_Q17() throws FileNotFoundException, XPathException, SAXException, IOException, XQueryException, URISyntaxException {
+
+        System.gc();
+
+        String o1 = executeQueryWithXbird("q17.xq", "fn:collection('/test/xmark/dtm/auction.xml')");
+
+        String o2 = executeQueryWithXbird("q17.xq", "fn:collection('/test/xmark/dtms/auction.xml')");
+
+        assertNotNull(o1);
+
+        assertEquals(o1, o2);
+
+        String s1 = executeQueryWithSaxon("q17.xq");
+
+        assertEqual(s1, o1);
+
+    }

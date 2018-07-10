@@ -1,0 +1,47 @@
+    public static void copyFiles(final File srcDir, final String[] files, final File destDir, final int override, final String[] exceptFiles) throws FileNotFoundException, IOException {
+
+        destDir.mkdirs();
+
+        for (int index = 0; index < files.length; index++) {
+
+            final String fileName = files[index];
+
+            final File srcFile = new File(srcDir, fileName);
+
+            if (srcFile.isDirectory()) {
+
+                if (fileName.equals("CVS") || fileName.toLowerCase().equals(".svn")) continue;
+
+                copyFiles(srcFile, new File(destDir, fileName), override, exceptFiles);
+
+                continue;
+
+            } else {
+
+                boolean exclude = false;
+
+                for (String excFileName : exceptFiles) {
+
+                    if (fileName.equals(excFileName)) {
+
+                        exclude = true;
+
+                        break;
+
+                    }
+
+                }
+
+                if (exclude) {
+
+                    continue;
+
+                }
+
+            }
+
+            copyFile(srcFile, new File(destDir, fileName), override);
+
+        }
+
+    }

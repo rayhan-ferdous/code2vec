@@ -1,0 +1,17 @@
+import java.io.FileReader;
+
+import java.util.Enumeration;
+
+import java.util.zip.ZipEntry;
+
+import java.util.zip.ZipFile;
+
+import java.util.zip.ZipOutputStream;
+
+import net.sf.jasperreports.engine.util.FileResolver;
+
+import org.apache.commons.io.IOUtils;
+
+
+
+public class FileUtil implements FileResolver {

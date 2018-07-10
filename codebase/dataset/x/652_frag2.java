@@ -1,0 +1,55 @@
+    private boolean save(boolean bSaveAs) throws IOException {
+
+        if ((m_outputFile == null) || bSaveAs) {
+
+            File selectedFile;
+
+            JFileChooser fc = new JFileChooser(m_fileChooserPath);
+
+            fc.setFileFilter(UIFactory.getEdlFileFilter());
+
+            int returnVal = fc.showSaveDialog(this);
+
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+
+                selectedFile = fc.getSelectedFile();
+
+                String sSelectedFilePath = selectedFile.getAbsolutePath();
+
+                int nDotIndex = sSelectedFilePath.indexOf(".");
+
+                String sExtension = (nDotIndex > 0) ? "" : ".edl";
+
+                m_outputFile = new File(sSelectedFilePath + sExtension);
+
+                m_fileChooserPath = fc.getSelectedFile().getParent();
+
+            } else {
+
+                return false;
+
+            }
+
+        }
+
+        FileOutputStream fos = new FileOutputStream(m_outputFile);
+
+        UITools.changeCursor(UITools.WAIT_CURSOR, this);
+
+        try {
+
+            DomHelper.printXml(m_resultPanel.getContext().getEdl().toXmlDocument(), fos);
+
+            updateHistroy(m_outputFile);
+
+            setModified(false);
+
+        } finally {
+
+            UITools.changeCursor(UITools.DEFAULT_CURSOR, this);
+
+        }
+
+        return true;
+
+    }

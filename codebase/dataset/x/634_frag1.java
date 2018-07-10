@@ -1,0 +1,13 @@
+    public void disconnect() {
+
+        try {
+
+            con.disconnect();
+
+        } catch (Exception e) {
+
+        } finally {
+
+        }
+
+    }

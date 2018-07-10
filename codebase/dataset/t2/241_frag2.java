@@ -1,0 +1,21 @@
+        saveFastaItem.addActionListener(new java.awt.event.ActionListener() {
+
+
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                saveFastaItemActionPerformed(evt);
+
+            }
+
+        });
+
+        fileMenu.add(saveFastaItem);
+
+        exitItem.setText("Close");
+
+        exitItem.addActionListener(new java.awt.event.ActionListener() {
+
+
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {

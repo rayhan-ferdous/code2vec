@@ -1,0 +1,35 @@
+    private Pool createDummyMatrixPool(String name, int card) {
+
+        Pool pool = new Pool(name);
+
+        logger.fine("creating dummy matrix pool " + name + " " + card);
+
+        for (int classe = 0; classe < card; classe++) {
+
+            float[][] matrix = new float[vectorLength][vectorLength];
+
+            for (int i = 0; i < vectorLength; i++) {
+
+                for (int j = 0; j < vectorLength; j++) {
+
+                    if (i == j) {
+
+                        matrix[i][j] = 1.0F;
+
+                    } else {
+
+                        matrix[i][j] = 0.0F;
+
+                    }
+
+                }
+
+            }
+
+            pool.put(classe, matrix);
+
+        }
+
+        return pool;
+
+    }

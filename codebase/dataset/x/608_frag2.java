@@ -1,0 +1,15 @@
+    public Matrix timesEquals(double s) {
+
+        for (int i = 0; i < m; i++) {
+
+            for (int j = 0; j < n; j++) {
+
+                A[i][j] = s * A[i][j];
+
+            }
+
+        }
+
+        return this;
+
+    }

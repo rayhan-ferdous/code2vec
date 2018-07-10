@@ -1,0 +1,29 @@
+    public static void copyDirectory(File sourceDir, File destDir) throws IOException {
+
+        if (!destDir.exists()) {
+
+            destDir.mkdir();
+
+        }
+
+        File[] children = sourceDir.listFiles();
+
+        for (File sourceChild : children) {
+
+            String name = sourceChild.getName();
+
+            File destChild = new File(destDir, name);
+
+            if (sourceChild.isDirectory()) {
+
+                copyDirectory(sourceChild, destChild);
+
+            } else {
+
+                copyFile(sourceChild, destChild);
+
+            }
+
+        }
+
+    }

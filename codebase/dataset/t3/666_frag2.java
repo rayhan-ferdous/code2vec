@@ -1,0 +1,11 @@
+    public ThdProxyAcceptCb(TCPServerChannel svrChannel, ConnectionListener cb, Executor svc, BufferFactory bufFactory) {
+
+        this.svrChannel = svrChannel;
+
+        this.cb = cb;
+
+        this.svc = svc;
+
+        this.bufFactory = bufFactory;
+
+    }

@@ -1,0 +1,13 @@
+    private String byteToString(byte[] bByte) {
+
+        StringBuffer sBuffer = new StringBuffer();
+
+        for (int i = 0; i < bByte.length; i++) {
+
+            sBuffer.append(byteToArrayString(bByte[i]));
+
+        }
+
+        return sBuffer.toString();
+
+    }

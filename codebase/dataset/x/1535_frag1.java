@@ -1,0 +1,5 @@
+        if ("ledgerName".equals(pColumn)) return vo.getLedgerName();
+
+        if ("ledgerType".equals(pColumn)) return vo.getLedgerType();
+
+        if ("amountStart".equals(pColumn)) return vo.getAmountStart();

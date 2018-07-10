@@ -1,0 +1,21 @@
+    public void setMatrix(int i0, int i1, int[] c, CMatrix X) {
+
+        try {
+
+            for (int i = i0; i <= i1; i++) {
+
+                for (int j = 0; j < c.length; j++) {
+
+                    A[i][c[j]] = X.get(i - i0, j);
+
+                }
+
+            }
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+
+            throw new ArrayIndexOutOfBoundsException("Submatrix indices");
+
+        }
+
+    }

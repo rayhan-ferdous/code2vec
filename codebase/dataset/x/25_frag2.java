@@ -1,0 +1,37 @@
+import java.nio.ByteBuffer;
+
+import java.nio.channels.SocketChannel;
+
+
+
+public class StubReadObserver implements ReadObserver, ReadTimeout {
+
+
+
+    private long readTimeout = 0;
+
+
+
+    private boolean shutdown = false;
+
+
+
+    private IOException iox;
+
+
+
+    private SocketChannel channel;
+
+
+
+    private int readsHandled;
+
+
+
+    private ByteBuffer buffer;
+
+
+
+    public void setChannel(SocketChannel channel) {
+
+        this.channel = channel;

@@ -1,0 +1,53 @@
+    public QueryAtomContainer(IAtomContainer container) {
+
+        this.atomCount = container.getAtomCount();
+
+        this.bondCount = container.getBondCount();
+
+        this.lonePairCount = container.getLonePairCount();
+
+        this.singleElectronCount = container.getSingleElectronCount();
+
+        this.atoms = new IAtom[this.atomCount];
+
+        this.bonds = new IBond[this.bondCount];
+
+        this.lonePairs = new ILonePair[this.lonePairCount];
+
+        this.singleElectrons = new ISingleElectron[this.singleElectronCount];
+
+        stereoElements = new ArrayList<IStereoElement>(atomCount / 2);
+
+        for (int f = 0; f < container.getAtomCount(); f++) {
+
+            atoms[f] = container.getAtom(f);
+
+            container.getAtom(f).addListener(this);
+
+        }
+
+        for (int f = 0; f < this.bondCount; f++) {
+
+            bonds[f] = container.getBond(f);
+
+            container.getBond(f).addListener(this);
+
+        }
+
+        for (int f = 0; f < this.lonePairCount; f++) {
+
+            lonePairs[f] = container.getLonePair(f);
+
+            container.getLonePair(f).addListener(this);
+
+        }
+
+        for (int f = 0; f < this.singleElectronCount; f++) {
+
+            singleElectrons[f] = container.getSingleElectron(f);
+
+            container.getSingleElectron(f).addListener(this);
+
+        }
+
+    }

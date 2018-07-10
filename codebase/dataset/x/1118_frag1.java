@@ -1,0 +1,25 @@
+    public Matrix prodRows() {
+
+        Matrix X = new Matrix(1, n);
+
+        double[][] C = X.getArray();
+
+        double s = 0;
+
+        for (int j = 0; j < n; j++) {
+
+            s = 1;
+
+            for (int i = 0; i < m; i++) {
+
+                s = s * A[i][j];
+
+            }
+
+            C[0][j] = s;
+
+        }
+
+        return X;
+
+    }

@@ -1,0 +1,11 @@
+                System.out.println("Subject: " + subject);
+
+            }
+
+            Properties props = System.getProperties();
+
+            if (mailhost != null) props.put("mail.smtp.host", mailhost);
+
+            Session session = Session.getInstance(props, null);
+
+            if (debug) session.setDebug(true);

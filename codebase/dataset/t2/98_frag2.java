@@ -1,0 +1,23 @@
+    ArrayList new28() {
+
+        @SuppressWarnings("hiding") ArrayList nodeList = new ArrayList();
+
+        @SuppressWarnings("unused") ArrayList nodeArrayList1 = pop();
+
+        PReference preferenceNode1;
+
+        {
+
+            TKwNull tkwnullNode2;
+
+            tkwnullNode2 = (TKwNull) nodeArrayList1.get(0);
+
+            preferenceNode1 = new AFNullReference(tkwnullNode2);
+
+        }
+
+        nodeList.add(preferenceNode1);
+
+        return nodeList;
+
+    }

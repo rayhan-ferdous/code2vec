@@ -1,0 +1,19 @@
+    public void testRetroCollections() {
+
+        {
+
+            List names = new Vector();
+
+            Map dictionary = new Hashtable();
+
+        }
+
+        {
+
+            List<String> names = new Vector<String>();
+
+            Map<String, String> dictionary = new Hashtable<String, String>();
+
+        }
+
+    }

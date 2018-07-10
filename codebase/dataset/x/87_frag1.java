@@ -1,0 +1,33 @@
+    private static void insert(EntityManagerFactory entityManagerFactory) {
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        try {
+
+            entityManager.getTransaction().begin();
+
+            Person person = new Person();
+
+            person.setName("Jesse James");
+
+            person.setSize(Length.create(180, LengthUnit.cm));
+
+            person.setHipSize(Length.create(80, LengthUnit.cm));
+
+            entityManager.persist(person);
+
+            entityManager.getTransaction().commit();
+
+        } finally {
+
+            if (entityManager.getTransaction().isActive()) {
+
+                entityManager.getTransaction().rollback();
+
+            }
+
+            entityManager.close();
+
+        }
+
+    }

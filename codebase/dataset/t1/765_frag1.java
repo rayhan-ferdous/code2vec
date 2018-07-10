@@ -1,0 +1,51 @@
+    private int evalTerm(StreamTokenizer st) throws IOException {
+
+        int val = evalFactor(st);
+
+        int token = st.nextToken();
+
+        while (token == '*' || token == '/' || token == '%' || token == '&') {
+
+            int t = evalFactor(st);
+
+            switch(token) {
+
+                case '*':
+
+                    val *= t;
+
+                    break;
+
+                case '/':
+
+                    val /= t;
+
+                    break;
+
+                case '%':
+
+                    val %= t;
+
+                    break;
+
+                case '&':
+
+                    val &= t;
+
+                    break;
+
+                default:
+
+                    throw new IOException("Invalid token");
+
+            }
+
+            token = st.nextToken();
+
+        }
+
+        st.pushBack();
+
+        return val;
+
+    }

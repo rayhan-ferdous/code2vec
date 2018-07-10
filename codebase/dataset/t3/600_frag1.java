@@ -1,0 +1,37 @@
+    private org.omg.CORBA.portable.OutputStream _OB_op_describe_proxy(org.omg.CORBA.portable.InputStream in, org.omg.CORBA.portable.ResponseHandler handler) {
+
+        org.omg.CORBA.portable.OutputStream out = null;
+
+        try {
+
+            String _ob_a0 = OfferIdHelper.read(in);
+
+            org.omg.CosTrading.ProxyPackage.ProxyInfo _ob_r = describe_proxy(_ob_a0);
+
+            out = handler.createReply();
+
+            org.omg.CosTrading.ProxyPackage.ProxyInfoHelper.write(out, _ob_r);
+
+        } catch (IllegalOfferId _ob_ex) {
+
+            out = handler.createExceptionReply();
+
+            IllegalOfferIdHelper.write(out, _ob_ex);
+
+        } catch (UnknownOfferId _ob_ex) {
+
+            out = handler.createExceptionReply();
+
+            UnknownOfferIdHelper.write(out, _ob_ex);
+
+        } catch (org.omg.CosTrading.ProxyPackage.NotProxyOfferId _ob_ex) {
+
+            out = handler.createExceptionReply();
+
+            org.omg.CosTrading.ProxyPackage.NotProxyOfferIdHelper.write(out, _ob_ex);
+
+        }
+
+        return out;
+
+    }

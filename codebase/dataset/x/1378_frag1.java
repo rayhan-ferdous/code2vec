@@ -1,0 +1,19 @@
+    private static InputStream readFromFile(String filename) {
+
+        FileInputStream fin = null;
+
+        try {
+
+            File f = new File(filename);
+
+            fin = new FileInputStream(f);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return fin;
+
+    }

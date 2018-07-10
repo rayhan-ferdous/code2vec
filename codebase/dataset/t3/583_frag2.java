@@ -1,0 +1,29 @@
+    private JMenu getJMainSystemMenu() {
+
+        if (jMainSystemMenu == null) {
+
+            jMainSystemMenu = new JMenu();
+
+            jMainSystemMenu.setText("Syst�m");
+
+            JMenuItem itemTemp = new JMenuItem("Konec", new ImageIcon("images/ctxsample_hide.gif"));
+
+            itemTemp.addActionListener(new java.awt.event.ActionListener() {
+
+
+
+                public void actionPerformed(java.awt.event.ActionEvent e) {
+
+                    System.exit(0);
+
+                }
+
+            });
+
+            jMainSystemMenu.add(itemTemp);
+
+        }
+
+        return jMainSystemMenu;
+
+    }

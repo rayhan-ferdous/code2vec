@@ -1,0 +1,23 @@
+            uploadFinished();
+
+        } else {
+
+            throw new Exception("There might be a problem with your internet connecivity or server error. Please try after some time. :(");
+
+        }
+
+    }
+
+
+
+    public String getData(String url) throws Exception {
+
+        u = new URL(url);
+
+        uc = (HttpURLConnection) u.openConnection();
+
+        uc.setDoOutput(true);
+
+        uc.setRequestProperty("Host", filesoniclink);
+
+        uc.setRequestProperty("Connection", "keep-alive");

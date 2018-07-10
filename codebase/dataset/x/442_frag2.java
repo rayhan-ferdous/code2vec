@@ -1,0 +1,159 @@
+        KeyStrList3.add("Ord");
+
+        KeyStrList3.add("ParamCount");
+
+        KeyStrList3.add("ParamStr");
+
+        KeyStrList3.add("Pi");
+
+        KeyStrList3.add("Point");
+
+        KeyStrList3.add("PointsEqual");
+
+        KeyStrList3.add("Pos");
+
+        KeyStrList3.add("Pred");
+
+        KeyStrList3.add("Printer");
+
+        KeyStrList3.add("PromptForFileName");
+
+        KeyStrList3.add("PtInRect");
+
+        KeyStrList3.add("RadToDeg");
+
+        KeyStrList3.add("Random");
+
+        KeyStrList3.add("RandomRange");
+
+        KeyStrList3.add("RecodeDate");
+
+        KeyStrList3.add("RecodeTime");
+
+        KeyStrList3.add("Rect");
+
+        KeyStrList3.add("RemoveDir");
+
+        KeyStrList3.add("RenameFile");
+
+        KeyStrList3.add("Round");
+
+        KeyStrList3.add("SeekEof");
+
+        KeyStrList3.add("SeekEoln");
+
+        KeyStrList3.add("SelectDirectory");
+
+        KeyStrList3.add("SetCurrentDir");
+
+        KeyStrList3.add("Sin");
+
+        KeyStrList3.add("SizeOf");
+
+        KeyStrList3.add("Slice");
+
+        KeyStrList3.add("Sqr");
+
+        KeyStrList3.add("Sqrt");
+
+        KeyStrList3.add("StringOfChar");
+
+        KeyStrList3.add("StringReplace");
+
+        KeyStrList3.add("StringToWideChar");
+
+        KeyStrList3.add("StrToCurr");
+
+        KeyStrList3.add("StrToDate");
+
+        KeyStrList3.add("StrToDateTime");
+
+        KeyStrList3.add("StrToFloat");
+
+        KeyStrList3.add("StrToInt");
+
+        KeyStrList3.add("StrToInt64");
+
+        KeyStrList3.add("StrToInt64Def");
+
+        KeyStrList3.add("StrToIntDef");
+
+        KeyStrList3.add("StrToTime");
+
+        KeyStrList3.add("StuffString");
+
+        KeyStrList3.add("Succ");
+
+        KeyStrList3.add("Sum");
+
+        KeyStrList3.add("Tan");
+
+        KeyStrList3.add("Time");
+
+        KeyStrList3.add("TimeToStr");
+
+        KeyStrList3.add("Tomorrow");
+
+        KeyStrList3.add("Trunc");
+
+        KeyStrList3.add("UpCase");
+
+        KeyStrList3.add("UpperCase");
+
+        KeyStrList3.add("VarType");
+
+        KeyStrList3.add("WideCharToString");
+
+        KeyStrList3.add("WrapText");
+
+        KeyStrList3.add("Yesterday");
+
+        KeyStrList3.add("Append");
+
+        KeyStrList3.add("AppendStr");
+
+        KeyStrList3.add("Assign");
+
+        KeyStrList3.add("AssignFile");
+
+        KeyStrList3.add("AssignPrn");
+
+        KeyStrList3.add("Beep");
+
+        KeyStrList3.add("BlockRead");
+
+        KeyStrList3.add("BlockWrite");
+
+        KeyStrList3.add("Break");
+
+        KeyStrList3.add("ChDir");
+
+        KeyStrList3.add("Close");
+
+        KeyStrList3.add("CloseFile");
+
+        KeyStrList3.add("Continue");
+
+        KeyStrList3.add("DateTimeToString");
+
+        KeyStrList3.add("Dec");
+
+        KeyStrList3.add("DecodeDate");
+
+        KeyStrList3.add("DecodeDateTime");
+
+        KeyStrList3.add("DecodeTime");
+
+        KeyStrList3.add("Delete");
+
+        KeyStrList3.add("Dispose");
+
+        KeyStrList3.add("EndThread");
+
+        KeyStrList3.add("Erase");
+
+        KeyStrList3.add("Exclude");
+
+        KeyStrList3.add("Exit");
+
+        KeyStrList3.add("FillChar");

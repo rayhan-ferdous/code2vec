@@ -1,0 +1,11 @@
+        Assert.assertEquals(0L, reader.getCurrentRecord());
+
+        Assert.assertEquals(1, reader.getColumnCount());
+
+        Assert.assertEquals("\"July 4th, 2005\"", reader.getRawRecord());
+
+        Assert.assertFalse(reader.readRecord());
+
+        reader.close();
+
+    }

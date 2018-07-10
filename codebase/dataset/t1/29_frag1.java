@@ -1,0 +1,25 @@
+    public void testLabeledBreak() {
+
+        List<List<String>> table = new ArrayList<List<String>>();
+
+        List<String> row1 = new ArrayList<String>();
+
+        row1.add("5");
+
+        row1.add("2");
+
+        List<String> row2 = new ArrayList<String>();
+
+        row2.add("3");
+
+        row2.add("4");
+
+        table.add(row1);
+
+        table.add(row2);
+
+        assertTrue(found(table, "3"));
+
+        assertFalse(found(table, "8"));
+
+    }

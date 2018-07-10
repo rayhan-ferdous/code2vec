@@ -1,0 +1,63 @@
+    public static XSingleComponentFactory __getComponentFactory(String sImplementationName) {
+
+        String regClassesList = getRegistrationClasses();
+
+        StringTokenizer t = new StringTokenizer(regClassesList, " ");
+
+        while (t.hasMoreTokens()) {
+
+            String className = t.nextToken();
+
+            if (className != null && className.length() != 0) {
+
+                try {
+
+                    Class regClass = Class.forName(className);
+
+                    Method writeRegInfo = regClass.getDeclaredMethod("__getComponentFactory", new Class[] { String.class });
+
+                    Object result = writeRegInfo.invoke(regClass, sImplementationName);
+
+                    if (result != null) {
+
+                        return (XSingleComponentFactory) result;
+
+                    }
+
+                } catch (ClassNotFoundException ex) {
+
+                    ex.printStackTrace();
+
+                } catch (ClassCastException ex) {
+
+                    ex.printStackTrace();
+
+                } catch (SecurityException ex) {
+
+                    ex.printStackTrace();
+
+                } catch (NoSuchMethodException ex) {
+
+                    ex.printStackTrace();
+
+                } catch (IllegalArgumentException ex) {
+
+                    ex.printStackTrace();
+
+                } catch (InvocationTargetException ex) {
+
+                    ex.printStackTrace();
+
+                } catch (IllegalAccessException ex) {
+
+                    ex.printStackTrace();
+
+                }
+
+            }
+
+        }
+
+        return null;
+
+    }

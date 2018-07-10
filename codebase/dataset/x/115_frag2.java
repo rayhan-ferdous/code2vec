@@ -1,0 +1,49 @@
+    public String getDocumentDataContentType(String documentId) {
+
+        logger.debug("getDocumentDataContentType(%s)", documentId);
+
+        Connection connection = null;
+
+        NamedParameterStatement statement = null;
+
+        ResultSet rs = null;
+
+        try {
+
+            connection = this.dataSource.getConnection();
+
+            statement = new NamedParameterStatement(connection, this.queryStore.get(QueryStore.SELECT_DOCUMENT_DATA_CONTENTTYPE));
+
+            statement.setString(QueryStore.SELECT_DOCUMENT_DATA_CONTENTTYPE_PARAM_ID_DOCUMENT, documentId);
+
+            rs = statement.executeQuery();
+
+            if (rs != null && rs.next()) {
+
+                String contentType = rs.getString(QueryStore.SELECT_DOCUMENT_DATA_CONTENTTYPE_RESULTSET_CONTENTTYPE);
+
+                return contentType;
+
+            } else {
+
+                throw new ApplicationException(String.format("Document %s not found", documentId));
+
+            }
+
+        } catch (SQLException e) {
+
+            logger.error(e.getMessage(), e);
+
+            throw new ApplicationException(e.getMessage());
+
+        } finally {
+
+            close(rs);
+
+            close(statement);
+
+            close(connection);
+
+        }
+
+    }

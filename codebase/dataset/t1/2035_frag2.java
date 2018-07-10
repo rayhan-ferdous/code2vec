@@ -1,0 +1,5 @@
+        if ("id".equals(pColumn)) return new Long(vo.getId());
+
+        if ("type".equals(pColumn)) return vo.getType();
+
+        if ("esrAccountNr".equals(pColumn)) return vo.getEsrAccountNr();

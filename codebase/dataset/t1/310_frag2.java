@@ -1,0 +1,19 @@
+        @SuppressWarnings("unused") int dontBreakLines = (options & DONT_BREAK_LINES);
+
+        try {
+
+            baos = new java.io.ByteArrayOutputStream();
+
+            b64os = new Base64.OutputStream(baos, ENCODE | options);
+
+            if (gzip == GZIP) {
+
+                gzos = new java.util.zip.GZIPOutputStream(b64os);
+
+                oos = new java.io.ObjectOutputStream(gzos);
+
+            } else oos = new java.io.ObjectOutputStream(b64os);
+
+            oos.writeObject(serializableObject);
+
+        } catch (java.io.IOException e) {

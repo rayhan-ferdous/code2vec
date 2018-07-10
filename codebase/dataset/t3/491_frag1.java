@@ -1,0 +1,19 @@
+    public void test79() {
+
+        CsvReader reader;
+
+        reader = CsvReader.parse("");
+
+        reader.close();
+
+        try {
+
+            reader.readRecord();
+
+        } catch (Exception ex) {
+
+            assertException(new IOException("This instance of the CsvReader class has already been closed."), ex);
+
+        }
+
+    }

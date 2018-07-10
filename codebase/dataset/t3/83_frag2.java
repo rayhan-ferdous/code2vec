@@ -1,0 +1,89 @@
+    public void executeSearch() {
+
+        Session session = null;
+
+        Transaction tx = null;
+
+        try {
+
+            session = sessionFactory.openSession();
+
+            tx = session.beginTransaction();
+
+            executionResults = session.find(getQueryStatement("select new org.eaasyst.eaa.syst.data.persistent.UserGroup(userGroup.idString, userGroup.title) from UserGroup userGroup {filter} {sort}"));
+
+            if (executionResults != null) {
+
+                responseCode = 0;
+
+                responseString = "Execution complete";
+
+                try {
+
+                    Collection emptyTest = (Collection) executionResults;
+
+                    if (emptyTest.isEmpty()) {
+
+                        responseCode = 1;
+
+                        responseString = "Record not found";
+
+                    }
+
+                } catch (ClassCastException e) {
+
+                    ;
+
+                }
+
+            } else {
+
+                responseCode = 1;
+
+                responseString = "Record not found";
+
+            }
+
+            tx.commit();
+
+        } catch (Throwable t) {
+
+            responseCode = 10;
+
+            responseString = t.toString();
+
+            t.printStackTrace();
+
+            if (tx != null) {
+
+                try {
+
+                    tx.rollback();
+
+                } catch (Throwable t2) {
+
+                    t2.printStackTrace();
+
+                }
+
+            }
+
+        } finally {
+
+            if (session != null) {
+
+                try {
+
+                    session.close();
+
+                } catch (Throwable t2) {
+
+                    t2.printStackTrace();
+
+                }
+
+            }
+
+        }
+
+    }

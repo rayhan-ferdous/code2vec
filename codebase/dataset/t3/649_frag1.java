@@ -1,0 +1,25 @@
+    private org.omg.CORBA.portable.OutputStream _OB_op_get_filter(org.omg.CORBA.portable.InputStream in, org.omg.CORBA.portable.ResponseHandler handler) {
+
+        org.omg.CORBA.portable.OutputStream out = null;
+
+        try {
+
+            int _ob_a0 = org.omg.CosNotifyFilter.FilterIDHelper.read(in);
+
+            org.omg.CosNotifyFilter.Filter _ob_r = get_filter(_ob_a0);
+
+            out = handler.createReply();
+
+            org.omg.CosNotifyFilter.FilterHelper.write(out, _ob_r);
+
+        } catch (org.omg.CosNotifyFilter.FilterNotFound _ob_ex) {
+
+            out = handler.createExceptionReply();
+
+            org.omg.CosNotifyFilter.FilterNotFoundHelper.write(out, _ob_ex);
+
+        }
+
+        return out;
+
+    }

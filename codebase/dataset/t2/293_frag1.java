@@ -1,0 +1,5 @@
+        Point location = frame.getLocation();
+
+        Point moveTo = new Point(location.x + e.getX() - this.point.x, location.y + e.getY() - this.point.y);
+
+        frame.setLocation(moveTo);

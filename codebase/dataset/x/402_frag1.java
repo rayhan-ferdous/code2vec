@@ -1,0 +1,5 @@
+            if ("name".equals(pColumn)) return fTotal.getName();
+
+            if ("link".equals(pColumn)) return fTotal.getLink();
+
+            if ("level".equals(pColumn)) return new Long(fTotal.getLevel());

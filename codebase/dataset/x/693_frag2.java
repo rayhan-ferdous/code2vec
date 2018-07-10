@@ -1,0 +1,19 @@
+    public synchronized HTMLEditorKit.Parser getParser() {
+
+        if (parser == null) {
+
+            try {
+
+                Class<?> c = Class.forName("javax.swing.text.html.parser.ParserDelegator");
+
+                parser = (HTMLEditorKit.Parser) c.newInstance();
+
+            } catch (Throwable e) {
+
+            }
+
+        }
+
+        return parser;
+
+    }

@@ -1,0 +1,17 @@
+    public void setTuningSteps(cwterm.service.rigctl.xsd.TuningStep[] param) {
+
+        validateTuningSteps(param);
+
+        if (param != null) {
+
+            localTuningStepsTracker = true;
+
+        } else {
+
+            localTuningStepsTracker = true;
+
+        }
+
+        this.localTuningSteps = param;
+
+    }

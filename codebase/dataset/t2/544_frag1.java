@@ -1,0 +1,15 @@
+                    aDiaryHeader.SetDiaryName(aDiary.getName());
+
+                    aDiaryHeader.SetPermissions(aDiary.getPermissions());
+
+                    if (aDiary.getOwnerName().compareTo(username) == 0) {
+
+                        aDiaryHeader.SetOwnerFlag('Y');
+
+                    } else {
+
+                        aDiaryHeader.SetOwnerFlag('N');
+
+                    }
+
+                    aDiaryHeader.SetRevNum(aDiary.getRevision());

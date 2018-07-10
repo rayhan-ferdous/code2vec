@@ -1,0 +1,101 @@
+    private static void insert(EntityManagerFactory entityManagerFactory) {
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        try {
+
+            entityManager.getTransaction().begin();
+
+            Person person = new Person();
+
+            person.setFirstName("Jesse");
+
+            person.setLastName("James");
+
+            entityManager.persist(person);
+
+            entityManager.getTransaction().commit();
+
+        } finally {
+
+            if (entityManager.getTransaction().isActive()) {
+
+                entityManager.getTransaction().rollback();
+
+            }
+
+            entityManager.close();
+
+        }
+
+    }
+
+
+
+    @SuppressWarnings("unchecked")
+
+    public static void query(EntityManagerFactory entityManagerFactory) {
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        try {
+
+            Query query = entityManager.createQuery("SELECT p FROM Person p");
+
+            Collection<Person> collection = (Collection<Person>) query.getResultList();
+
+            for (Person person : collection) {
+
+                System.out.println("found: " + person);
+
+            }
+
+        } finally {
+
+            entityManager.close();
+
+        }
+
+    }
+
+
+
+    @SuppressWarnings("unchecked")
+
+    private static void update(EntityManagerFactory entityManagerFactory) {
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        try {
+
+            entityManager.getTransaction().begin();
+
+            Query query = entityManager.createQuery("SELECT p FROM Person p");
+
+            Collection<Person> collection = (Collection<Person>) query.getResultList();
+
+            for (Person person : collection) {
+
+                person.setFirstName(person.getFirstName() + "-1");
+
+            }
+
+            entityManager.getTransaction().commit();
+
+        } finally {
+
+            if (entityManager.getTransaction().isActive()) {
+
+                entityManager.getTransaction().rollback();
+
+            }
+
+            entityManager.close();
+
+        }
+
+    }
+
+
+
+    private static void delete(EntityManagerFactory entityManagerFactory) {

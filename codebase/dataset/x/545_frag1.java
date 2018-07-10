@@ -1,0 +1,11 @@
+        EntityManagerHelper.beginTransaction();
+
+        EntityDataAccess.persist(element);
+
+        EntityManagerHelper.commit();
+
+        element.setName("Updated");
+
+        EntityManagerHelper.beginTransaction();
+
+        final Element mergedElement = EntityDataAccess.merge(element);

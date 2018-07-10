@@ -1,0 +1,21 @@
+        reader.setUseTextQualifier(true);
+
+        reader.setEscapeMode(CsvReader.ESCAPE_MODE_BACKSLASH);
+
+        Assert.assertTrue(reader.readRecord());
+
+        Assert.assertEquals("\n\r\t\b\fzAAAAA", reader.get(0));
+
+        Assert.assertEquals("\"\\n\\r\\t\\b\\f\\e\\v\\a\\z\\d065\\o101\\101\\x41\\u0041\"", reader.getRawRecord());
+
+        Assert.assertEquals(0L, reader.getCurrentRecord());
+
+        Assert.assertEquals(1, reader.getColumnCount());
+
+        Assert.assertFalse(reader.readRecord());
+
+        reader.close();
+
+    }
+
+

@@ -1,0 +1,25 @@
+    private SearchEngineQuery getStrongQuery(Vector phrases) throws IOException {
+
+        StringBuffer queryBuffer = new StringBuffer();
+
+        int i = 0;
+
+        for (Enumeration e = phrases.elements(); e.hasMoreElements() && i < 10; i++) {
+
+            String phrase = (String) e.nextElement();
+
+            queryBuffer.append("\"");
+
+            queryBuffer.append(phrase);
+
+            queryBuffer.append("\"");
+
+            if (e.hasMoreElements()) queryBuffer.append(" ");
+
+        }
+
+        SearchEngineQuery query = new SearchEngineQuery(queryBuffer.toString(), SearchEngineQuery.ALL_MODE);
+
+        return query;
+
+    }

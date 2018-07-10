@@ -1,0 +1,27 @@
+                for (int j = 0; j < li.size(); j++) {
+
+                    if (j == 0) str = ((Element) li.get(j)).getChild("Name").getText(); else {
+
+                        str = str + ", " + ((Element) li.get(j)).getText();
+
+                    }
+
+                }
+
+                retobj[7] = str;
+
+                li = ((Element) datalist.get(i)).getChildren("GeographicalSD");
+
+                str = "";
+
+                for (int j = 0; j < li.size(); j++) {
+
+                    if (j == 0) str = ((Element) li.get(j)).getChild("Name").getText(); else {
+
+                        str = str + ", " + ((Element) li.get(j)).getText();
+
+                    }
+
+                }
+
+                retobj[8] = str;

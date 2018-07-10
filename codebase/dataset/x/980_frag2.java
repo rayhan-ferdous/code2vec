@@ -1,0 +1,21 @@
+        public boolean hasNext() {
+
+            if (!this.hasNextCached && this.index < this.endIndex) {
+
+                StoredObject nextLanguage = this.contentObject.getReference(this.index);
+
+                if (this.language == null) {
+
+                    this.hasNextCached = (nextLanguage == null);
+
+                } else {
+
+                    this.hasNextCached = this.language.equals(nextLanguage);
+
+                }
+
+            }
+
+            return this.hasNextCached;
+
+        }

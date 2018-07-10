@@ -1,0 +1,13 @@
+        delimiter = args[6];
+
+        DescriptorFilter descFilter = null;
+
+        try {
+
+            descFilter = (DescriptorFilter) FilterFactory.instance().getFilter("DescriptorFilter");
+
+        } catch (FilterException ex) {
+
+            ex.printStackTrace();
+
+            System.exit(1);

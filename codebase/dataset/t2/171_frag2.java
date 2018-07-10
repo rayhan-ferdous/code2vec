@@ -1,0 +1,23 @@
+                        FredOutVal result = runNpopConfidenceInterval();
+
+                        if (result != null) {
+
+                            if (userApproval(result)) {
+
+                                try {
+
+                                    readyForCI = false;
+
+                                    hClimbResult = hillClimbing(result);
+
+                                    readyForCI = true;
+
+                                } catch (IOException e) {
+
+                                    e.printStackTrace();
+
+                                }
+
+                            }
+
+                        }

@@ -1,0 +1,19 @@
+    public void testCloseStream() throws FileNotFoundException {
+
+        translationManagerMojo.closeStream(null, "A null FileInputStream should not raise an exception");
+
+        FileInputStream fis = new FileInputStream(new File(inputFolder, "lang.properties"));
+
+        translationManagerMojo.closeStream(fis, "A test FileInputStream");
+
+        try {
+
+            fis.read();
+
+            Assert.fail("The stream should be closed!");
+
+        } catch (IOException e) {
+
+        }
+
+    }

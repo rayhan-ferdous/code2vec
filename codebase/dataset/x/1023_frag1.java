@@ -1,0 +1,19 @@
+            public void run() {
+
+                try {
+
+                    lock.writeLock().lock();
+
+                    threadAssertFalse(lock.getWaitingThreads(c).isEmpty());
+
+                    c.await();
+
+                    lock.writeLock().unlock();
+
+                } catch (InterruptedException e) {
+
+                    threadUnexpectedException();
+
+                }
+
+            }

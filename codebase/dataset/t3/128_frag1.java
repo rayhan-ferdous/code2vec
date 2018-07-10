@@ -1,0 +1,69 @@
+    public static Resource createDiagram(URI diagramURI, URI modelURI, IProgressMonitor progressMonitor) {
+
+        editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
+
+        progressMonitor.beginTask(Messages.TestDiagramEditorUtil_CreateDiagramProgressTask, 3);
+
+        final Resource diagramResource = editingDomain.getResourceSet().createResource(diagramURI);
+
+        final Resource modelResource = editingDomain.getResourceSet().createResource(modelURI);
+
+        final String diagramName = diagramURI.lastSegment();
+
+        AbstractTransactionalCommand command = new AbstractTransactionalCommand(editingDomain, Messages.TestDiagramEditorUtil_CreateDiagramCommandLabel, Collections.EMPTY_LIST) {
+
+
+
+            protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+
+                FlowChart model = createInitialModel();
+
+                attachModelToResource(model, modelResource);
+
+                Diagram diagram = ViewService.createDiagram(model, FlowChartEditPart.MODEL_ID, TestDiagramEditorPlugin.DIAGRAM_PREFERENCES_HINT);
+
+                if (diagram != null) {
+
+                    diagramResource.getContents().add(diagram);
+
+                    diagram.setName(diagramName);
+
+                    diagram.setElement(model);
+
+                }
+
+                try {
+
+                    modelResource.save(com.sf.plctest.testmodel.diagram.part.TestDiagramEditorUtil.getSaveOptions());
+
+                    diagramResource.save(com.sf.plctest.testmodel.diagram.part.TestDiagramEditorUtil.getSaveOptions());
+
+                } catch (IOException e) {
+
+                    TestDiagramEditorPlugin.getInstance().logError("Unable to store model and diagram resources", e);
+
+                }
+
+                return CommandResult.newOKCommandResult();
+
+            }
+
+        };
+
+        try {
+
+            OperationHistoryFactory.getOperationHistory().execute(command, new SubProgressMonitor(progressMonitor, 1), null);
+
+        } catch (ExecutionException e) {
+
+            TestDiagramEditorPlugin.getInstance().logError("Unable to create model and diagram", e);
+
+        }
+
+        setCharset(WorkspaceSynchronizer.getFile(modelResource));
+
+        setCharset(WorkspaceSynchronizer.getFile(diagramResource));
+
+        return diagramResource;
+
+    }

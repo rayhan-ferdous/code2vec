@@ -1,0 +1,15 @@
+                ArrayList in = newMember.getChannels();
+
+                for (Iterator iter = in.iterator(); iter.hasNext(); ) {
+
+                    Object object = iter.next();
+
+                    if (object != null) {
+
+                        String name = "";
+
+                        if (object instanceof String) {
+
+                            name = (String) object;
+
+                        } else {

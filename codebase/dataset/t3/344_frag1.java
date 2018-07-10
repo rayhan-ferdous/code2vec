@@ -1,0 +1,37 @@
+    public void test_18_25_writeObject() {
+
+        Object objToSave = null;
+
+        Object objLoaded;
+
+        try {
+
+            Vector<String> vector = new Vector<String>(1);
+
+            vector.add(FOO);
+
+            objToSave = vector;
+
+            if (DEBUG) System.out.println("Obj = " + objToSave);
+
+            objLoaded = dumpAndReload(objToSave);
+
+            assertTrue(MSG_TEST_FAILED + objToSave, FOO.equals(((java.util.Vector) objLoaded).elementAt(0)));
+
+        } catch (IOException e) {
+
+            fail("IOException serializing " + objToSave + " : " + e.getMessage());
+
+        } catch (ClassNotFoundException e) {
+
+            fail("ClassNotFoundException reading Object type : " + e.getMessage());
+
+        } catch (Error err) {
+
+            System.out.println("Error when obj = " + objToSave);
+
+            throw err;
+
+        }
+
+    }

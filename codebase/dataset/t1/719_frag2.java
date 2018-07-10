@@ -1,0 +1,27 @@
+    private void deleteRefFiles(DirWriter w, DirRecord rec, int[] counter) throws IOException {
+
+        String[] fileIDs = rec.getRefFileIDs();
+
+        if (fileIDs != null) {
+
+            File f = w.getRefFile(fileIDs);
+
+            if (!f.delete()) {
+
+                System.out.println(MessageFormat.format(messages.getString("deleteFailed"), new Object[] { f }));
+
+            } else {
+
+                ++counter[0];
+
+            }
+
+        }
+
+        for (DirRecord child = rec.getFirstChild(true); child != null; child = child.getNextSibling(true)) {
+
+            deleteRefFiles(w, child, counter);
+
+        }
+
+    }

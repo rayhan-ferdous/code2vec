@@ -1,0 +1,13 @@
+        } else {
+
+            context.put("periodData", new Hashtable());
+
+        }
+
+        Vector periodschemaList = PeriodData.getSchemeList();
+
+        context.put("periodschemaList", periodschemaList);
+
+        session.setAttribute("token", Token.get());
+
+        Template template = engine.getTemplate(template_name);

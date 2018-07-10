@@ -1,0 +1,37 @@
+        } else if ("27".equals(urlData.getParameter("action"))) {
+
+            outStream.write(showCapPathPage(urlData));
+
+            return;
+
+        } else if ("28".equals(urlData.getParameter("action"))) {
+
+            outStream.write(deleteNamePattern(urlData));
+
+            return;
+
+        } else if ("29".equals(urlData.getParameter("action"))) {
+
+            outStream.write(addNamePattern(urlData));
+
+            return;
+
+        } else if ("30".equals(urlData.getParameter("action"))) {
+
+            outStream.write(moveNamePattern(urlData));
+
+            return;
+
+        } else if ("31".equals(urlData.getParameter("action"))) {
+
+            outStream.write(showAvailablePaths(urlData));
+
+            return;
+
+        } else if ("32".equals(urlData.getParameter("action"))) {
+
+            outStream.write(addCapturePath(urlData));
+
+            return;
+
+        } else if ("33".equals(urlData.getParameter("action"))) {

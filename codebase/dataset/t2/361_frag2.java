@@ -1,0 +1,45 @@
+        protected void handleInformRequest(ACLMessage inform) {
+
+            Predicate predicate = null;
+
+            byte[] data;
+
+            try {
+
+                predicate = (Predicate) _agent.getContentManager().extractContent(inform);
+
+            } catch (Exception e) {
+
+                if (_logger.isLoggable(Logger.SEVERE)) _logger.log(Logger.SEVERE, "SelfProtectedAgent: RequestDecipher: " + getName() + ": " + ERR_EXTRACT_CONTENT + e);
+
+            }
+
+            if (predicate != null) {
+
+                if (predicate instanceof InformDecipheredDataPredicate) {
+
+                    data = ((InformDecipheredDataPredicate) predicate).getDecipheredData();
+
+                    if (data != null) {
+
+                        _ds.put(DS_DECIPHERED_CODE, data);
+
+                    } else {
+
+                        if (_logger.isLoggable(Logger.SEVERE)) _logger.log(Logger.SEVERE, "SelfProtectedAgent: RequestDecipher: " + getName() + ": " + ERR_NULL_CONTENT);
+
+                    }
+
+                } else {
+
+                    if (_logger.isLoggable(Logger.SEVERE)) _logger.log(Logger.SEVERE, "SelfProtectedAgent: RequestDecipher: " + getName() + ": " + ERR_INCORRECT_ACTION);
+
+                }
+
+            } else {
+
+                if (_logger.isLoggable(Logger.SEVERE)) _logger.log(Logger.SEVERE, "SelfProtectedAgent: RequestDecipher: " + getName() + ": " + ERR_NULL_ACTION);
+
+            }
+
+        }

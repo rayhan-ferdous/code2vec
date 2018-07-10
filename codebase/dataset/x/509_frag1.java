@@ -1,0 +1,15 @@
+        jMenu1.add(salvarImagemMenu);
+
+        imprimirMenu.setText("Imprimir...");
+
+        jMenu1.add(imprimirMenu);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Matriz");
+
+        jMenuItem6.setText("Nova Matriz");
+
+        jMenu2.add(jMenuItem6);
+
+        jMenu4.setText("Apagar Matriz");

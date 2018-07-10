@@ -1,0 +1,21 @@
+    public void sort(Object array[]) {
+
+        if (array != null && array.length > 1) {
+
+            int maxLength;
+
+            maxLength = array.length;
+
+            swapSpace = new Object[maxLength];
+
+            toSort = array;
+
+            this.mergeSort(0, maxLength - 1);
+
+            swapSpace = null;
+
+            toSort = null;
+
+        }
+
+    }

@@ -1,0 +1,35 @@
+            out.write("\tfunction CZLBChange(value){\r\n");
+
+            out.write("\t\tif(value==\"\"){\r\n");
+
+            out.write("\t\t\t$('#nsrbm').attr(\"value\",'');\r\n");
+
+            out.write("\t\t\t$('#nsrbm').attr(\"readonly\",false);\r\n");
+
+            out.write("\t\t\t$('#sfzhm').attr(\"value\",'');\r\n");
+
+            out.write("\t\t\t$('#sfzhm').attr(\"readonly\",false);\r\n");
+
+            out.write("\t\t\t$('#czMc').attr(\"value\",'');\r\n");
+
+            out.write("\t\t\t$('#czDz').attr(\"value\",'');\r\n");
+
+            out.write("\t\t\t$('#czDh').attr(\"value\",'');\r\n");
+
+            out.write("\t\t}\r\n");
+
+            out.write("\t\tif(value==\"01\"){\r\n");
+
+            out.write("\t\t\t$('#nsrbm').attr(\"value\",'');\r\n");
+
+            out.write("\t\t\t$('#nsrbm').attr(\"readonly\",false);\r\n");
+
+            out.write("\t\t\t$('#sfzhm').attr(\"value\",' ');\r\n");
+
+            out.write("\t\t\t$('#sfzhm').attr(\"readonly\",true);\r\n");
+
+            out.write("\t\t\t$('#czMc').attr(\"value\",'');\r\n");
+
+            out.write("\t\t\t$('#czDz').attr(\"value\",'');\r\n");
+
+            out.write("\t\t\t$('#czDh').attr(\"value\",'');\r\n");

@@ -1,0 +1,25 @@
+        return xppParser;
+
+    }
+
+
+
+    public XmlPullParserFactory getXPPFactory() throws XmlPullParserException {
+
+        if (xppFactory == null) {
+
+            xppFactory = XmlPullParserFactory.newInstance();
+
+        }
+
+        xppFactory.setNamespaceAware(true);
+
+        return xppFactory;
+
+    }
+
+
+
+    public void setXPPFactory(XmlPullParserFactory xPPfactory) {
+
+        this.xppFactory = xPPfactory;

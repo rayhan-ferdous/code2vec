@@ -1,0 +1,11 @@
+            int b;
+
+            while ((b = in.read()) != -1) out.write(b);
+
+            out.flush();
+
+            out.close();
+
+            in.close();
+
+            s = out.toString();

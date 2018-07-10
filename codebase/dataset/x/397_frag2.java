@@ -1,0 +1,13 @@
+            byte[] buffer = new byte[4096];
+
+            int readCount = 0;
+
+            while ((readCount = bis.read(buffer)) != -1) {
+
+                fos.write(buffer, 0, readCount);
+
+            }
+
+            fos.flush();
+
+            fos.close();

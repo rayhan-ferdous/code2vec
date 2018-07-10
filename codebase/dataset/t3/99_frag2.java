@@ -1,0 +1,33 @@
+        if ("bookDate".equals(pColumn)) {
+
+            fComparator = new DateComparator();
+
+            java.sql.Date[] temp = new java.sql.Date[fTableData.length];
+
+            for (int i = 0; i < temp.length; i++) {
+
+                temp[i] = fTableData[i].getBookDate();
+
+            }
+
+            sort(temp, 0, temp.length - 1, up);
+
+        }
+
+        if ("valueDate".equals(pColumn)) {
+
+            fComparator = new DateComparator();
+
+            java.sql.Date[] temp = new java.sql.Date[fTableData.length];
+
+            for (int i = 0; i < temp.length; i++) {
+
+                temp[i] = fTableData[i].getValueDate();
+
+            }
+
+            sort(temp, 0, temp.length - 1, up);
+
+        }
+
+        if ("ledgerDebit".equals(pColumn)) {

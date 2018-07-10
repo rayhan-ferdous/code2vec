@@ -1,0 +1,27 @@
+        StringBuilder sBuilder = new StringBuilder();
+
+        for (int i = 0; i < input.length; i++) {
+
+            int halfbyte = (input[i] >>> 4) & 0x0F;
+
+            int two_halfs = 0;
+
+            do {
+
+                if ((0 <= halfbyte) && (halfbyte <= 9)) {
+
+                    sBuilder.append((char) ('0' + halfbyte));
+
+                } else {
+
+                    sBuilder.append((char) ('a' + (halfbyte - 10)));
+
+                }
+
+                halfbyte = input[i] & 0x0F;
+
+            } while (two_halfs++ < 1);
+
+        }
+
+        return sBuilder.toString();

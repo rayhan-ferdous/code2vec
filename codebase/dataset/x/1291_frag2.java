@@ -1,0 +1,31 @@
+    private static synchronized FileManager getDir(String dir, boolean stray) throws IOException {
+
+        if (ClaimedDirs == null) {
+
+            ClaimedDirs = new HashMap<String, FileManager>();
+
+        }
+
+        File dirfile = new File(dir);
+
+        FileManager fm = ClaimedDirs.get(dirfile.getPath());
+
+        if (fm == null) {
+
+            fm = new FileManager(dirfile.getPath(), stray);
+
+            ClaimedDirs.put(dirfile.getPath(), fm);
+
+        } else {
+
+            if (fm.Stray) {
+
+                fm.Stray = stray;
+
+            }
+
+        }
+
+        return fm;
+
+    }

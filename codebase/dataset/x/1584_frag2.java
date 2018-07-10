@@ -1,0 +1,35 @@
+    public static List readLines(File theFile) throws IOException {
+
+        logger.debug("readLines(theFile={}) - start", theFile);
+
+        InputStream tableListStream = new FileInputStream(theFile);
+
+        try {
+
+            List orderedNames = new ArrayList();
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(tableListStream));
+
+            String line = null;
+
+            while ((line = reader.readLine()) != null) {
+
+                String table = line.trim();
+
+                if (table.length() > 0) {
+
+                    orderedNames.add(table);
+
+                }
+
+            }
+
+            return orderedNames;
+
+        } finally {
+
+            tableListStream.close();
+
+        }
+
+    }

@@ -1,0 +1,21 @@
+    void fireCtcpUserinfoRequestReceived(CtcpUserinfoRequestEvent event) {
+
+        synchronized (ctcpListeners) {
+
+            for (final CtcpListener ctcpListener : ctcpListeners) {
+
+                try {
+
+                    ctcpListener.userinfoRequestReceived(event);
+
+                } catch (Exception exc) {
+
+                    handleException(exc);
+
+                }
+
+            }
+
+        }
+
+    }

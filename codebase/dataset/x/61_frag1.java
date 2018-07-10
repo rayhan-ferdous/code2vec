@@ -1,0 +1,9 @@
+            pstmt.setInt(1, pe.getIdCliente());
+
+            pstmt.setInt(2, pe.getIdPromocion());
+
+            pstmt.setInt(3, pe.getIdProducto());
+
+            pstmt.setFloat(4, pe.getImporte());
+
+            if (pe.getFecha() != null) {

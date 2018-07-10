@@ -1,0 +1,47 @@
+    private int getColorID(String sColor) {
+
+        if (sColor.equals("army")) {
+
+            return 0;
+
+        } else if (sColor.equals("blue")) {
+
+            return 1;
+
+        } else if (sColor.equals("gray")) {
+
+            return 2;
+
+        } else if (sColor.equals("green")) {
+
+            return 3;
+
+        } else if (sColor.equals("orange")) {
+
+            return 4;
+
+        } else if (sColor.equals("pink")) {
+
+            return 5;
+
+        } else if (sColor.equals("purple")) {
+
+            return 6;
+
+        } else if (sColor.equals("red")) {
+
+            return 7;
+
+        } else if (sColor.equals("teal")) {
+
+            return 8;
+
+        } else if (sColor.equals("yellow")) {
+
+            return 9;
+
+        }
+
+        return 7;
+
+    }

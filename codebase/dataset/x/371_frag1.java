@@ -1,0 +1,13 @@
+    private WebElement getHtmlTable(String tableSummaryOrId) {
+
+        try {
+
+            return driver.findElement(By.xpath("(//table[@id=" + escapeQuotes(tableSummaryOrId) + " or @summary=" + escapeQuotes(tableSummaryOrId) + "])"));
+
+        } catch (NoSuchElementException e) {
+
+            return null;
+
+        }
+
+    }

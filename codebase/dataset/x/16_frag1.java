@@ -1,0 +1,15 @@
+                result.addElement(vo);
+
+            }
+
+            stmt.close();
+
+            return result;
+
+        } catch (InstantiationException ex) {
+
+            throw new SQLException("InstantiationException: " + ex.getMessage());
+
+        } catch (IllegalAccessException ex) {
+
+            throw new SQLException("IllegalAccessException: " + ex.getMessage());

@@ -1,0 +1,19 @@
+        public Temp(JFrame jf, BufferedImage bi, int width, int height) {
+
+            this.jf = jf;
+
+            this.bi = bi;
+
+            this.width = width;
+
+            this.height = height;
+
+            this.addMouseListener(this);
+
+            this.addMouseMotionListener(this);
+
+            this.setDoubleBuffered(false);
+
+            initRecs();
+
+        }

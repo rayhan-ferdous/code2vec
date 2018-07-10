@@ -1,0 +1,19 @@
+                        for (int j = 0; j < col1Width; j++) {
+
+                            String delimiter = name.substring(nameLeftIndex + col1Width - j - 1, nameLeftIndex + col1Width - j);
+
+                            if (delimiter.equals(" ") || delimiter.equals(";") || delimiter.equals(",")) {
+
+                                nameRightIndex = nameLeftIndex + col1Width - j;
+
+                                break;
+
+                            }
+
+                        }
+
+                        trimmedName = name.substring(nameLeftIndex, nameRightIndex);
+
+                        nameLeftIndex = nameRightIndex;
+
+                        int space = spaces.length() - trimmedName.length();

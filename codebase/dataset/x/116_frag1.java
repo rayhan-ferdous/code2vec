@@ -1,0 +1,29 @@
+            @Override
+
+            public Scene load(URL url) throws FileNotFoundException {
+
+                PrintStream defaultSystemErrorStream = System.err;
+
+                try {
+
+                    System.setErr(new PrintStream(new OutputStream() {
+
+
+
+                        @Override
+
+                        public void write(int b) throws IOException {
+
+                        }
+
+                    }));
+
+                    return super.load(url);
+
+                } finally {
+
+                    System.setErr(defaultSystemErrorStream);
+
+                }
+
+            }

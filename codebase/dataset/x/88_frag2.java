@@ -1,0 +1,9 @@
+        if (DEBUG) System.out.println("params=\"" + params + "\"");
+
+        QuotedStringTokenizer pst = new QuotedStringTokenizer(params);
+
+        if (!pst.hasMoreTokens()) throw new IOException("Missing var name in COUNT");
+
+        String var_name = pst.nextToken();
+
+        int count = 0;

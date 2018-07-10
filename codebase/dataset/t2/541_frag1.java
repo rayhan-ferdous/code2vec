@@ -1,0 +1,9 @@
+        if ("percentage".equals(pColumn)) {
+
+            Sorter sorter = new Sorter();
+
+            double[] temp = new double[fTableData.length];
+
+            for (int i = 0; i < temp.length; i++) {
+
+                temp[i] = fTableData[i].getPercentage();

@@ -1,0 +1,19 @@
+    public final boolean isService() {
+
+        switch(this.type) {
+
+            case TYPE_SRV:
+
+            case TYPE_UDP:
+
+            case TYPE_MDP:
+
+                return true;
+
+            default:
+
+                return false;
+
+        }
+
+    }

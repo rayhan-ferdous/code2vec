@@ -1,0 +1,7 @@
+        } else if ("13".equals(urlData.getParameter("action"))) {
+
+            outStream.write(deleteMatchItem(urlData));
+
+            return;
+
+        } else if ("14".equals(urlData.getParameter("action"))) {

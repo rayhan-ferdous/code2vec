@@ -1,0 +1,49 @@
+    private DocumentBuilder getXercesDocumentBuilder(boolean validate) throws Exception {
+
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+
+        dbf.setNamespaceAware(true);
+
+        dbf.setValidating(validate);
+
+        SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+
+        String schemaName = EXAMPLES_RESOURCE + S_SLASH + "schema.xsd";
+
+        InputStream in = CMLUtil.getInputStreamFromResource(schemaName);
+
+        Source schemaSource = new StreamSource(in);
+
+        Schema schema = null;
+
+        try {
+
+            schema = factory.newSchema(schemaSource);
+
+        } catch (SAXException e1) {
+
+            e1.printStackTrace();
+
+        }
+
+        dbf.setSchema(schema);
+
+        DocumentBuilder docBuilder = null;
+
+        try {
+
+            docBuilder = dbf.newDocumentBuilder();
+
+        } catch (ParserConfigurationException e) {
+
+            neverThrow(e);
+
+        }
+
+        ErrorHandler errorHandler = new MyErrorHandler();
+
+        docBuilder.setErrorHandler(errorHandler);
+
+        return docBuilder;
+
+    }

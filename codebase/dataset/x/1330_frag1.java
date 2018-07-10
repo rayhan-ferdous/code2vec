@@ -1,0 +1,31 @@
+    public Map getProperties(String uri) throws ServiceAccessException, AccessDeniedException, ObjectNotFoundException, ObjectLockedException {
+
+        try {
+
+            Map m = parseUri(uri);
+
+            if (representsAbstractFolder(m)) {
+
+                return null;
+
+            } else {
+
+                return client.getDAVProperties(uri, m);
+
+            }
+
+        } catch (ZoneMismatchException e) {
+
+            throw new AccessDeniedException(uri, e.getMessage(), "read");
+
+        } catch (NoAccessException e) {
+
+            throw new AccessDeniedException(uri, e.getMessage(), "read");
+
+        } catch (CCClientException e) {
+
+            throw new ServiceAccessException(service, e.getMessage());
+
+        }
+
+    }

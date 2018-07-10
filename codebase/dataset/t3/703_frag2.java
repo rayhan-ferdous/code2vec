@@ -1,0 +1,21 @@
+    private int actionPosition(List<Action> list, String seekAction) {
+
+        int position = 0;
+
+        for (Action action : list) {
+
+            if (action.getName().equals(seekAction)) {
+
+                break;
+
+            } else {
+
+                position++;
+
+            }
+
+        }
+
+        return position;
+
+    }

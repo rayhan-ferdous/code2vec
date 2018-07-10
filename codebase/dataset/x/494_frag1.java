@@ -1,0 +1,11 @@
+        PlanPTRoutesComparator planPTRoutesComparator = new PlanPTRoutesComparator();
+
+        for (int i = 0; i < plansArray.length; i++) {
+
+            String fileName = plansArray[i];
+
+            String strId = fileName.substring(11, fileName.length() - 9);
+
+            String filePath = plansDir + fileName;
+
+            Population popX = loader.readPopulation(filePath);

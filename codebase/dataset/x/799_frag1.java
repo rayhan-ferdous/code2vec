@@ -1,0 +1,19 @@
+        } catch (MalformedURLException e) {
+
+            e.printStackTrace();
+
+            return Boolean.FALSE.toString();
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+            return Boolean.FALSE.toString();
+
+        }
+
+        if (isResultString) {
+
+            try {
+
+                return convertStreamToString(uc.getInputStream());

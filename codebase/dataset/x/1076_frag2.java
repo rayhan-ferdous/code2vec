@@ -1,0 +1,49 @@
+    public static boolean saveAsJPEG(BufferedImage bufim, String filename, float quality) throws IOException {
+
+        ImageWriter jpgWriter = null;
+
+        Iterator it = ImageIO.getImageWritersByFormatName("jpeg");
+
+        if (it.hasNext()) {
+
+            jpgWriter = (ImageWriter) it.next();
+
+        } else {
+
+            throw new IOException("Can't find an ImageWriter for JPEG files.");
+
+        }
+
+        ImageWriteParam jpgParam = jpgWriter.getDefaultWriteParam();
+
+        jpgParam.setCompressionMode(ImageWriteParam.MODE_EXPLICIT);
+
+        jpgParam.setCompressionQuality(quality);
+
+        jpgParam.setProgressiveMode(ImageWriteParam.MODE_DEFAULT);
+
+        FileImageOutputStream imout = new FileImageOutputStream(new File(filename));
+
+        jpgWriter.setOutput(imout);
+
+        try {
+
+            jpgWriter.write(null, new IIOImage(bufim, null, null), jpgParam);
+
+            imout.close();
+
+            return true;
+
+        } catch (IOException e) {
+
+            imout.close();
+
+            e.printStackTrace();
+
+        }
+
+        imout.close();
+
+        return false;
+
+    }

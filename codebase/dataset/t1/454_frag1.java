@@ -1,0 +1,15 @@
+                List result = em.createQuery("SELECT Object(T) FROM " + Person.class.getName() + " T").getResultList();
+
+                assertEquals(1, result.size());
+
+                tx.rollback();
+
+            } finally {
+
+                if (tx.isActive()) {
+
+                    tx.rollback();
+
+                }
+
+                em.close();

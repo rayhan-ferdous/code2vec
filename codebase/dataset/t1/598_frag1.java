@@ -1,0 +1,13 @@
+            int index = 0;
+
+            int level = 0;
+
+            while (index >= 0) {
+
+                index = fileName.indexOf('/', index);
+
+                if (index >= 0) {
+
+                    level++;
+
+                    index++;

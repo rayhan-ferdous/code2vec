@@ -1,0 +1,27 @@
+    public void clearForm() {
+
+        bankNameEdt.setText("");
+
+        agencyEdt.setText("");
+
+        addressLine1Edt.setText("");
+
+        addressLine2Edt.setText("");
+
+        addressNumberEdt.setText("");
+
+        codeEdt.setText("");
+
+        cityEdt.setText("");
+
+        countryCmb.setSelectedItem(null);
+
+        phoneEdt.setText("");
+
+        faxEdt.setText("");
+
+        setInternetAddress("");
+
+        emailEdt.setText("");
+
+    }

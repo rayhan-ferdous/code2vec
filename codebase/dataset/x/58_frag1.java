@@ -1,0 +1,121 @@
+    void fireTopicReceived(TopicEvent event) {
+
+        synchronized (connectionListeners) {
+
+            for (final ConnectionListener connectionListener : connectionListeners) {
+
+                try {
+
+                    connectionListener.topicReceived(event);
+
+                } catch (Exception exc) {
+
+                    handleException(exc);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    void fireListReceived(ListEvent event) {
+
+        synchronized (connectionListeners) {
+
+            for (final ConnectionListener connectionListener : connectionListeners) {
+
+                try {
+
+                    connectionListener.listReceived(event);
+
+                } catch (Exception exc) {
+
+                    handleException(exc);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    void fireChannelModeReceived(ChannelModeEvent event) {
+
+        synchronized (connectionListeners) {
+
+            for (final ConnectionListener connectionListener : connectionListeners) {
+
+                try {
+
+                    connectionListener.channelModeReceived(event);
+
+                } catch (Exception exc) {
+
+                    handleException(exc);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    void fireNickChanged(NickEvent event) {
+
+        synchronized (connectionListeners) {
+
+            for (final ConnectionListener connectionListener : connectionListeners) {
+
+                try {
+
+                    connectionListener.nickChanged(event);
+
+                } catch (Exception exc) {
+
+                    handleException(exc);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    void fireMessageReceived(MessageEvent event) {
+
+        synchronized (connectionListeners) {
+
+            for (final ConnectionListener connectionListener : connectionListeners) {
+
+                try {
+
+                    connectionListener.messageReceived(event);
+
+                } catch (Exception exc) {
+
+                    handleException(exc);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    void fireNoticeReceived(MessageEvent event) {

@@ -1,0 +1,25 @@
+    private static synchronized String buildJarEntryDescriptor(ZipEntry entry, JarFile2 jarFile) {
+
+        StringBuilder builder = new StringBuilder();
+
+        builder.append(entry.getName());
+
+        builder.append(":");
+
+        try {
+
+            String path = jarFile.extractTempFile(entry.getName(), ".jar");
+
+            builder.append(createNormalizedJarDescriptorDigest(path));
+
+            new File(path).delete();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return builder.toString();
+
+    }

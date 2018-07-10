@@ -1,0 +1,13 @@
+        public void writeLong(long val) throws SerializationException {
+
+            try {
+
+                oos.writeLong(val);
+
+            } catch (IOException e) {
+
+                throw new SerializationException(e);
+
+            }
+
+        }

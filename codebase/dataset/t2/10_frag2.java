@@ -1,0 +1,15 @@
+            while ((i = lcLine.indexOf(lcOldString, i)) > 0) {
+
+                buf.append(line2, j, i - j).append(newString2);
+
+                i += oLength;
+
+                j = i;
+
+            }
+
+            buf.append(line2, j, line2.length - j);
+
+            return buf.toString();
+
+        }

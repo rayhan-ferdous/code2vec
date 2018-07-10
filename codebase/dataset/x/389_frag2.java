@@ -1,0 +1,23 @@
+                    if (currCpg.getColor().equals(col)) continue;
+
+                    for (int l = 0; l < enclosed.length; l++) {
+
+                        if (currCpg.equals(enclosed[l])) {
+
+                            flag = true;
+
+                            break;
+
+                        }
+
+                    }
+
+                    if (!flag) return false;
+
+                }
+
+            }
+
+        }
+
+        return true;

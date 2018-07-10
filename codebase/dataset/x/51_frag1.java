@@ -1,0 +1,13 @@
+        public AcceptCallListener(ChatSessionInfo chatInfo, int reqId, String contentType, SetupRequestMessage msg, AcceptTimer acceptTimer) {
+
+            this.chatInfo = chatInfo;
+
+            this.reqId = reqId;
+
+            this.contentType = contentType;
+
+            this.msg = msg;
+
+            this.acceptTimer = acceptTimer;
+
+        }

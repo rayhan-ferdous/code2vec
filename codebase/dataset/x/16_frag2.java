@@ -1,0 +1,13 @@
+        } catch (TriggerException e) {
+
+            transact.abort(txn);
+
+            throw new PermissionDeniedException("Trigger failed: " + e.getMessage());
+
+        } catch (LockException e) {
+
+            transact.abort(txn);
+
+            throw new PermissionDeniedException("Could not acquire lock: " + e.getMessage());
+
+        } catch (TransactionException e) {

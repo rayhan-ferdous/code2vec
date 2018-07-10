@@ -1,0 +1,11 @@
+    public String getAction() {
+
+        if (action == null) {
+
+            return this.getClass().getSimpleName().replace("IdentityMediationEndpoint", "");
+
+        }
+
+        return action;
+
+    }

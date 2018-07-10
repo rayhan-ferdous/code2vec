@@ -1,0 +1,25 @@
+        public void process(File file) throws Exception {
+
+            ZipInputStream zip = new ZipInputStream(new FileInputStream(file));
+
+            try {
+
+                ZipEntry entry;
+
+                while ((entry = zip.getNextEntry()) != null) {
+
+                    byte bytes[] = ByteCodeHelper.readByteCode(zip);
+
+                    entryHandler.handleEntry(entry, bytes);
+
+                    zip.closeEntry();
+
+                }
+
+            } finally {
+
+                zip.close();
+
+            }
+
+        }

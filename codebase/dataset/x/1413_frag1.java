@@ -1,0 +1,17 @@
+    protected void fireProgressChanged(int e) {
+
+        if (progressListeners != null) {
+
+            Vector<ProgressListener> listeners = progressListeners;
+
+            int count = listeners.size();
+
+            for (int i = 0; i < count; i++) {
+
+                listeners.elementAt(i).progressChanged(e);
+
+            }
+
+        }
+
+    }

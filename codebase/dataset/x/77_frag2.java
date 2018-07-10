@@ -1,0 +1,121 @@
+    public static final String GEN_ID_SYS_AUTHORITY = "s_authority_id";
+
+
+
+    public static final String GEN_ID_SYS_DATAPRIV = "s_datapriv_id";
+
+
+
+    public static final String GEN_ID_SYS_ASSIGNLOG = "s_assignlog_id";
+
+
+
+    public static final String GEN_ID_SYS_LOGINTIME = "s_logintime_id";
+
+
+
+    public static final String GEN_ID_SYS_CTGR = "s_ctgr_id";
+
+
+
+    public static final String GEN_ID_SYS_DATA = "s_data_id";
+
+
+
+    public static final String GEN_ID_SYS_ORGANIZE = "s_organize_id";
+
+
+
+    public static final String GEN_ID_SYS_VERSION = "s_version_no";
+
+
+
+    public static final String GEN_ID_SYS_RECORD_NO = "s_record_no";
+
+
+
+    public static final String GEN_ID_SYS_USER_GROUP = "s_user_group_id";
+
+
+
+    public static final String GEN_ID_WM_WEBMAIL = "s_webmail_id";
+
+
+
+    public static final String GEN_ID_WM_ACCOUNT = "s_account_id";
+
+
+
+    public static final String GEN_ID_WM_AFFIX = "s_affix_id";
+
+
+
+    public static final String GEN_ID_WM_ADDRESS = "s_address_id";
+
+
+
+    public static final String GEN_ID_WM_MAILBOX = "s_mailbox_id";
+
+
+
+    public static final String GEN_ID_WM_FOLDER = "mail_folder";
+
+
+
+    public static final String GEN_ID_WM_FILE = "mail_file";
+
+
+
+    public static final String GEN_ID_WM_FOLDER_SHARE = "mail_folder_share";
+
+
+
+    public static final String GEN_ID_IP_DOC = "T_IP_DOC.ID";
+
+
+
+    public static final String GEN_ID_IP_DOC_RES = "T_IP_DOC_RES.ID";
+
+
+
+    public static final String GEN_ID_IP_ORDER_NO = "T_IP_ORDER_NO";
+
+
+
+    public static final String GEN_ID_IP_SITE = "T_IP_SITE.ID";
+
+
+
+    public static final String GEN_ID_IP_CHANNEL = "T_IP_CHANNEL.ID";
+
+
+
+    public static final String GEN_ID_IP_TEMPLATE = "T_IP_TEMPLATE.ID";
+
+
+
+    public static final String GEN_ID_IP_TREE = "s_ip_tree";
+
+
+
+    public static final String GEN_ID_IP_DOC_TYPE = "T_IP_DOC_TYPE.ID";
+
+
+
+    public static final String GEN_ID_COFFICE_DOC_REV = "coffice_doc_rcv.ID";
+
+
+
+    public static final String GEN_ID_COFFICE_DOC_SEND = "coffice_doc_send.ID";
+
+
+
+    public static final String GEN_ID_COFFICE_DOC_CONSULT = "coffice_doc_consult.ID";
+
+
+
+    public static final String GEN_ID_COFFICE_ADDRS_FOLDER = "coffice_addrslist_folder.ID";
+
+
+
+    public static final String GEN_ID_COFFICE_ADDRS_ENTRY = "coffice_addrslist_entry.ID";

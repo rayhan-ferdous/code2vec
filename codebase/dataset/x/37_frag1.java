@@ -1,0 +1,19 @@
+        command.append("ORDER BY PBXNAME");
+
+        TBLPBX.fill(command);
+
+        PrintWriter configFile = new PrintWriter(new FileWriter(configBase + "tegsoft_TBLPBX.conf", false));
+
+        for (int i = 0; i < TBLPBX.getRowCount(); i++) {
+
+            DataRow rowTBLPBX = TBLPBX.getRow(i);
+
+            configFile.println(";" + rowTBLPBX.getString("PBXNAME"));
+
+            configFile.println("[" + rowTBLPBX.getString("PBXID") + "]");
+
+            configFile.println("dtmfmode=RFC2833");
+
+            configFile.println("canreinvite=yes");
+
+            configFile.println("context=tegsoft-TBLPBX");

@@ -1,0 +1,17 @@
+    private String getModelDefault() {
+
+        loadProperties();
+
+        String mdef = (String) properties.get(PROP_MODEL);
+
+        if (mdef != null) {
+
+            return mdef;
+
+        } else {
+
+            return PROP_MODEL_DEFAULT;
+
+        }
+
+    }

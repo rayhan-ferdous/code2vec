@@ -1,0 +1,19 @@
+    public boolean equals(Object obj) {
+
+        if (this == obj) return true;
+
+        if (!super.equals(obj)) return false;
+
+        if (getClass() != obj.getClass()) return false;
+
+        final StateCondition other = (StateCondition) obj;
+
+        if (testState == null) {
+
+            if (other.testState != null) return false;
+
+        } else if (!testState.equals(other.testState)) return false;
+
+        return true;
+
+    }

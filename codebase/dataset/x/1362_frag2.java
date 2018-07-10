@@ -1,0 +1,75 @@
+    public void processMessage(String header, String body) throws Throwable {
+
+        if (header.equals("VER")) {
+
+            sendMessage(header, body);
+
+        } else if (header.equals("USR")) {
+
+            int i0 = body.indexOf(' ');
+
+            if (i0 == -1) {
+
+                close();
+
+                return;
+
+            }
+
+            String loginName = body.substring(0, i0);
+
+            String authCookie = body.substring(i0 + 1);
+
+            if (!loginName.equals(peerLoginName) || !authCookie.equals(this.authCookie)) {
+
+                close();
+
+                return;
+
+            }
+
+            sendMessage("FIL", String.valueOf(file.length()));
+
+        } else if (header.equals("TFR")) {
+
+            binaryThread = new Thread(new Runnable() {
+
+
+
+                public void run() {
+
+                    try {
+
+                        sendFileContent();
+
+                    } catch (Throwable e) {
+
+                        fireError(e);
+
+                    }
+
+                }
+
+            });
+
+            binaryThread.start();
+
+        } else if (header.equals("CCL")) {
+
+            if (binaryThread != null) {
+
+                binaryThread.interrupt();
+
+                binaryThread = null;
+
+                isLive = false;
+
+            }
+
+        } else if (header.equals("BYE")) {
+
+            isLive = false;
+
+        }
+
+    }

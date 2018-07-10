@@ -1,0 +1,23 @@
+                sourcePluginZipURL = new URL(sourcePluginZipURLString);
+
+            } catch (MalformedURLException ex) {
+
+                throw new RuntimeException("Could not convert plugin zip " + sourcePluginZipURLString + " to a URL: ", ex);
+
+            }
+
+            URL finalZipURL;
+
+            String finalZipURLString = libraryURLString + "/" + LIBRARY_PLUGS_DIR + "/" + pluginString;
+
+            try {
+
+                finalZipURL = new URL(finalZipURLString);
+
+            } catch (MalformedURLException ex) {
+
+                throw new RuntimeException("Could not convert plugin zip " + finalZipURLString + " to a URL: ", ex);
+
+            }
+
+            URL pluginManifestURL;

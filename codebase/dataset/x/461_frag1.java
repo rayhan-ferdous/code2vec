@@ -1,0 +1,11 @@
+        public void start() {
+
+            errStr = null;
+
+            thread = new Thread(this);
+
+            thread.setName("Capture");
+
+            thread.start();
+
+        }

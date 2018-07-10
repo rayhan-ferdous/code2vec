@@ -1,0 +1,3 @@
+        int randomState = random.nextInt(stateArray.size());
+
+        return new Transition(indexState, a, X, (State) stateArray.get(randomState), Y, (1 + random.nextInt(3)), (1 + random.nextInt(3)));

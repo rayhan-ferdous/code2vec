@@ -1,0 +1,13 @@
+    private org.omg.CORBA.portable.OutputStream _OB_op_obtain_pull_consumer(org.omg.CORBA.portable.InputStream in, org.omg.CORBA.portable.ResponseHandler handler) {
+
+        org.omg.CORBA.portable.OutputStream out = null;
+
+        org.omg.CosEventChannelAdmin.ProxyPullConsumer _ob_r = obtain_pull_consumer();
+
+        out = handler.createReply();
+
+        org.omg.CosEventChannelAdmin.ProxyPullConsumerHelper.write(out, _ob_r);
+
+        return out;
+
+    }

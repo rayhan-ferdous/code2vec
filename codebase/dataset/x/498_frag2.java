@@ -1,0 +1,27 @@
+    public void setFileName(final String fileName) {
+
+        this.fileName = fileName;
+
+    }
+
+
+
+    public void setFormat(final ImageFormat format) {
+
+        this.format = format;
+
+    }
+
+
+
+    public void setResize(final boolean resize) {
+
+        this.resize = resize;
+
+    }
+
+
+
+    public void setTargetSize(final Dimension targetSize) {
+
+        this.targetSize = targetSize;

@@ -1,0 +1,35 @@
+    protected Connection getConnection(Element connectionELem) {
+
+        if (connectionELem != null) {
+
+            String Source = connectionELem.getAttributeValue("Source");
+
+            String Destination = connectionELem.getAttributeValue("Destination");
+
+            String Comment = connectionELem.getAttributeValue("Comment");
+
+            String dx1 = connectionELem.getAttributeValue("dx1");
+
+            String dx2 = connectionELem.getAttributeValue("dx2");
+
+            String dy = connectionELem.getAttributeValue("dy");
+
+            Connection connection = new Connection(Source, Destination, Comment, dx1, dx2, dy);
+
+            return connection;
+
+        } else {
+
+            System.err.println("Invalid element input in getECTransition()");
+
+            if (this.console != null) {
+
+                console.setText("Invalid element input in getECTransition()");
+
+            }
+
+            return null;
+
+        }
+
+    }

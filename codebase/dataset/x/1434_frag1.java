@@ -1,0 +1,11 @@
+        @Override
+
+        public void doWrite(DataOutputStream out) throws Exception {
+
+            for (int j = 0; j < maxID; j++) {
+
+                out.writeFloat(users[j].actualChips);
+
+            }
+
+        }

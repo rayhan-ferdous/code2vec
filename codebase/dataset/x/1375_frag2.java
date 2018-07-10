@@ -1,0 +1,25 @@
+    @Override
+
+    public AudioFileFormat getAudioFileFormat(File file) throws UnsupportedAudioFileException, IOException {
+
+        InputStream in = null;
+
+        try {
+
+            in = new BufferedInputStream(new FileInputStream(file));
+
+            in.mark(1000);
+
+            final AudioFileFormat aff = getAudioFileFormat(in, (int) file.length());
+
+            in.reset();
+
+            return aff;
+
+        } finally {
+
+            if (in != null) in.close();
+
+        }
+
+    }

@@ -1,0 +1,17 @@
+            case 19:
+
+                return _OB_op_remove_all_filters(in, handler);
+
+            case 20:
+
+                return _OB_op_remove_filter(in, handler);
+
+            case 21:
+
+                return _OB_op_set_qos(in, handler);
+
+            case 22:
+
+                return _OB_op_subscription_change(in, handler);
+
+            case 23:

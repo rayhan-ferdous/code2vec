@@ -1,0 +1,39 @@
+    private static void insert(EntityManagerFactory entityManagerFactory) {
+
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        try {
+
+            entityManager.getTransaction().begin();
+
+            Person person = new Person();
+
+            person.setFirstName("Jesse");
+
+            person.setLastName("James");
+
+            Address address = new Address();
+
+            address.setStreet("Main Road 12");
+
+            address.setCity("Oakwood");
+
+            person.setAddress(address);
+
+            entityManager.persist(person);
+
+            entityManager.getTransaction().commit();
+
+        } finally {
+
+            if (entityManager.getTransaction().isActive()) {
+
+                entityManager.getTransaction().rollback();
+
+            }
+
+            entityManager.close();
+
+        }
+
+    }

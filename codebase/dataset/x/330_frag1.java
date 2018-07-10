@@ -1,0 +1,15 @@
+    private static void add(Configuration cfg, String s) {
+
+        int pos = s.indexOf('=');
+
+        if (pos == -1) {
+
+            cfg.put(s, "");
+
+        } else {
+
+            cfg.put(s.substring(0, pos), s.substring(pos + 1));
+
+        }
+
+    }

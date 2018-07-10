@@ -1,0 +1,25 @@
+    public void compress(byte[] data) throws IOException {
+
+        Deflater compresser = new Deflater();
+
+        compresser.setInput(data);
+
+        compresser.finish();
+
+        byte[] buffer = new byte[2048];
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+        while (!compresser.finished()) {
+
+            int len = compresser.deflate(buffer);
+
+            baos.write(buffer, 0, len);
+
+        }
+
+        write4(baos.size());
+
+        write(baos.toByteArray());
+
+    }

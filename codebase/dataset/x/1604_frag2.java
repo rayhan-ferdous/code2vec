@@ -1,0 +1,21 @@
+    private String getAttributeValue(Node node, String attribname) {
+
+        NamedNodeMap attributes = node.getAttributes();
+
+        String att = null;
+
+        if (attributes != null) {
+
+            Node attribute = attributes.getNamedItem(attribname);
+
+            if (attribute != null) {
+
+                att = attribute.getNodeValue();
+
+            }
+
+        }
+
+        return att;
+
+    }

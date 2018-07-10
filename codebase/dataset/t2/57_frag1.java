@@ -1,0 +1,41 @@
+        xmlStreamWriter.writeStartElement("xsl:template");
+
+        xmlStreamWriter.writeAttribute("name", "addContextParameters");
+
+        xmlStreamWriter.writeCharacters("\n");
+
+        List<Extension> contextParams = new ArrayList<Extension>();
+
+        contextParams.addAll(getExtensions(pd, "context-param"));
+
+        ExtensionPoint exnPt = pd.getExtensionPoint(EXNPT_CTX_PARAM_ADPTR);
+
+        if (exnPt != null) {
+
+            contextParams.addAll(exnPt.getConnectedExtensions());
+
+        }
+
+        Comparator<Object> comparator = new Comparator<Object>() {
+
+
+
+            public int compare(Object obj1, Object obj2) {
+
+                Extension e1 = (Extension) obj1;
+
+                Extension e2 = (Extension) obj2;
+
+                return e1.getParameter("param-name").valueAsString().compareTo(e2.getParameter("param-name").valueAsString());
+
+            }
+
+
+
+            ;
+
+        };
+
+        Collections.sort(contextParams, comparator);
+
+        for (Extension exn : contextParams) {

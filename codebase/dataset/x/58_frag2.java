@@ -1,0 +1,121 @@
+    void firePrivateCtcpPingReplyReceived(CtcpPingReplyEvent event) {
+
+        synchronized (privateCtcpListeners) {
+
+            for (final CtcpListener privateCtcpListener : privateCtcpListeners) {
+
+                try {
+
+                    privateCtcpListener.pingReplyReceived(event);
+
+                } catch (Exception exc) {
+
+                    handleException(exc);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    void firePrivateCtcpTimeReplyReceived(CtcpTimeReplyEvent event) {
+
+        synchronized (privateCtcpListeners) {
+
+            for (final CtcpListener privateCtcpListener : privateCtcpListeners) {
+
+                try {
+
+                    privateCtcpListener.timeReplyReceived(event);
+
+                } catch (Exception exc) {
+
+                    handleException(exc);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    void firePrivateCtcpVersionReplyReceived(CtcpVersionReplyEvent event) {
+
+        synchronized (privateCtcpListeners) {
+
+            for (final CtcpListener privateCtcpListener : privateCtcpListeners) {
+
+                try {
+
+                    privateCtcpListener.versionReplyReceived(event);
+
+                } catch (Exception exc) {
+
+                    handleException(exc);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    void firePrivateCtcpFingerReplyReceived(CtcpFingerReplyEvent event) {
+
+        synchronized (privateCtcpListeners) {
+
+            for (final CtcpListener privateCtcpListener : privateCtcpListeners) {
+
+                try {
+
+                    privateCtcpListener.fingerReplyReceived(event);
+
+                } catch (Exception exc) {
+
+                    handleException(exc);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    void firePrivateCtcpSourceReplyReceived(CtcpSourceReplyEvent event) {
+
+        synchronized (privateCtcpListeners) {
+
+            for (final CtcpListener privateCtcpListener : privateCtcpListeners) {
+
+                try {
+
+                    privateCtcpListener.sourceReplyReceived(event);
+
+                } catch (Exception exc) {
+
+                    handleException(exc);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+    void firePrivateCtcpUserinfoReplyReceived(CtcpUserinfoReplyEvent event) {

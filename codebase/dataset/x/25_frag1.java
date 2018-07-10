@@ -1,0 +1,25 @@
+    private static final File SOURCE_JAR = new File("alliance.dat");
+
+
+
+    private CacheStorage cache;
+
+
+
+    private CoreSubsystem core;
+
+
+
+    private boolean upgradeAttemtHasBeenMade = false;
+
+
+
+    private Hash newVersionHash, myJarHash;
+
+
+
+    public AutomaticUpgrade(CoreSubsystem core, CacheStorage cache) throws IOException {
+
+        this.core = core;
+
+        this.cache = cache;

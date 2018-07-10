@@ -1,0 +1,25 @@
+    Token new4(@SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) {
+
+        return new TWhileint(line, pos);
+
+    }
+
+
+
+    Token new5(@SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) {
+
+        return new TWhileend(line, pos);
+
+    }
+
+
+
+    Token new6(@SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) {
+
+        return new TPrint(line, pos);
+
+    }
+
+
+
+    Token new7(@SuppressWarnings("hiding") int line, @SuppressWarnings("hiding") int pos) {

@@ -1,0 +1,55 @@
+    public void test39() throws Exception {
+
+        CsvReader reader = CsvReader.parse("user_id,name\r\n1,Bruce");
+
+        Assert.assertTrue(reader.getSafetySwitch());
+
+        reader.setSafetySwitch(false);
+
+        Assert.assertFalse(reader.getSafetySwitch());
+
+        Assert.assertEquals('#', reader.getComment());
+
+        reader.setComment('!');
+
+        Assert.assertEquals('!', reader.getComment());
+
+        Assert.assertEquals(CsvReader.ESCAPE_MODE_DOUBLED, reader.getEscapeMode());
+
+        reader.setEscapeMode(CsvReader.ESCAPE_MODE_BACKSLASH);
+
+        Assert.assertEquals(CsvReader.ESCAPE_MODE_BACKSLASH, reader.getEscapeMode());
+
+        Assert.assertEquals('\0', reader.getRecordDelimiter());
+
+        reader.setRecordDelimiter(';');
+
+        Assert.assertEquals(';', reader.getRecordDelimiter());
+
+        Assert.assertEquals('\"', reader.getTextQualifier());
+
+        reader.setTextQualifier('\'');
+
+        Assert.assertEquals('\'', reader.getTextQualifier());
+
+        Assert.assertTrue(reader.getTrimWhitespace());
+
+        reader.setTrimWhitespace(false);
+
+        Assert.assertFalse(reader.getTrimWhitespace());
+
+        Assert.assertFalse(reader.getUseComments());
+
+        reader.setUseComments(true);
+
+        Assert.assertTrue(reader.getUseComments());
+
+        Assert.assertTrue(reader.getUseTextQualifier());
+
+        reader.setUseTextQualifier(false);
+
+        Assert.assertFalse(reader.getUseTextQualifier());
+
+        reader.close();
+
+    }

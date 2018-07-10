@@ -1,0 +1,17 @@
+                } catch (DcmParseException e) {
+
+                    log.error(MessageFormat.format(messages.getString("failformat"), new Object[] { file }));
+
+                    return false;
+
+                }
+
+            } catch (IOException e) {
+
+                log.error(MessageFormat.format(messages.getString("failread"), new Object[] { file, e }));
+
+                return false;
+
+            }
+
+            sendDataset(active, file, parser, merge(ds, mergeDataset));

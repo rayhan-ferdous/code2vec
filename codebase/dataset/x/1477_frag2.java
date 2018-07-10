@@ -1,0 +1,13 @@
+    public Double getLambda() {
+
+        try {
+
+            return Double.valueOf(lambdaField.getText());
+
+        } catch (NumberFormatException ex) {
+
+            return null;
+
+        }
+
+    }

@@ -1,0 +1,21 @@
+    @Deprecated
+
+    public static void printStackTrace(SystemUtils.OutputEater eater, Throwable e) {
+
+        if (eater != null) {
+
+            eater.stderr(e.getMessage());
+
+            for (StackTraceElement stackTraceElement : e.getStackTrace()) {
+
+                eater.stderr(stackTraceElement.toString());
+
+            }
+
+        } else {
+
+            e.printStackTrace(System.err);
+
+        }
+
+    }

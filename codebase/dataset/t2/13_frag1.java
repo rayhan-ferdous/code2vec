@@ -1,0 +1,19 @@
+    public static void setCharset(IFile file) {
+
+        if (file == null) {
+
+            return;
+
+        }
+
+        try {
+
+            file.setCharset("UTF-8", new NullProgressMonitor());
+
+        } catch (CoreException e) {
+
+            PlwebDiagramEditorPlugin.getInstance().logError("Unable to set charset for file " + file.getFullPath(), e);
+
+        }
+
+    }

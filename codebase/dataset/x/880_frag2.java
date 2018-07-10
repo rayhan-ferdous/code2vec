@@ -1,0 +1,333 @@
+    private javax.swing.JLabel jLabel13;
+
+
+
+    private javax.swing.JLabel jLabel14;
+
+
+
+    private javax.swing.JLabel jLabel15;
+
+
+
+    private javax.swing.JLabel jLabel16;
+
+
+
+    private javax.swing.JLabel jLabel17;
+
+
+
+    private javax.swing.JLabel jLabel18;
+
+
+
+    private javax.swing.JLabel jLabel19;
+
+
+
+    private javax.swing.JLabel jLabel2;
+
+
+
+    private javax.swing.JLabel jLabel20;
+
+
+
+    private javax.swing.JLabel jLabel3;
+
+
+
+    private javax.swing.JLabel jLabel4;
+
+
+
+    private javax.swing.JLabel jLabel5;
+
+
+
+    private javax.swing.JLabel jLabel6;
+
+
+
+    private javax.swing.JLabel jLabel7;
+
+
+
+    private javax.swing.JLabel jLabel8;
+
+
+
+    private javax.swing.JLabel jLabel9;
+
+
+
+    private javax.swing.JMenu jMenu1;
+
+
+
+    private javax.swing.JMenu jMenu2;
+
+
+
+    private javax.swing.JMenu jMenu3;
+
+
+
+    private javax.swing.JMenu jMenu4;
+
+
+
+    private javax.swing.JMenuBar jMenuBar1;
+
+
+
+    private javax.swing.JMenuItem jMenuItem1;
+
+
+
+    private javax.swing.JMenuItem jMenuItem2;
+
+
+
+    private javax.swing.JMenuItem jMenuItem3;
+
+
+
+    private javax.swing.JMenuItem jMenuItem4;
+
+
+
+    private javax.swing.JMenuItem jMenuItem5;
+
+
+
+    private javax.swing.JMenuItem jMenuItem6;
+
+
+
+    private javax.swing.JMenuItem jMenuItem7;
+
+
+
+    private javax.swing.JMenuItem jMenuItem8;
+
+
+
+    private javax.swing.JPanel jPanel1;
+
+
+
+    private javax.swing.JPanel jPanel10;
+
+
+
+    private javax.swing.JPanel jPanel11;
+
+
+
+    private javax.swing.JPanel jPanel12;
+
+
+
+    private javax.swing.JPanel jPanel13;
+
+
+
+    private javax.swing.JPanel jPanel14;
+
+
+
+    private javax.swing.JPanel jPanel15;
+
+
+
+    private javax.swing.JPanel jPanel16;
+
+
+
+    private javax.swing.JPanel jPanel17;
+
+
+
+    private javax.swing.JPanel jPanel18;
+
+
+
+    private javax.swing.JPanel jPanel19;
+
+
+
+    private javax.swing.JPanel jPanel2;
+
+
+
+    private javax.swing.JPanel jPanel20;
+
+
+
+    private javax.swing.JPanel jPanel21;
+
+
+
+    private javax.swing.JPanel jPanel22;
+
+
+
+    private javax.swing.JPanel jPanel23;
+
+
+
+    private javax.swing.JPanel jPanel24;
+
+
+
+    private javax.swing.JPanel jPanel25;
+
+
+
+    private javax.swing.JPanel jPanel26;
+
+
+
+    private javax.swing.JPanel jPanel27;
+
+
+
+    private javax.swing.JPanel jPanel28;
+
+
+
+    private javax.swing.JPanel jPanel29;
+
+
+
+    private javax.swing.JPanel jPanel3;
+
+
+
+    private javax.swing.JPanel jPanel4;
+
+
+
+    private javax.swing.JPanel jPanel5;
+
+
+
+    private javax.swing.JPanel jPanel6;
+
+
+
+    private javax.swing.JPanel jPanel7;
+
+
+
+    private javax.swing.JPanel jPanel8;
+
+
+
+    private javax.swing.JPanel jPanel9;
+
+
+
+    private javax.swing.JScrollPane jScrollPane1;
+
+
+
+    private javax.swing.JScrollPane jScrollPane10;
+
+
+
+    private javax.swing.JScrollPane jScrollPane11;
+
+
+
+    private javax.swing.JScrollPane jScrollPane12;
+
+
+
+    private javax.swing.JScrollPane jScrollPane13;
+
+
+
+    private javax.swing.JScrollPane jScrollPane14;
+
+
+
+    private javax.swing.JScrollPane jScrollPane15;
+
+
+
+    private javax.swing.JScrollPane jScrollPane2;
+
+
+
+    private javax.swing.JScrollPane jScrollPane3;
+
+
+
+    private javax.swing.JScrollPane jScrollPane4;
+
+
+
+    private javax.swing.JScrollPane jScrollPane5;
+
+
+
+    private javax.swing.JScrollPane jScrollPane7;
+
+
+
+    private javax.swing.JScrollPane jScrollPane8;
+
+
+
+    private javax.swing.JScrollPane jScrollPane9;
+
+
+
+    private javax.swing.JSplitPane jSplitPane1;
+
+
+
+    private javax.swing.JTabbedPane jTabbedPane1;
+
+
+
+    private javax.swing.JTabbedPane jTabbedPane2;
+
+
+
+    private javax.swing.JTabbedPane jTabbedPane3;
+
+
+
+    private javax.swing.JTabbedPane jTabbedPane4;
+
+
+
+    private javax.swing.JTabbedPane jTabbedPane5;
+
+
+
+    private javax.swing.JTextArea jTextArea3;
+
+
+
+    private javax.swing.JTextArea jTextArea4;
+
+
+
+    private javax.swing.JTextField jTextField5;
+
+
+
+    private javax.swing.JTextField jTextField7;
+
+
+
+    private javax.swing.JPanel leftPanel;
+
+
+
+    private javax.swing.JEditorPane logEditorPane;

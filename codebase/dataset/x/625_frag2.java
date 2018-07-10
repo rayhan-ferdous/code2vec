@@ -1,0 +1,13 @@
+            if (record.getSTBChannel() != null) {
+
+                stbChannel = record.getSTBChannel();
+
+            }
+
+            Integer stbVal = (Integer) record.valueForKey(PVData.stbValKey);
+
+            if (channel != null && channel.isConnected()) {
+
+                name = channel.getId();
+
+                spVal = (Double) record.valueForKey(PVData.spSavedValKey);

@@ -1,0 +1,17 @@
+            if (rs_atts != null) try {
+
+                rs_atts.close();
+
+            } catch (Exception e) {
+
+            }
+
+            if (pstmt_atts != null) try {
+
+                pstmt_atts.close();
+
+            } catch (Exception e) {
+
+            }
+
+        }

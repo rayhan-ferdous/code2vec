@@ -1,0 +1,23 @@
+    public static String cortaString(String str, int limite) {
+
+        String resp = "";
+
+        if (Util.isNull(str)) {
+
+            return "";
+
+        }
+
+        if (str.length() > limite) {
+
+            resp = str.substring(0, limite);
+
+        } else {
+
+            resp = str;
+
+        }
+
+        return resp;
+
+    }

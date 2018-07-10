@@ -1,0 +1,5 @@
+            if ("deliveryKind".equals(pColumn)) return fTotal.getDeliveryKind();
+
+            if ("customerNr".equals(pColumn)) return fTotal.getCustomerNr();
+
+            if ("sortKey".equals(pColumn)) return fTotal.getSortKey();

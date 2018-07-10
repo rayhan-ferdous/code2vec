@@ -1,0 +1,19 @@
+    public String toString() {
+
+        StringBuffer sb = new StringBuffer();
+
+        sb.append(getClass().getName());
+
+        sb.append(" [");
+
+        super.append(sb);
+
+        sb.append(", direct ");
+
+        sb.append(isDirect);
+
+        sb.append("] ");
+
+        return sb.toString();
+
+    }

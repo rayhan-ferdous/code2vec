@@ -1,0 +1,221 @@
+    private void initComponents() {
+
+        jToolBar1 = new javax.swing.JToolBar();
+
+        viewPropButton = new javax.swing.JButton();
+
+        globeLayersButton = new javax.swing.JButton();
+
+        wmsButton = new javax.swing.JButton();
+
+        terrainProfileButton = new javax.swing.JButton();
+
+        screenCaptureButton = new javax.swing.JButton();
+
+        genMovieButton = new javax.swing.JButton();
+
+        fullScreenButton = new javax.swing.JButton();
+
+        wwjPanel = new javax.swing.JPanel();
+
+        jPanel2 = new javax.swing.JPanel();
+
+        setMinimumSize(new java.awt.Dimension(50, 50));
+
+        setPreferredSize(new java.awt.Dimension(50, 50));
+
+        setLayout(new java.awt.BorderLayout());
+
+        jToolBar1.setFloatable(false);
+
+        jToolBar1.setRollover(true);
+
+        viewPropButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/other/eye24.png")));
+
+        viewPropButton.setToolTipText("View Properties");
+
+        viewPropButton.setFocusable(false);
+
+        viewPropButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        viewPropButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        viewPropButton.addActionListener(new java.awt.event.ActionListener() {
+
+
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                viewPropButtonActionPerformed(evt);
+
+            }
+
+        });
+
+        jToolBar1.add(viewPropButton);
+
+        globeLayersButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/other/applications-internet.png")));
+
+        globeLayersButton.setToolTipText("Globe Layers");
+
+        globeLayersButton.setFocusable(false);
+
+        globeLayersButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        globeLayersButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        globeLayersButton.addActionListener(new java.awt.event.ActionListener() {
+
+
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                globeLayersButtonActionPerformed(evt);
+
+            }
+
+        });
+
+        jToolBar1.add(globeLayersButton);
+
+        wmsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/other/folder-remote.png")));
+
+        wmsButton.setToolTipText("Manage Web Map Services");
+
+        wmsButton.setFocusable(false);
+
+        wmsButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        wmsButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        wmsButton.addActionListener(new java.awt.event.ActionListener() {
+
+
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                wmsButtonActionPerformed(evt);
+
+            }
+
+        });
+
+        jToolBar1.add(wmsButton);
+
+        terrainProfileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gnome_2_18/stock_chart-autoformat.png")));
+
+        terrainProfileButton.setToolTipText("Terrain Profiler");
+
+        terrainProfileButton.setFocusable(false);
+
+        terrainProfileButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        terrainProfileButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        terrainProfileButton.addActionListener(new java.awt.event.ActionListener() {
+
+
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                terrainProfileButtonActionPerformed(evt);
+
+            }
+
+        });
+
+        jToolBar1.add(terrainProfileButton);
+
+        screenCaptureButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/gnome_2_18/applets-screenshooter22.png")));
+
+        screenCaptureButton.setToolTipText("Screenshot");
+
+        screenCaptureButton.setFocusable(false);
+
+        screenCaptureButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        screenCaptureButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        screenCaptureButton.addActionListener(new java.awt.event.ActionListener() {
+
+
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                screenCaptureButtonActionPerformed(evt);
+
+            }
+
+        });
+
+        jToolBar1.add(screenCaptureButton);
+
+        genMovieButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/other/applications-multimedia.png")));
+
+        genMovieButton.setToolTipText("Create Movie");
+
+        genMovieButton.setFocusable(false);
+
+        genMovieButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        genMovieButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        genMovieButton.addActionListener(new java.awt.event.ActionListener() {
+
+
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                genMovieButtonActionPerformed(evt);
+
+            }
+
+        });
+
+        jToolBar1.add(genMovieButton);
+
+        fullScreenButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/other/view-fullscreen.png")));
+
+        fullScreenButton.setToolTipText("Fullscreen Mode - press Esc to exit");
+
+        fullScreenButton.setFocusable(false);
+
+        fullScreenButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        fullScreenButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        fullScreenButton.addActionListener(new java.awt.event.ActionListener() {
+
+
+
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+
+                fullScreenButtonActionPerformed(evt);
+
+            }
+
+        });
+
+        jToolBar1.add(fullScreenButton);
+
+        add(jToolBar1, java.awt.BorderLayout.PAGE_START);
+
+        wwjPanel.setBackground(new java.awt.Color(0, 0, 0));
+
+        wwjPanel.setLayout(new java.awt.BorderLayout());
+
+        add(wwjPanel, java.awt.BorderLayout.CENTER);
+
+        jPanel2.setPreferredSize(new java.awt.Dimension(100, 15));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+
+        jPanel2.setLayout(jPanel2Layout);
+
+        jPanel2Layout.setHorizontalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 400, Short.MAX_VALUE));
+
+        jPanel2Layout.setVerticalGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addGap(0, 15, Short.MAX_VALUE));
+
+        add(jPanel2, java.awt.BorderLayout.PAGE_END);
+
+    }

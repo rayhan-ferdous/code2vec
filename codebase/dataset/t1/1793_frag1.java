@@ -1,0 +1,19 @@
+    private Principal[] getPrincipals(GeneralNames names) {
+
+        Object[] p = this.getNames(names.getNames());
+
+        List l = new ArrayList();
+
+        for (int i = 0; i != p.length; i++) {
+
+            if (p[i] instanceof Principal) {
+
+                l.add(p[i]);
+
+            }
+
+        }
+
+        return (Principal[]) l.toArray(new Principal[l.size()]);
+
+    }

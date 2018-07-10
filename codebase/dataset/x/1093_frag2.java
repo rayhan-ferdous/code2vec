@@ -1,0 +1,49 @@
+    private boolean auth() {
+
+        boolean httpOk = false;
+
+        while (!httpOk) {
+
+            try {
+
+                SAXParserFactory spfactory = SAXParserFactory.newInstance();
+
+                SAXParser parser = spfactory.newSAXParser();
+
+                byte[] xml = this.getCredentials();
+
+                InputStream is = new ByteArrayInputStream(xml);
+
+                parser.parse(is, this);
+
+                httpOk = true;
+
+            } catch (Exception e) {
+
+                log.warn("通信エラー。5分後にリトライします。", e);
+
+                try {
+
+                    Thread.sleep(ReconnectInterval * ReconnectCount);
+
+                } catch (Exception ee) {
+
+                }
+
+            }
+
+        }
+
+        if (!ok.equals("OK")) {
+
+            ok = "";
+
+            return false;
+
+        }
+
+        this.setCredentials();
+
+        return true;
+
+    }

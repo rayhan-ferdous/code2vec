@@ -1,0 +1,17 @@
+        public static am.ik.protobuf.CalcIOProtos.CalcInput parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+
+            return newBuilder().mergeFrom(input).buildParsed();
+
+        }
+
+
+
+        public static am.ik.protobuf.CalcIOProtos.CalcInput parseFrom(com.google.protobuf.CodedInputStream input, com.google.protobuf.ExtensionRegistry extensionRegistry) throws java.io.IOException {
+
+            return newBuilder().mergeFrom(input, extensionRegistry).buildParsed();
+
+        }
+
+
+
+        public static Builder newBuilder() {

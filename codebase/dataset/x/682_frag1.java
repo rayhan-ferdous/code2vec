@@ -1,0 +1,21 @@
+                System.err.println("Not enough read. Bytes read: " + Integer.toHexString(totRead));
+
+            }
+
+            for (int i = 0x00; i < totRead; i++) {
+
+                if (cbuf[i] != i) {
+
+                    System.err.println("Error: 0x" + i + " read as 0x" + cbuf[i]);
+
+                }
+
+            }
+
+            in.close();
+
+            in = new StraightStreamReader(new FileInputStream(f));
+
+            totRead = 0;
+
+            while (totRead <= 0x100 && (read = in.read(cbuf, totRead + 0x123, 0x100 - totRead)) > 0) {

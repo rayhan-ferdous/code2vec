@@ -1,0 +1,11 @@
+    public Form getForm() {
+
+        if (form == null) {
+
+            form = builder.getInstance();
+
+        }
+
+        return form;
+
+    }

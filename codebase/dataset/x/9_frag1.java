@@ -1,0 +1,13 @@
+        BigBlockStore(POIFSDocumentPath path, String name, int size, POIFSWriterListener writer) {
+
+            bigBlocks = new DocumentBlock[0];
+
+            _path = path;
+
+            _name = name;
+
+            _size = size;
+
+            _writer = writer;
+
+        }

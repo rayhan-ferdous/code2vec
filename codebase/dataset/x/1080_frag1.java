@@ -1,0 +1,39 @@
+            captype = Integer.parseInt(urlData.getParameter("captype"));
+
+        } catch (Exception e01) {
+
+        }
+
+        Calendar newDate = Calendar.getInstance();
+
+        newDate.set(Calendar.MILLISECOND, 0);
+
+        newDate.set(Integer.parseInt(y), Integer.parseInt(m), Integer.parseInt(d), Integer.parseInt(h), Integer.parseInt(mi), 0);
+
+        if ("yes".equals(addBuff)) {
+
+            newDate.add(Calendar.MINUTE, (startBuff * -1));
+
+            duration = duration + startBuff + endBuff;
+
+        }
+
+        if (item == null) item = new ScheduleItem(store.rand.nextLong());
+
+        item.setCreatedFrom(null);
+
+        item.setCapType(captype);
+
+        item.setType(type);
+
+        item.setName(name);
+
+        item.setState(ScheduleItem.WAITING);
+
+        item.setStatus("Waiting");
+
+        item.resetAbort();
+
+        item.setStart(newDate);
+
+        item.setDuration(duration);

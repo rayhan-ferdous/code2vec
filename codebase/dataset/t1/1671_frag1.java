@@ -1,0 +1,29 @@
+        if (addresses.size() == 0) addresses.add(null);
+
+        Iterator iaddr = addresses.iterator();
+
+        while (iaddr.hasNext()) {
+
+            InetAddress addr = (InetAddress) iaddr.next();
+
+            Iterator iport = ports.iterator();
+
+            while (iport.hasNext()) {
+
+                short port = ((Short) iport.next()).shortValue();
+
+                String addrString;
+
+                addUDP(addr, port);
+
+                addTCP(addr, port);
+
+                if (addr == null) addrString = "0.0.0.0"; else addrString = addr.getHostAddress();
+
+                System.out.println("jnamed: listening on " + addrString + "#" + port);
+
+            }
+
+        }
+
+        System.out.println("jnamed: running");

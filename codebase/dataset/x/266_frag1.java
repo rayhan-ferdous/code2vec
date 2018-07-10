@@ -1,0 +1,21 @@
+            e.printStackTrace();
+
+        } catch (NoSuchAlgorithmException e) {
+
+            e.printStackTrace();
+
+        } catch (CertificateException e) {
+
+            e.printStackTrace();
+
+        } catch (CRLException e) {
+
+            e.printStackTrace();
+
+        } catch (IllegalStateException e) {
+
+            e.printStackTrace();
+
+        } catch (SignatureException e) {
+
+            e.printStackTrace();

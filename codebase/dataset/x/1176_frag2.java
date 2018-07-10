@@ -1,0 +1,35 @@
+    public static XmpRawMetadata parse(String xmpString) throws IOException {
+
+        try {
+
+            DocumentBuilder builder = DOC_FACTORY.newDocumentBuilder();
+
+            Document doc = null;
+
+            if (xmpString != null) {
+
+                doc = builder.parse(IOUtils.toInputStream(xmpString));
+
+            } else {
+
+                doc = builder.newDocument();
+
+                final Node rootNode = doc.createElementNS("http://www.w3.org/1999/02/22-rdf-syntax-ns#", "RDF");
+
+                doc.appendChild(rootNode);
+
+            }
+
+            return new XmpRawMetadata(doc);
+
+        } catch (SAXException e) {
+
+            throw new IOException(e);
+
+        } catch (ParserConfigurationException e) {
+
+            throw new IOException(e);
+
+        }
+
+    }

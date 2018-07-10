@@ -1,0 +1,17 @@
+    public void setChannelList(cwterm.service.rigctl.xsd.Channel[] param) {
+
+        validateChannelList(param);
+
+        if (param != null) {
+
+            localChannelListTracker = true;
+
+        } else {
+
+            localChannelListTracker = true;
+
+        }
+
+        this.localChannelList = param;
+
+    }

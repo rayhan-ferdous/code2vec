@@ -1,0 +1,9 @@
+            response.setBody(body, allowGzip);
+
+            response.setHeaders(wContext.createHeader(null, WebResponseCodes.HTTP_NOT_FOUND, response.getBodySize(), 0L, "text/html", false, allowGzip));
+
+            response.setResponse(WebResponseCodes.HTTP_NOT_FOUND);
+
+            return response;
+
+        }

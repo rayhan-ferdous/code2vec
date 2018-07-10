@@ -1,0 +1,19 @@
+        chkAddForeignKeyWithRelationName.setName("chkAddForeignKeyWithRelationName");
+
+        chkAddForeignKeyWithRelationName.setPreferredSize(new java.awt.Dimension(80, 20));
+
+        chkAddForeignKeyWithRelationName.addChangeListener(new javax.swing.event.ChangeListener() {
+
+
+
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+
+                chkAddForeignKeyWithRelationNameStateChanged(evt);
+
+            }
+
+        });
+
+        panelChkOptions.add(chkAddForeignKeyWithRelationName);
+
+        chkAddAlternateKey.setText(resourceMap.getString("chkAddAlternateKey.text"));

@@ -1,0 +1,17 @@
+                try {
+
+                    root = bizDriverDoc.getRootElement();
+
+                    bizDriverConnElem = root.getChild("initialcontext", ns);
+
+                    bizDriverElem = bizDriverConnElem.getChild("host", ns);
+
+                    host = bizDriverElem.getText();
+
+                    bizDriverElem = bizDriverConnElem.getChild("port", ns);
+
+                    port = bizDriverElem.getText();
+
+                } catch (final Throwable ex) {
+
+                    logger.finest("Error parsing elements from biz driver file.");

@@ -1,0 +1,33 @@
+        void write(JavaFileObject file, byte[] bytes) {
+
+            OutputStream out = null;
+
+            try {
+
+                out = file.openOutputStream();
+
+                out.write(bytes, 0, bytes.length);
+
+            } catch (IOException e) {
+
+                error("Error writing file: " + e);
+
+            } finally {
+
+                if (out != null) {
+
+                    try {
+
+                        out.close();
+
+                    } catch (IOException e) {
+
+                        error("Error closing file: " + e);
+
+                    }
+
+                }
+
+            }
+
+        }

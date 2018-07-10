@@ -1,0 +1,167 @@
+        newlinks.add("http://famoso.disi.unitn.it/");
+
+        newlinks.add("http://www.winsite.com/bin/Info?19000000037359");
+
+        newlinks.add("http://2pt3.com/news/twotone-icons-for-free/");
+
+        newlinks.add("http://2pt3.com/news/twotone-icons-for-free/");
+
+        newlinks.add("http://www.feedjournal.com/");
+
+        newlinks.add("http://www.sciencedirect.com/science?_ob=ArticleURL&_udi=B6VDC-4HNSB2G-1&_user=6239427&_rdoc=1&_fmt=&_orig=search&_sort=d&view=c&_version=1&_urlVersion=0&_userid=6239427&md5=4a66f30b3cd3566dcfa0af9553e022b6");
+
+        newlinks.add("http://www.audioanarchy.org/");
+
+        newlinks.add("http://xkcd.com/");
+
+        newlinks.add("http://ontolog.cim3.net/cgi-bin/wiki.pl?ConferenceCall_2008_09_18");
+
+        newlinks.add("http://sioc-project.org/firefox");
+
+        newlinks.add("http://www.islifecorp.com.br/");
+
+        newlinks.add("http://www.third-bit.com/");
+
+        newlinks.add("http://www.elearnspace.org/Articles/connectivism.htm");
+
+        newlinks.add("http://www.linuxdevcenter.com/pub/a/linux/2005/05/05/libcurl.html");
+
+        newlinks.add("http://www.useit.com/alertbox/20010218.html");
+
+        newlinks.add("http://www.talis.com/");
+
+        newlinks.add("http://psy.ex.ac.uk/~tpostmes/refsbytype.php");
+
+        newlinks.add("http://www.jeffheaton.com/ai");
+
+        newlinks.add("http://goodoldai.org.yu/semantic_web_and_education/links.htm");
+
+        newlinks.add("http://maemo.org/");
+
+        newlinks.add("http://youxcity.punkt.at/?id=2");
+
+        newlinks.add("http://forums.anarchy-online.com/showthread.php?t=206101&page=1&pp=20");
+
+        newlinks.add("http://www.inf.ufrgs.br/~mirella/Rumo.html");
+
+        newlinks.add("http://www.tietoenator.dk/default.asp?path=487,610");
+
+        newlinks.add("http://www.infoq.com/articles/8-reasons-why-MDE-fails");
+
+        newlinks.add("http://www.galaxyzoo.org/");
+
+        newlinks.add("http://www.eskildsen.dk/");
+
+        newlinks.add("http://www2.umassd.edu/SECenter/SAResources.html");
+
+        newlinks.add("http://dionysos.mpch-mainz.mpg.de/~joeckel/pdflatex/");
+
+        newlinks.add("http://www.openadvantage.org/articles/oadocument.2005-04-19.0329097790");
+
+        newlinks.add("http://www.folhaonline.com/");
+
+        newlinks.add("http://ejohn.org/apps/learn");
+
+        newlinks.add("http://www.e-series.org/");
+
+        newlinks.add("http://logic.stanford.edu/");
+
+        newlinks.add("http://www.ariadne-eu.org/3_MD/ariadne_metadata_v31.htm");
+
+        newlinks.add("http://www.ariadne-eu.org/3_MD/ariadne_metadata_v31.htm");
+
+        newlinks.add("http://www.id-book.com/catherb/index.htm");
+
+        newlinks.add("http://publib.boulder.ibm.com/wasce/V1.0.1/pt_BR/Tasks/Migrating/FromTomcat.html");
+
+        newlinks.add("http://www.livejournal.com/");
+
+        newlinks.add("http://www.hcirn.com/index.php");
+
+        newlinks.add("http://bhandler.spaces.live.com/blog/cns!70F64BC910C9F7F3!1231.entry");
+
+        newlinks.add("http://www.spikesource.com/suitetwo/");
+
+        newlinks.add("http://www.zimbra.com/");
+
+        newlinks.add("http://www.psp-hacks.com/");
+
+        newlinks.add("http://www.cc.gatech.edu/~asb/papers/hci-for-kids.pdf");
+
+        newlinks.add("http://www.hcii2009.org/");
+
+        newlinks.add("http://www.opencalais.com/");
+
+        newlinks.add("http://java.sun.com/j2se/javadoc/writingdoccomments/#exampleresult");
+
+        newlinks.add("http://www.guardian.co.uk/weekend/story/0,,2129855,00.html");
+
+        newlinks.add("http://blizzard.com/");
+
+        newlinks.add("http://www.blockstatus.com/msn/stchecker");
+
+        newlinks.add("http://www.greycobra.com/tutorial/Mac_Style_Buttons/");
+
+        newlinks.add("http://www.stigmergicsystems.com/");
+
+        newlinks.add("http://digg.com/");
+
+        newlinks.add("http://code.google.com/p/ocropus/");
+
+        newlinks.add("http://w5.cs.uni-sb.de/~butz/teaching/ie-ss03/papers/HCIinSF/");
+
+        newlinks.add("http://www.joelamantia.com/blog/archives/ideas/tag_clouds_evolve_understanding_tag_clouds_1.html");
+
+        newlinks.add("http://revistaepoca.globo.com/Revista/Epoca/0,,EDG79037-5855,00-ARQUIVO+MAX+GEHRINGER.html");
+
+        newlinks.add("http://www.stoweboyd.com/message/2006/10/are_you_ready_f.html");
+
+        newlinks.add("http://bpt.hpi.uni-potsdam.de/twiki/bin/view/Public/MathiasWeske");
+
+        newlinks.add("http://casa.abril.uol.com.br/arquitetura/simulador/lb_coz/");
+
+        newlinks.add("http://201.20.19.254/download/manuais/senado08_informatica_manual.pdf");
+
+        newlinks.add("http://insitu.lri.fr/ecscw/workshop2.html");
+
+        newlinks.add("http://cmap.ihmc.us/");
+
+        newlinks.add("http://www.zdnet.com/swlib/prespick/prescrnt.html");
+
+        newlinks.add("http://www.wvquine.org/");
+
+        newlinks.add("http://www.yahoo.com/");
+
+        newlinks.add("http://www.vocabulix.com/online/Learn/Verbs");
+
+        newlinks.add("http://acdc.linguateca.pt/aval_conjunta/aval_RI.html");
+
+        newlinks.add("http://www.hotmail.com/");
+
+        newlinks.add("http://buscatextual.cnpq.br/buscatextual/index.jsp");
+
+        newlinks.add("http://dbh.nsd.uib.no/kanaler/");
+
+        newlinks.add("http://www.gmail.com/");
+
+        newlinks.add("http://ieeexplore.ieee.org/xpl/freeabs_all.jsp?arnumber=917969");
+
+        newlinks.add("http://www.planeteclipse.org/planet/");
+
+        newlinks.add("http://www.geocities.com/jmanderson_2000/trainers/trainers.htm");
+
+        newlinks.add("http://www.cs.phs.uoa.gr/en/staff/vosniadou.html");
+
+        newlinks.add("http://www.iath.virginia.edu/utc/uncletom/key/kyhp.html");
+
+        newlinks.add("http://piwik.org/");
+
+        newlinks.add("http://script.aculo.us/");
+
+        newlinks.add("http://kom.aau.dk/~csp/PDP08/Sites/PDP5/index.php");
+
+        newlinks.add("http://www.nachdenkseiten.de/");
+
+        newlinks.add("http://equipe.nce.ufrj.br/adriano/c/apostila/algoritmos.htm");
+
+        newlinks.add("http://meryl.net/2008/01/22/175-data-and-information-visualization-examples-and-resources/");

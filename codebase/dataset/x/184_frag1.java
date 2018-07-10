@@ -1,0 +1,19 @@
+    public static void refreshFor(View view) {
+
+        DualDiff dualDiff = DualDiffManager.getDualDiffFor(view);
+
+        if (dualDiff != null) {
+
+            dualDiff.refresh();
+
+        } else {
+
+            if (jEdit.getBooleanProperty(BEEP_ON_ERROR)) {
+
+                view.getToolkit().beep();
+
+            }
+
+        }
+
+    }

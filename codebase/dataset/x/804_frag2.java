@@ -1,0 +1,13 @@
+                deleteServer(is, os, comBean);
+
+            } else if (command.equals("ping")) {
+
+                ObjectOutputStream oos = new ObjectOutputStream(os);
+
+                ComBean answer = new ComBean();
+
+                answer.setErrorCode(0);
+
+                answer.setVersionNumber(ComBean.version);
+
+                oos.writeObject(answer);
