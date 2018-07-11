@@ -1,0 +1,46 @@
+public   void   test70  (  )  throws   Exception  { 
+
+String   data  =  "\"1\",Bruce\r\n\"2\",Toni\r\n\"3\",Brian\r\n"  ; 
+
+CsvReader   reader  =  CsvReader  .  parse  (  data  )  ; 
+
+reader  .  setHeaders  (  new   String  [  ]  {  "userid"  ,  "name"  }  )  ; 
+
+Assert  .  assertEquals  (  2  ,  reader  .  getHeaderCount  (  )  )  ; 
+
+Assert  .  assertTrue  (  reader  .  readRecord  (  )  )  ; 
+
+Assert  .  assertEquals  (  "1"  ,  reader  .  get  (  "userid"  )  )  ; 
+
+Assert  .  assertEquals  (  "Bruce"  ,  reader  .  get  (  "name"  )  )  ; 
+
+Assert  .  assertEquals  (  0L  ,  reader  .  getCurrentRecord  (  )  )  ; 
+
+Assert  .  assertEquals  (  2  ,  reader  .  getColumnCount  (  )  )  ; 
+
+Assert  .  assertTrue  (  reader  .  readRecord  (  )  )  ; 
+
+Assert  .  assertEquals  (  "2"  ,  reader  .  get  (  "userid"  )  )  ; 
+
+Assert  .  assertEquals  (  "Toni"  ,  reader  .  get  (  "name"  )  )  ; 
+
+Assert  .  assertEquals  (  1L  ,  reader  .  getCurrentRecord  (  )  )  ; 
+
+Assert  .  assertEquals  (  2  ,  reader  .  getColumnCount  (  )  )  ; 
+
+Assert  .  assertTrue  (  reader  .  readRecord  (  )  )  ; 
+
+Assert  .  assertEquals  (  "3"  ,  reader  .  get  (  "userid"  )  )  ; 
+
+Assert  .  assertEquals  (  "Brian"  ,  reader  .  get  (  "name"  )  )  ; 
+
+Assert  .  assertEquals  (  2L  ,  reader  .  getCurrentRecord  (  )  )  ; 
+
+Assert  .  assertEquals  (  2  ,  reader  .  getColumnCount  (  )  )  ; 
+
+Assert  .  assertFalse  (  reader  .  readRecord  (  )  )  ; 
+
+reader  .  close  (  )  ; 
+
+} 
+

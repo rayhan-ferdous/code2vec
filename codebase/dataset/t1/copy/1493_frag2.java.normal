@@ -1,0 +1,298 @@
+private   static   final   byte  [  ]  getDecodabet  (  int   options  )  { 
+
+if  (  (  options  &  URL_SAFE  )  ==  URL_SAFE  )  return   _URL_SAFE_DECODABET  ;  else   if  (  (  options  &  ORDERED  )  ==  ORDERED  )  return   _ORDERED_DECODABET  ;  else   return   _STANDARD_DECODABET  ; 
+
+} 
+
+
+
+
+
+private   Base64  (  )  { 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   final   void   main  (  String  [  ]  args  )  { 
+
+if  (  args  .  length  <  3  )  { 
+
+usage  (  "Not enough arguments."  )  ; 
+
+}  else  { 
+
+String   flag  =  args  [  0  ]  ; 
+
+String   infile  =  args  [  1  ]  ; 
+
+String   outfile  =  args  [  2  ]  ; 
+
+if  (  flag  .  equals  (  "-e"  )  )  { 
+
+Base64  .  encodeFileToFile  (  infile  ,  outfile  )  ; 
+
+}  else   if  (  flag  .  equals  (  "-d"  )  )  { 
+
+Base64  .  decodeFileToFile  (  infile  ,  outfile  )  ; 
+
+}  else  { 
+
+usage  (  "Unknown flag: "  +  flag  )  ; 
+
+} 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+private   static   final   void   usage  (  String   msg  )  { 
+
+System  .  err  .  println  (  msg  )  ; 
+
+System  .  err  .  println  (  "Usage: java Base64 -e|-d inputfile outputfile"  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private   static   byte  [  ]  encode3to4  (  byte  [  ]  b4  ,  byte  [  ]  threeBytes  ,  int   numSigBytes  ,  int   options  )  { 
+
+encode3to4  (  threeBytes  ,  0  ,  numSigBytes  ,  b4  ,  0  ,  options  )  ; 
+
+return   b4  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private   static   byte  [  ]  encode3to4  (  byte  [  ]  source  ,  int   srcOffset  ,  int   numSigBytes  ,  byte  [  ]  destination  ,  int   destOffset  ,  int   options  )  { 
+
+byte  [  ]  ALPHABET  =  getAlphabet  (  options  )  ; 
+
+int   inBuff  =  (  numSigBytes  >  0  ?  (  (  source  [  srcOffset  ]  <<  24  )  >  >  >  8  )  :  0  )  |  (  numSigBytes  >  1  ?  (  (  source  [  srcOffset  +  1  ]  <<  24  )  >  >  >  16  )  :  0  )  |  (  numSigBytes  >  2  ?  (  (  source  [  srcOffset  +  2  ]  <<  24  )  >  >  >  24  )  :  0  )  ; 
+
+switch  (  numSigBytes  )  { 
+
+case   3  : 
+
+destination  [  destOffset  ]  =  ALPHABET  [  (  inBuff  >  >  >  18  )  ]  ; 
+
+destination  [  destOffset  +  1  ]  =  ALPHABET  [  (  inBuff  >  >  >  12  )  &  0x3f  ]  ; 
+
+destination  [  destOffset  +  2  ]  =  ALPHABET  [  (  inBuff  >  >  >  6  )  &  0x3f  ]  ; 
+
+destination  [  destOffset  +  3  ]  =  ALPHABET  [  (  inBuff  )  &  0x3f  ]  ; 
+
+return   destination  ; 
+
+case   2  : 
+
+destination  [  destOffset  ]  =  ALPHABET  [  (  inBuff  >  >  >  18  )  ]  ; 
+
+destination  [  destOffset  +  1  ]  =  ALPHABET  [  (  inBuff  >  >  >  12  )  &  0x3f  ]  ; 
+
+destination  [  destOffset  +  2  ]  =  ALPHABET  [  (  inBuff  >  >  >  6  )  &  0x3f  ]  ; 
+
+destination  [  destOffset  +  3  ]  =  EQUALS_SIGN  ; 
+
+return   destination  ; 
+
+case   1  : 
+
+destination  [  destOffset  ]  =  ALPHABET  [  (  inBuff  >  >  >  18  )  ]  ; 
+
+destination  [  destOffset  +  1  ]  =  ALPHABET  [  (  inBuff  >  >  >  12  )  &  0x3f  ]  ; 
+
+destination  [  destOffset  +  2  ]  =  EQUALS_SIGN  ; 
+
+destination  [  destOffset  +  3  ]  =  EQUALS_SIGN  ; 
+
+return   destination  ; 
+
+default  : 
+
+return   destination  ; 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   String   encodeObject  (  java  .  io  .  Serializable   serializableObject  )  { 
+
+return   encodeObject  (  serializableObject  ,  NO_OPTIONS  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   String   encodeObject  (  java  .  io  .  Serializable   serializableObject  ,  int   options  )  { 
+

@@ -1,0 +1,28 @@
+private   boolean   updateBlogList  (  String   countryCode  )  { 
+
+if  (  updateingBlogs  )  { 
+
+return   false  ; 
+
+} 
+
+if  (  blogTable  .  get  (  countryCode  )  ==  null  )  { 
+
+return   true  ; 
+
+} 
+
+Calendar   testDate  =  Calendar  .  getInstance  (  )  ; 
+
+testDate  .  add  (  Calendar  .  HOUR  ,  -  1  )  ; 
+
+if  (  testDate  .  after  (  blogTable  .  get  (  countryCode  )  .  lastBlogListUpdate  )  )  { 
+
+return   true  ; 
+
+} 
+
+return   false  ; 
+
+} 
+

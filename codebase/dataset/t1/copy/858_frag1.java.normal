@@ -1,0 +1,26 @@
+public   Matrix   prodColumns  (  )  { 
+
+Matrix   X  =  new   Matrix  (  m  ,  1  )  ; 
+
+double  [  ]  [  ]  C  =  X  .  getArray  (  )  ; 
+
+double   s  =  0  ; 
+
+for  (  int   i  =  0  ;  i  <  m  ;  i  ++  )  { 
+
+s  =  1  ; 
+
+for  (  int   j  =  0  ;  j  <  n  ;  j  ++  )  { 
+
+s  =  s  *  A  [  i  ]  [  j  ]  ; 
+
+} 
+
+C  [  i  ]  [  0  ]  =  s  ; 
+
+} 
+
+return   X  ; 
+
+} 
+

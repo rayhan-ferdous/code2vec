@@ -1,0 +1,162 @@
+int   total  =  0  ; 
+
+synchronized  (  in  )  { 
+
+while  (  (  nread  =  in  .  read  (  buf  ,  0  ,  buf  .  length  )  )  >=  0  )  { 
+
+out  .  write  (  buf  ,  0  ,  nread  )  ; 
+
+total  +=  nread  ; 
+
+} 
+
+} 
+
+out  .  flush  (  )  ; 
+
+buf  =  null  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   void   setParameter  (  String   name  ,  String   filename  ,  InputStream   is  )  throws   IOException  { 
+
+boundary  (  )  ; 
+
+writeName  (  name  )  ; 
+
+write  (  "; filename=\""  )  ; 
+
+write  (  filename  )  ; 
+
+write  (  '"'  )  ; 
+
+newline  (  )  ; 
+
+write  (  "Content-Type: "  )  ; 
+
+String   type  =  URLConnection  .  guessContentTypeFromName  (  filename  )  ; 
+
+if  (  type  ==  null  )  type  =  "application/octet-stream"  ; 
+
+writeln  (  type  )  ; 
+
+newline  (  )  ; 
+
+pipe  (  is  ,  os  )  ; 
+
+newline  (  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   void   setParameter  (  String   name  ,  File   file  )  throws   IOException  { 
+
+setParameter  (  name  ,  file  .  getPath  (  )  ,  new   FileInputStream  (  file  )  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   void   setParameter  (  String   name  ,  Object   object  )  throws   IOException  { 
+
+if  (  object   instanceof   File  )  { 
+
+setParameter  (  name  ,  (  File  )  object  )  ; 
+
+}  else  { 
+
+setParameter  (  name  ,  object  .  toString  (  )  )  ; 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   void   setParameters  (  Map  <  Object  ,  Object  >  parameters  )  throws   IOException  { 
+

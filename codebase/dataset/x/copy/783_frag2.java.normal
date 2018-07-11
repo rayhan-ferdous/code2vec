@@ -1,0 +1,34 @@
+Long  [  ]  nums  =  new   Long  [  names  .  length  ]  ; 
+
+for  (  int   i  =  0  ;  i  <  nums  .  length  ;  i  +=  1  )  { 
+
+nums  [  i  ]  =  getNumFromName  (  names  [  i  ]  )  ; 
+
+} 
+
+return   nums  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   Long   getFollowingFileNum  (  long   currentFileNum  ,  boolean   forward  )  { 
+
+String  [  ]  names  =  listFiles  (  JE_SUFFIXES  )  ; 
+

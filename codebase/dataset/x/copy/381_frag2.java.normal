@@ -1,0 +1,32 @@
+protected   JTable   videoTable  ; 
+
+
+
+
+
+private   MovieSurface   surface  ; 
+
+
+
+
+
+private   JSlider   position  ; 
+
+
+
+
+
+private   JSlider   volumeSlider  ; 
+
+
+
+
+
+private   JLabel   positionTime  ; 
+
+
+
+
+
+private   JLabel   subtitle  ; 
+

@@ -1,0 +1,82 @@
+private   Model   model  ; 
+
+
+
+
+
+
+
+
+
+private   JMenuBar   menuBar  ; 
+
+
+
+
+
+
+
+
+
+private   JPopupMenu   addCardMenu  ; 
+
+
+
+
+
+
+
+
+
+private   JPopupMenu   prefMenu  ; 
+
+
+
+
+
+
+
+
+
+private   JToolBar   toolbar  ; 
+
+
+
+
+
+
+
+
+
+private   JButton   newBallotButton  ; 
+
+
+
+
+
+
+
+
+
+private   JButton   openBallotButton  ; 
+
+
+
+
+
+
+
+
+
+private   JButton   saveBallotButton  ; 
+
+
+
+
+
+
+
+
+
+private   JButton   exportBallotButton  ; 
+

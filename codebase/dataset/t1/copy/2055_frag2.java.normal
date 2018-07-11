@@ -1,0 +1,10 @@
+progressMonitor  .  beginTask  (  de  .  nordakademie  .  lejos  .  stateMachine  .  diagram  .  part  .  Messages  .  StateMachineDiagramEditorUtil_CreateDiagramProgressTask  ,  3  )  ; 
+
+final   Resource   diagramResource  =  editingDomain  .  getResourceSet  (  )  .  createResource  (  diagramURI  )  ; 
+
+final   Resource   modelResource  =  editingDomain  .  getResourceSet  (  )  .  createResource  (  modelURI  )  ; 
+
+final   String   diagramName  =  diagramURI  .  lastSegment  (  )  ; 
+
+AbstractTransactionalCommand   command  =  new   AbstractTransactionalCommand  (  editingDomain  ,  de  .  nordakademie  .  lejos  .  stateMachine  .  diagram  .  part  .  Messages  .  StateMachineDiagramEditorUtil_CreateDiagramCommandLabel  ,  Collections  .  EMPTY_LIST  )  { 
+

@@ -1,0 +1,40 @@
+public   List  <  RecommendationType  >  getRuleDependencyCandidates  (  ApplicationType   app  ,  GroupType   group  )  { 
+
+List  <  String  >  deps  ; 
+
+deps  =  group  .  getDependencyList  (  )  ; 
+
+List  <  RecommendationType  >  candidates  =  null  ; 
+
+RecommendationHelper   ruleHelper  =  new   RecommendationHelper  (  )  ; 
+
+List  <  RecommendationType  >  activeRules  =  ruleHelper  .  getActiveItems  (  app  .  getRecommendations  (  )  .  getRecommendationList  (  )  )  ; 
+
+if  (  activeRules  .  isEmpty  (  )  )  { 
+
+candidates  =  Collections  .  emptyList  (  )  ; 
+
+}  else  { 
+
+candidates  =  new   ArrayList  <  RecommendationType  >  (  activeRules  .  size  (  )  -  deps  .  size  (  )  )  ; 
+
+for  (  RecommendationType   depCandidate  :  activeRules  )  { 
+
+if  (  !  deps  .  contains  (  depCandidate  .  getId  (  )  )  )  { 
+
+if  (  !  isCircular  (  app  ,  group  ,  depCandidate  )  )  { 
+
+candidates  .  add  (  depCandidate  )  ; 
+
+} 
+
+} 
+
+} 
+
+} 
+
+return   candidates  ; 
+
+} 
+

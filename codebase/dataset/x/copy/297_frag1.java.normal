@@ -1,0 +1,66 @@
+import   org  .  apache  .  commons  .  logging  .  LogFactory  ; 
+
+import   net  .  sf  .  appfw  .  common  .  util  .  XMLProperties  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   class   XmlMessagesImpl   extends   AbstractMessages  { 
+
+
+
+private   static   final   Log   _log  =  LogFactory  .  getLog  (  XmlMessagesImpl  .  class  )  ; 
+
+
+
+private   Properties   _properties  ; 
+
+
+
+private   Locale   _locale  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   XmlMessagesImpl  (  Class   claz  )  { 
+

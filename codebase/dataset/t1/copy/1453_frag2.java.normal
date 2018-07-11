@@ -1,0 +1,790 @@
+public   void   _setFileNamePrefix  (  String   rPrefix  )  { 
+
+if  (  null  ==  rPrefix  )  { 
+
+return  ; 
+
+} 
+
+writer__iFileNamePrefix  =  rPrefix  ; 
+
+} 
+
+
+
+
+
+public   String   _getFileNamePrefix  (  )  { 
+
+return   writer__iFileNamePrefix  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   void   _setFileNameSuffix  (  String   rSuffix  )  { 
+
+if  (  null  ==  rSuffix  )  { 
+
+return  ; 
+
+} 
+
+writer__iFileNameSuffix  =  rSuffix  ; 
+
+} 
+
+
+
+
+
+public   String   _getFileNameSuffix  (  )  { 
+
+return   writer__iFileNameSuffix  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _setFullFileName  (  String   rName  )  { 
+
+_setFileNamePrefix  (  ""  )  ; 
+
+_setFileNameRoot  (  rName  )  ; 
+
+_setFileNameSuffix  (  ""  )  ; 
+
+} 
+
+
+
+
+
+public   String   _getFullFileName  (  )  { 
+
+return   _getFileNamePrefix  (  )  +  _getFileNameRoot  (  )  +  _getFileNameSuffix  (  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _setFullFileNames  (  String  [  ]  rNames  )  { 
+
+_setFileNamePrefix  (  ""  )  ; 
+
+_setFileNameRoots  (  rNames  )  ; 
+
+_setFileNameSuffix  (  ""  )  ; 
+
+} 
+
+
+
+
+
+public   String  [  ]  _getFullFileNames  (  )  { 
+
+String  [  ]  fileNameRoots  =  _getFileNameRoots  (  )  ; 
+
+int   numFiles  =  fileNameRoots  .  length  ; 
+
+String  [  ]  fullFileNames  =  new   String  [  numFiles  ]  ; 
+
+String   fileNamePrefix  =  _getFileNamePrefix  (  )  ; 
+
+String   fileNameSuffix  =  _getFileNameSuffix  (  )  ; 
+
+for  (  int   fileI  =  0  ;  fileI  <  numFiles  ;  fileI  ++  )  { 
+
+fullFileNames  [  fileI  ]  =  fileNamePrefix  +  fileNameRoots  [  fileI  ]  +  fileNameSuffix  ; 
+
+} 
+
+return   fullFileNames  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   void   _setFileNameRoot  (  String   rFileNameRoot  )  { 
+
+if  (  null  ==  rFileNameRoot  )  { 
+
+return  ; 
+
+} 
+
+_setFileNameRoots  (  new   String  [  ]  {  rFileNameRoot  }  )  ; 
+
+} 
+
+
+
+
+
+public   String   _getFileNameRoot  (  )  { 
+
+if  (  0  <  writer__iFileNameRoots  .  length  )  { 
+
+return   writer__iFileNameRoots  [  writer__iCurrentFileIndex  ]  ; 
+
+} 
+
+return  ""  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   void   _setFileNameRoots  (  String  [  ]  rFileNameRoots  )  { 
+
+if  (  null  ==  rFileNameRoots  )  { 
+
+return  ; 
+
+} 
+
+String  [  ]  roots  =  (  String  [  ]  )  rFileNameRoots  .  clone  (  )  ; 
+
+int   numRoots  =  roots  .  length  ; 
+
+for  (  int   rootI  =  0  ;  rootI  <  numRoots  ;  rootI  ++  )  { 
+
+if  (  null  ==  roots  [  rootI  ]  )  { 
+
+roots  [  rootI  ]  =  ""  ; 
+
+} 
+
+} 
+
+writer__iFileNameRoots  =  roots  ; 
+
+writer__iNumFiles  =  numRoots  ; 
+
+} 
+
+
+
+
+
+public   String  [  ]  _getFileNameRoots  (  )  { 
+
+return   writer__iFileNameRoots  ; 
+
+} 
+
+
+
+
+
+public   int   _getFileIndex  (  )  { 
+
+return   writer__iCurrentFileIndex  ; 
+
+} 
+
+
+
+
+
+public   int   _getNumFiles  (  )  { 
+
+return   writer__iNumFiles  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   void   _setOutputFolder  (  String   rOutputFolder  )  { 
+
+writer__iOutputFolder  =  rOutputFolder  ; 
+
+} 
+
+
+
+
+
+public   String   _getOutputFolder  (  )  { 
+
+return   writer__iOutputFolder  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   void   _setBackupFolder  (  String   rBackupFolder  )  { 
+
+writer__iBackupFolder  =  writer__iOutputFolder  +  "\\"  +  rBackupFolder  ; 
+
+} 
+
+
+
+
+
+public   String   _getBackupFolder  (  )  { 
+
+return   writer__iBackupFolder  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   void   _setBackupSuffix  (  String   rSuffix  )  { 
+
+if  (  null  ==  rSuffix  )  { 
+
+return  ; 
+
+} 
+
+writer__iBackupSuffix  =  rSuffix  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   void   _setBackupPrefix  (  String   rPrefix  )  { 
+
+if  (  null  ==  rPrefix  )  { 
+
+return  ; 
+
+} 
+
+writer__iBackupPrefix  =  rPrefix  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   void   _backup  (  boolean   rBackup  )  { 
+
+writer__iBackup  =  rBackup  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   void   _save  (  boolean   rSave  )  { 
+
+writer__iSave  =  rSave  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   String   _getProperty  (  String   rName  )  { 
+
+String   result  =  ""  ; 
+
+if  (  !  writer__iPropertiesInitialised  )  { 
+
+writer__initProperties  (  )  ; 
+
+} 
+
+if  (  writer__iProperties  .  containsKey  (  rName  )  )  { 
+
+result  =  (  String  )  writer__iProperties  .  get  (  rName  )  ; 
+
+} 
+
+return   result  ; 
+
+} 
+
+
+
+
+
+public   String   _getFirstUserArg  (  )  { 
+
+return   _getUserArg  (  0  )  ; 
+
+} 
+
+
+
+
+
+public   String   _getSecondUserArg  (  )  { 
+
+return   _getUserArg  (  1  )  ; 
+
+} 
+
+
+
+
+
+public   String   _getThirdUserArg  (  )  { 
+
+return   _getUserArg  (  2  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   String   _getUserArg  (  int   rOrdinal  )  { 
+
+if  (  null  ==  writer__iArgs  )  { 
+
+return  ""  ; 
+
+} 
+
+int   ordinal  =  0  ; 
+
+int   numArgs  =  writer__iArgs  .  length  ; 
+
+next_arg  :  for  (  int   argI  =  0  ;  argI  <  numArgs  ;  argI  ++  )  { 
+
+if  (  writer__iArgs  [  argI  ]  .  startsWith  (  writer__ARGUMENT_CONTROL_PREFIX  )  )  { 
+
+continue   next_arg  ; 
+
+}  else  { 
+
+if  (  ordinal  ==  rOrdinal  )  { 
+
+return   writer__iArgs  [  argI  ]  ; 
+
+}  else  { 
+
+ordinal  ++  ; 
+
+} 
+
+} 
+
+} 
+
+return  ""  ; 
+
+} 
+
+
+
+
+
+public   String  [  ]  _getArgs  (  )  { 
+
+return   writer__iArgs  ; 
+
+} 
+
+
+
+
+
+public   int   _getNumArgs  (  )  { 
+
+return   writer__iNumArgs  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _insert  (  String   rText  )  { 
+
+writer__iCurrentText  .  append  (  rText  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _insert  (  Object   rObject  )  { 
+
+writer__iCurrentText  .  append  (  ""  +  rObject  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _insert  (  int   rInt  )  { 
+
+writer__iCurrentText  .  append  (  rInt  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _insert  (  long   rLong  )  { 
+
+writer__iCurrentText  .  append  (  rLong  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _insert  (  short   rShort  )  { 
+
+writer__iCurrentText  .  append  (  rShort  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _insert  (  byte   rByte  )  { 
+
+writer__iCurrentText  .  append  (  rByte  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _insert  (  double   rDouble  )  { 
+
+writer__iCurrentText  .  append  (  rDouble  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _insert  (  float   rFloat  )  { 
+
+writer__iCurrentText  .  append  (  rFloat  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _insert  (  char   rChar  )  { 
+
+writer__iCurrentText  .  append  (  rChar  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   _insert  (  boolean   rBoolean  )  { 
+
+writer__iCurrentText  .  append  (  rBoolean  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   String   _spaces  (  int   rNumSpaces  )  { 
+
+int   numSpaces  =  rNumSpaces  ; 
+
+if  (  0  >  numSpaces  )  { 
+
+numSpaces  *=  -  1  ; 
+
+} 
+
+StringBuffer   spaces  =  new   StringBuffer  (  numSpaces  )  ; 
+
+for  (  int   spaceI  =  0  ;  spaceI  <  numSpaces  ;  spaceI  ++  )  { 
+
+spaces  .  append  (  " "  )  ; 
+
+} 
+
+return   spaces  .  toString  (  )  ; 
+
+} 
+
+
+
+
+
+public   String   _left  (  String   rText  ,  int   rColWidth  )  { 
+
+return   _align  (  rText  ,  " "  ,  rColWidth  ,  'l'  )  ; 
+
+} 
+
+
+
+
+
+public   String   _right  (  String   rText  ,  int   rColWidth  )  { 
+
+return   _align  (  rText  ,  " "  ,  rColWidth  ,  'r'  )  ; 
+
+} 
+
+
+
+
+
+public   String   _center  (  String   rText  ,  int   rColWidth  )  { 
+
+return   _align  (  rText  ,  " "  ,  rColWidth  ,  'c'  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   String   _align  (  String   rText  ,  String   rBackText  ,  int   rColWidth  ,  char   rAlignment  )  { 
+
+String   result  =  rText  ; 
+
+if  (  null  ==  rText  )  { 
+
+result  =  ""  ; 
+
+}  else   if  (  null  !=  rBackText  )  { 
+
+try  { 
+
+int   textLen  =  rText  .  length  (  )  ; 
+
+if  (  rColWidth  >  textLen  )  { 
+
+int   backTextLen  =  rBackText  .  length  (  )  ; 
+
+int   remainWidth  =  rColWidth  -  textLen  ; 
+
+int   backTextRepeats  =  remainWidth  /  backTextLen  ; 
+
+int   backTextRemain  =  remainWidth  %  backTextLen  ; 
+
+String   back  =  ""  ; 
+
+for  (  int   backTextI  =  0  ;  backTextI  <  backTextRepeats  ;  backTextI  ++  )  { 
+
+back  =  back  +  rBackText  ; 
+
+} 
+
+back  =  back  +  rBackText  .  substring  (  0  ,  backTextRemain  )  ; 
+
+switch  (  rAlignment  )  { 
+
+case  'l'  : 
+
+result  =  result  +  back  ; 
+
+break  ; 
+
+case  'c'  : 
+
+result  =  back  .  substring  (  0  ,  (  back  .  length  (  )  /  2  )  )  +  result  +  back  .  substring  (  (  back  .  length  (  )  /  2  )  )  ; 
+
+break  ; 
+
+case  'r'  : 
+
+result  =  back  +  result  ; 
+
+break  ; 
+
+} 
+
+} 
+
+}  catch  (  Exception   e  )  { 
+
+result  =  rText  ; 
+
+} 
+
+} 
+
+return   result  ; 
+
+} 
+
+
+
+
+
+public   void   _setText  (  String   rText  )  { 
+
+writer__iCurrentText  =  new   StringBuffer  (  rText  )  ; 
+
+} 
+
+
+
+
+
+public   String   _getText  (  )  { 
+
+return   writer__iCurrentText  .  toString  (  )  ; 
+
+} 
+
+} 
+

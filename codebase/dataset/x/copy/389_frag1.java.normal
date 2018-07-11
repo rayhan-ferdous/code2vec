@@ -1,0 +1,34 @@
+return   false  ; 
+
+}  else  { 
+
+for  (  int   i  =  0  ;  i  <  categories  .  length  ;  i  ++  )  { 
+
+if  (  categories  [  i  ]  .  equals  (  category  )  )  { 
+
+return   true  ; 
+
+} 
+
+} 
+
+return   false  ; 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+void   setKey  (  Object   key  )  { 
+
+this  .  key  =  key  ; 
+

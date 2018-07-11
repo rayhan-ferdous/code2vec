@@ -1,0 +1,32 @@
+public   static   Object   executeSave  (  Object   o  ,  Session   em  )  throws   Exception  { 
+
+Transaction   t  =  null  ; 
+
+Object   o2  =  null  ; 
+
+try  { 
+
+t  =  em  .  beginTransaction  (  )  ; 
+
+o2  =  em  .  save  (  o  )  ; 
+
+t  .  commit  (  )  ; 
+
+return   o2  ; 
+
+}  catch  (  Exception   e  )  { 
+
+try  { 
+
+t  .  rollback  (  )  ; 
+
+}  catch  (  Exception   ee  )  { 
+
+} 
+
+throw   e  ; 
+
+} 
+
+} 
+

@@ -1,0 +1,46 @@
+@  Override 
+
+@  SuppressWarnings  (  "unchecked"  ) 
+
+public   String   generate  (  NameCategory   category  )  { 
+
+List  <  String  >  lines  =  this  .  linesPerCategory  .  get  (  category  )  ; 
+
+if  (  lines  ==  null  )  { 
+
+try  { 
+
+File   file  =  getFile  (  category  )  ; 
+
+lines  =  FileUtils  .  readLines  (  file  )  ; 
+
+}  catch  (  IOException   ex  )  { 
+
+throw   new   CodeException  (  "NameGenerator.IO"  ,  ex  ,  category  ,  ex  )  ; 
+
+} 
+
+this  .  linesPerCategory  .  put  (  category  ,  lines  )  ; 
+
+} 
+
+if  (  lines  .  isEmpty  (  )  )  { 
+
+return   super  .  generate  (  category  )  ; 
+
+}  else  { 
+
+Collections  .  shuffle  (  lines  )  ; 
+
+String   line  =  lines  .  get  (  0  )  ; 
+
+lines  .  remove  (  0  )  ; 
+
+line  =  StringUtils  .  trim  (  line  )  ; 
+
+return   line  ; 
+
+} 
+
+} 
+

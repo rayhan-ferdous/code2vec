@@ -1,0 +1,20 @@
+JMenuBar   m_MainMenuBar  ; 
+
+
+
+JMenuItem   m_File_Save_Item  ; 
+
+
+
+public   PatternSelectorPanel   getPatternSelectorPanel  (  )  { 
+
+return   m_PatternSelector  ; 
+
+} 
+
+
+
+public   TextureGraphEditorPanel   getTextureGraphEditorPanel  (  )  { 
+
+return   m_GraphDrawPanel  ; 
+

@@ -1,0 +1,46 @@
+@  SuppressWarnings  (  "unused"  ) 
+
+private   static   Map  <  String  ,  Integer  >  createPacketIDList  (  LogFile   file  )  { 
+
+boolean   mustUnload  =  false  ; 
+
+if  (  !  file  .  isFullyLoaded  (  )  )  { 
+
+mustUnload  =  true  ; 
+
+file  .  loadFully  (  )  ; 
+
+} 
+
+Session   s  =  file  .  getSession  (  )  ; 
+
+Map  <  String  ,  Integer  >  packetIDs  =  new   FastMap  <  String  ,  Integer  >  (  )  ; 
+
+for  (  DataPacket   packet  :  s  .  getPackets  (  )  )  { 
+
+if  (  packet  .  getFormat  (  )  !=  null  )  { 
+
+String   op  =  packet  .  getPacketFormat  (  )  .  getOpcodeStr  (  )  ; 
+
+Integer   count  =  packetIDs  .  get  (  op  )  ; 
+
+if  (  count  !=  null  )  { 
+
+packetIDs  .  put  (  op  ,  count  +  1  )  ; 
+
+}  else  { 
+
+packetIDs  .  put  (  op  ,  1  )  ; 
+
+} 
+
+} 
+
+} 
+
+if  (  mustUnload  )  file  .  unLoadSessionPackets  (  )  ; 
+
+return   packetIDs  ; 
+
+} 
+

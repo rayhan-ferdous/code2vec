@@ -1,0 +1,44 @@
+SINGLETON_HEADER_NAMES  .  add  (  FromHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  ToHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  CSeqHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  CallIdHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  MaxForwardsHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  ContentLengthHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  ContentDispositionHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  ContentTypeHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  ContentLengthHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  ContentTypeHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  DateHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  ContentTypeHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  ExpiresHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  MinExpiresHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  MimeVersionHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  MinExpiresHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  OrganizationHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  PriorityHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  ReplyToHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  RetryAfterHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  PriorityHeader  .  NAME  )  ; 
+
+SINGLETON_HEADER_NAMES  .  add  (  ServerHeader  .  NAME  )  ; 
+

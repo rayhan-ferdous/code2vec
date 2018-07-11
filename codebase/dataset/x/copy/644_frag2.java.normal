@@ -1,0 +1,20 @@
+private   void   executeRemoveCommand  (  )  { 
+
+IStructuredSelection   sel  =  (  IStructuredSelection  )  fPluginsList  .  getSelection  (  )  ; 
+
+if  (  sel  !=  null  )  { 
+
+RailsPluginDescriptor   plugin  =  (  RailsPluginDescriptor  )  sel  .  getFirstElement  (  )  ; 
+
+IProject   project  =  RailsPlugin  .  getSelectedOrOnlyRailsProject  (  )  ; 
+
+if  (  project  !=  null  )  { 
+
+RailsPluginsHelper  .  removePlugin  (  project  ,  plugin  )  ; 
+
+} 
+
+} 
+
+} 
+

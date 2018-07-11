@@ -1,0 +1,32 @@
+public   static   int  [  ]  [  ]  derivateIntArrays  (  String   xDParam  )  { 
+
+String   tempStr  =  new   String  (  xDParam  )  ; 
+
+Vector   tempVec  =  new   Vector  (  )  ; 
+
+Vector   resultVec  =  new   Vector  (  )  ; 
+
+tempVec  =  split1  (  xDParam  )  ; 
+
+for  (  int   i  =  0  ;  i  <  tempVec  .  size  (  )  ;  i  ++  )  { 
+
+resultVec  .  add  (  split2  (  (  String  )  tempVec  .  get  (  i  )  ,  ','  )  )  ; 
+
+} 
+
+int  [  ]  [  ]  resultInts  ; 
+
+resultInts  =  new   int  [  resultVec  .  size  (  )  ]  [  (  (  Vector  )  resultVec  .  get  (  0  )  )  .  size  (  )  ]  ; 
+
+for  (  int   i  =  0  ;  i  <  resultVec  .  size  (  )  ;  i  ++  )  { 
+
+for  (  int   j  =  0  ;  j  <  (  (  Vector  )  resultVec  .  get  (  0  )  )  .  size  (  )  ;  j  ++  )  { 
+
+resultInts  [  i  ]  [  j  ]  =  Integer  .  parseInt  (  (  (  String  )  (  (  Vector  )  (  resultVec  .  get  (  i  )  )  )  .  get  (  j  )  )  .  trim  (  )  )  ; 
+
+} 
+
+} 
+
+return   resultInts  ; 
+

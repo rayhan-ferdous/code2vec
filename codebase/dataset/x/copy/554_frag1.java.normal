@@ -1,0 +1,38 @@
+@  Override 
+
+public   void   run  (  )  { 
+
+synchronized  (  feedPageDescriptor  )  { 
+
+try  { 
+
+try  { 
+
+final   FeedPageDefinition   newFeedPageDefinition  =  fetchFeedPageDefinition  (  feedPageDescriptor  ,  this  )  ; 
+
+cacheFeedPageDefinition  (  feedPageDefinitionCache  ,  pageCache  ,  newFeedPageDefinition  )  ; 
+
+}  catch  (  WWWeeePortal  .  Exception   wpe  )  { 
+
+throw   wpe  ; 
+
+}  catch  (  Exception   e  )  { 
+
+throw   new   WWWeeePortal  .  SoftwareException  (  e  )  ; 
+
+} 
+
+}  catch  (  WWWeeePortal  .  Exception   wpe  )  { 
+
+@  SuppressWarnings  (  "synthetic-access"  )  final   Logger   logger  =  getLogger  (  )  ; 
+
+LogAnnotation  .  log  (  logger  ,  LogAnnotation  .  annotate  (  wpe  ,  "FeedPageDescriptor"  ,  feedPageDescriptor  ,  null  ,  false  )  ,  getClass  (  )  ,  wpe  )  ; 
+
+} 
+
+return  ; 
+
+} 
+
+} 
+

@@ -1,0 +1,24 @@
+private   org  .  omg  .  CORBA  .  portable  .  OutputStream   _OB_op_set_property_modes  (  org  .  omg  .  CORBA  .  portable  .  InputStream   in  ,  org  .  omg  .  CORBA  .  portable  .  ResponseHandler   handler  )  { 
+
+org  .  omg  .  CORBA  .  portable  .  OutputStream   out  =  null  ; 
+
+try  { 
+
+PropertyMode  [  ]  _ob_a0  =  PropertyModesHelper  .  read  (  in  )  ; 
+
+set_property_modes  (  _ob_a0  )  ; 
+
+out  =  handler  .  createReply  (  )  ; 
+
+}  catch  (  MultipleExceptions   _ob_ex  )  { 
+
+out  =  handler  .  createExceptionReply  (  )  ; 
+
+MultipleExceptionsHelper  .  write  (  out  ,  _ob_ex  )  ; 
+
+} 
+
+return   out  ; 
+
+} 
+

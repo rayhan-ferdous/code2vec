@@ -1,0 +1,34 @@
+scanDir  (  files  ,  dir  ,  getRootDir  (  dir  )  ,  Class  .  forName  (  superClass  )  )  ; 
+
+}  catch  (  ClassNotFoundException   e  )  { 
+
+e  .  printStackTrace  (  System  .  err  )  ; 
+
+} 
+
+} 
+
+return   files  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+protected   final   String   getRootDir  (  String   dir  )  { 
+
+String   last  ; 
+
+do  { 
+
+if  (  dir  .  endsWith  (  fileSep  )  )  dir  =  dir  .  substring  (  0  ,  dir  .  length  (  )  -  1  )  ; 
+

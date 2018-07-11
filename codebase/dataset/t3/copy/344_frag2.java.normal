@@ -1,0 +1,40 @@
+public   void   test_18_30_writeObject  (  )  { 
+
+Object   objToSave  =  null  ; 
+
+Object   objLoaded  ; 
+
+try  { 
+
+ClassBasedReplacementWhenLoadingViolatesFieldType   classBasedReplacementWhenLoadingViolatesFieldType  =  new   ClassBasedReplacementWhenLoadingViolatesFieldType  (  )  ; 
+
+objToSave  =  classBasedReplacementWhenLoadingViolatesFieldType  ; 
+
+if  (  DEBUG  )  System  .  out  .  println  (  "Obj = "  +  objToSave  )  ; 
+
+objLoaded  =  dumpAndReload  (  objToSave  )  ; 
+
+fail  (  "Loading replacements can cause field type violation in this implementation"  )  ; 
+
+}  catch  (  IOException   e  )  { 
+
+fail  (  "IOException serializing "  +  objToSave  +  " : "  +  e  .  getMessage  (  )  )  ; 
+
+}  catch  (  ClassNotFoundException   e  )  { 
+
+fail  (  "ClassNotFoundException reading Object type : "  +  e  .  getMessage  (  )  )  ; 
+
+}  catch  (  ClassCastException   e  )  { 
+
+assertTrue  (  "Loading replacements can NOT cause field type violation in this implementation"  ,  true  )  ; 
+
+}  catch  (  Error   err  )  { 
+
+System  .  out  .  println  (  "Error when obj = "  +  objToSave  )  ; 
+
+throw   err  ; 
+
+} 
+
+} 
+

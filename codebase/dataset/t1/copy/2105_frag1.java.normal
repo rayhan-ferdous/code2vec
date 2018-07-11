@@ -1,0 +1,26 @@
+if  (  "int"  .  equals  (  rType  )  )  { 
+
+return  "Integer"  ; 
+
+} 
+
+if  (  "long"  .  equals  (  rType  )  )  { 
+
+return  "Long"  ; 
+
+} 
+
+if  (  "float"  .  equals  (  rType  )  )  { 
+
+return  "Float"  ; 
+
+} 
+
+if  (  "double"  .  equals  (  rType  )  )  { 
+
+return  "Double"  ; 
+
+} 
+
+return   rType  ; 
+

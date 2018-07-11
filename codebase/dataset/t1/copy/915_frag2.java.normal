@@ -1,0 +1,68 @@
+private   Pool   loadMixtureWeightsAscii  (  String   path  ,  float   floor  )  throws   FileNotFoundException  ,  IOException  { 
+
+logger  .  fine  (  "Loading mixture weights from: "  +  path  )  ; 
+
+int   numStates  ; 
+
+int   numStreams  ; 
+
+int   numGaussiansPerState  ; 
+
+InputStream   inputStream  =  StreamFactory  .  getInputStream  (  location  ,  path  )  ; 
+
+Pool   pool  =  new   Pool  (  path  )  ; 
+
+ExtendedStreamTokenizer   est  =  new   ExtendedStreamTokenizer  (  inputStream  ,  '#'  ,  false  )  ; 
+
+est  .  expectString  (  "mixw"  )  ; 
+
+numStates  =  est  .  getInt  (  "numStates"  )  ; 
+
+numStreams  =  est  .  getInt  (  "numStreams"  )  ; 
+
+numGaussiansPerState  =  est  .  getInt  (  "numGaussiansPerState"  )  ; 
+
+pool  .  setFeature  (  NUM_SENONES  ,  numStates  )  ; 
+
+pool  .  setFeature  (  NUM_STREAMS  ,  numStreams  )  ; 
+
+pool  .  setFeature  (  NUM_GAUSSIANS_PER_STATE  ,  numGaussiansPerState  )  ; 
+
+for  (  int   i  =  0  ;  i  <  numStates  ;  i  ++  )  { 
+
+est  .  expectString  (  "mixw"  )  ; 
+
+est  .  expectString  (  "["  +  i  )  ; 
+
+est  .  expectString  (  "0]"  )  ; 
+
+float   total  =  est  .  getFloat  (  "total"  )  ; 
+
+float  [  ]  logMixtureWeight  =  new   float  [  numGaussiansPerState  ]  ; 
+
+for  (  int   j  =  0  ;  j  <  numGaussiansPerState  ;  j  ++  )  { 
+
+float   val  =  est  .  getFloat  (  "mixwVal"  )  ; 
+
+if  (  val  <  floor  )  { 
+
+val  =  floor  ; 
+
+} 
+
+logMixtureWeight  [  j  ]  =  val  ; 
+
+} 
+
+convertToLogMath  (  logMixtureWeight  )  ; 
+
+pool  .  put  (  i  ,  logMixtureWeight  )  ; 
+
+} 
+
+est  .  close  (  )  ; 
+
+return   pool  ; 
+
+} 
+

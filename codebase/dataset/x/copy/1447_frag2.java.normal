@@ -1,0 +1,32 @@
+return   true  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private   byte  [  ]  computeSessionId  (  byte  [  ]  cookie  ,  BigInteger   hostKeyN  ,  BigInteger   sessionKeyN  )  { 
+
+try  { 
+
+MessageDigest   md  =  MessageDigest  .  getInstance  (  "MD5"  )  ; 
+
+md  .  update  (  hostKeyN  .  abs  (  )  .  toByteArray  (  )  )  ; 
+
+md  .  update  (  sessionKeyN  .  abs  (  )  .  toByteArray  (  )  )  ; 
+
+md  .  update  (  cookie  ,  0  ,  8  )  ; 
+

@@ -1,0 +1,82 @@
+public   Pool   getVariancePool  (  )  { 
+
+return   variancePool  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   Pool   getVarianceTransformationMatrixPool  (  )  { 
+
+return   varianceTransformationMatrixPool  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   Pool   getVarianceTransformationVectorPool  (  )  { 
+
+return   varianceTransformationVectorPool  ; 
+
+} 
+
+
+
+public   Pool   getMixtureWeightPool  (  )  { 
+
+return   mixtureWeightsPool  ; 
+
+} 
+
+
+
+public   Pool   getTransitionMatrixPool  (  )  { 
+
+return   matrixPool  ; 
+
+} 
+
+
+
+public   Pool   getSenonePool  (  )  { 
+
+return   senonePool  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   int   getLeftContextSize  (  )  { 
+
+return   CONTEXT_SIZE  ; 
+

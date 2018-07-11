@@ -1,0 +1,42 @@
+import   java  .  io  .  OutputStream  ; 
+
+import   java  .  io  .  Reader  ; 
+
+import   java  .  io  .  Writer  ; 
+
+import   org  .  restlet  .  data  .  MediaType  ; 
+
+import   org  .  restlet  .  engine  .  io  .  BioUtils  ; 
+
+import   org  .  restlet  .  engine  .  io  .  NioUtils  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   abstract   class   ChannelRepresentation   extends   Representation  { 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   ChannelRepresentation  (  MediaType   mediaType  )  { 
+

@@ -1,0 +1,106 @@
+public   void   doFilter  (  ServletRequest   req  ,  ServletResponse   res  ,  FilterChain   chain  )  throws   ServletException  ,  IOException  { 
+
+HttpServletRequest   request  =  (  HttpServletRequest  )  req  ; 
+
+HttpServletResponse   response  =  (  HttpServletResponse  )  res  ; 
+
+Locale   locale  =  LanguageUtil  .  getViewLocale  (  request  )  ; 
+
+String   generatedKey  =  null  ; 
+
+if  (  locale  !=  null  )  { 
+
+generatedKey  =  generateEntryKey  (  null  ,  request  ,  1  ,  locale  .  getLanguage  (  )  )  ; 
+
+}  else  { 
+
+generatedKey  =  generateEntryKey  (  null  ,  request  ,  1  ,  null  )  ; 
+
+} 
+
+java  .  security  .  Principal   prince  =  request  .  getUserPrincipal  (  )  ; 
+
+StringBuffer   keyb  =  new   StringBuffer  (  )  ; 
+
+keyb  .  append  (  generatedKey  )  ; 
+
+if  (  prince  !=  null  )  { 
+
+keyb  .  append  (  "_"  )  ; 
+
+keyb  .  append  (  prince  )  ; 
+
+} 
+
+String   key  =  keyb  .  toString  (  )  ; 
+
+ResponseContent   respContent  =  (  ResponseContent  )  getFromCache  (  key  )  ; 
+
+if  (  respContent  ==  null  )  { 
+
+try  { 
+
+CacheHttpServletResponseWrapper   cacheResponse  =  new   CacheHttpServletResponseWrapper  (  response  )  ; 
+
+chain  .  doFilter  (  request  ,  cacheResponse  )  ; 
+
+if  (  request  .  getAttribute  (  "DisplayException"  )  ==  null  )  { 
+
+ResponseContent   rc  =  cacheResponse  .  getContent  (  )  ; 
+
+putToCache  (  key  ,  rc  )  ; 
+
+}  else  { 
+
+StringBuffer   sb  =  new   StringBuffer  (  )  ; 
+
+sb  .  append  (  "Display exception, cache, key="  )  ; 
+
+sb  .  append  (  key  )  ; 
+
+mLogger  .  error  (  sb  .  toString  (  )  )  ; 
+
+} 
+
+}  catch  (  java  .  net  .  SocketException   se  )  { 
+
+}  catch  (  Exception   e  )  { 
+
+StringBuffer   sb  =  new   StringBuffer  (  )  ; 
+
+sb  .  append  (  "Error rendering page, key="  )  ; 
+
+sb  .  append  (  key  )  ; 
+
+mLogger  .  error  (  sb  .  toString  (  )  )  ; 
+
+} 
+
+}  else  { 
+
+try  { 
+
+respContent  .  writeTo  (  response  )  ; 
+
+}  catch  (  java  .  net  .  SocketException   se  )  { 
+
+}  catch  (  Exception   e  )  { 
+
+if  (  mLogger  .  isDebugEnabled  (  )  )  { 
+
+StringBuffer   sb  =  new   StringBuffer  (  )  ; 
+
+sb  .  append  (  "Probably a client abort exception, key="  )  ; 
+
+sb  .  append  (  key  )  ; 
+
+mLogger  .  error  (  sb  .  toString  (  )  )  ; 
+
+} 
+
+} 
+
+} 
+
+} 
+

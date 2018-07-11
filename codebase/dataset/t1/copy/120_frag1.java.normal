@@ -1,0 +1,56 @@
+ResultSet   res  =  pstmt  .  executeQuery  (  )  ; 
+
+if  (  res  .  next  (  )  )  { 
+
+xml  =  res  .  getString  (  1  )  ; 
+
+} 
+
+res  .  close  (  )  ; 
+
+pstmt  .  close  (  )  ; 
+
+}  catch  (  SQLException   se  )  { 
+
+System  .  err  .  println  (  "EXCEPTION HANDLING CROSSREF CACHE"  )  ; 
+
+throw   new   GrobidException  (  "EXCEPTION HANDLING CROSSREF CACHE."  ,  se  )  ; 
+
+}  finally  { 
+
+try  { 
+
+if  (  pstmt  !=  null  )  pstmt  .  close  (  )  ; 
+
+}  catch  (  SQLException   se  )  { 
+
+} 
+
+} 
+
+if  (  xml  !=  null  )  { 
+
+InputSource   is  =  new   InputSource  (  )  ; 
+
+is  .  setCharacterStream  (  new   StringReader  (  xml  )  )  ; 
+
+DefaultHandler   crossref  =  new   CrossrefUnixrefSaxParser  (  bib2  )  ; 
+
+SAXParserFactory   spf  =  SAXParserFactory  .  newInstance  (  )  ; 
+
+SAXParser   parser  =  spf  .  newSAXParser  (  )  ; 
+
+parser  .  parse  (  is  ,  crossref  )  ; 
+
+if  (  bib2  .  size  (  )  >  0  )  { 
+
+if  (  !  bib2  .  get  (  0  )  .  getError  (  )  )  result  =  true  ; 
+
+} 
+
+} 
+
+} 
+
+if  (  xml  ==  null  )  { 
+

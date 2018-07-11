@@ -1,0 +1,30 @@
+Node   new16  (  )  { 
+
+TIdent   node2  =  (  TIdent  )  pop  (  )  ; 
+
+TTestname   node1  =  (  TTestname  )  pop  (  )  ; 
+
+AName   node  =  new   AName  (  node1  ,  node2  )  ; 
+
+return   node  ; 
+
+} 
+
+
+
+Node   new17  (  )  { 
+
+TPackageName   node2  =  (  TPackageName  )  pop  (  )  ; 
+
+TPackage   node1  =  (  TPackage  )  pop  (  )  ; 
+
+APackageDeclaration   node  =  new   APackageDeclaration  (  node1  ,  node2  )  ; 
+
+return   node  ; 
+
+} 
+
+
+
+Node   new18  (  )  { 
+

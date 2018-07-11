@@ -1,0 +1,48 @@
+public   RequestThread  (  Socket   s  )  { 
+
+clientSocket  =  s  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   void   run  (  )  { 
+
+try  { 
+
+HTTPrequest   req  =  getRequest  (  clientSocket  )  ; 
+
+implementMethod  (  req  )  ; 
+
+}  catch  (  IOException   ioe  )  { 
+
+Debug  .  output  (  3  ,  ioe  )  ; 
+
+} 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   WebServer  (  String  [  ]  args  )  { 
+

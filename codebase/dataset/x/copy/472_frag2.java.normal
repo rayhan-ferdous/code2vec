@@ -1,0 +1,44 @@
+private   int   idx  ; 
+
+
+
+private   int   count  ; 
+
+
+
+private   final   int   type  ; 
+
+
+
+
+
+
+
+
+
+
+
+HashIterator  (  int   type  )  { 
+
+this  .  type  =  type  ; 
+
+count  =  elements  ; 
+
+idx  =  0  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   boolean   hasNext  (  )  { 
+

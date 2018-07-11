@@ -1,0 +1,174 @@
+public   RestServiceResult   search  (  RestServiceResult   serviceResult  ,  String   sTestName  )  { 
+
+List  <  CoTest  >  list  =  new   CoTestDAO  (  )  .  findByTestName  (  sTestName  )  ; 
+
+if  (  list  .  size  (  )  ==  0  )  { 
+
+serviceResult  .  setError  (  true  )  ; 
+
+serviceResult  .  setMessage  (  bundle  .  getString  (  "test.search.notFound"  )  )  ; 
+
+}  else  { 
+
+Object  [  ]  arrayParam  =  {  list  .  size  (  )  }  ; 
+
+serviceResult  .  setMessage  (  MessageFormat  .  format  (  bundle  .  getString  (  "test.search.success"  )  ,  arrayParam  )  )  ; 
+
+serviceResult  .  setObjResult  (  list  )  ; 
+
+} 
+
+return   serviceResult  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   RestServiceResult   search  (  RestServiceResult   serviceResult  ,  Long   nTestId  )  { 
+
+CoTest   coTest  =  new   CoTestDAO  (  )  .  findById  (  nTestId  )  ; 
+
+if  (  coTest  ==  null  )  { 
+
+serviceResult  .  setError  (  true  )  ; 
+
+serviceResult  .  setMessage  (  bundle  .  getString  (  "test.search.notFound"  )  )  ; 
+
+}  else  { 
+
+List  <  CoTest  >  list  =  new   ArrayList  <  CoTest  >  (  )  ; 
+
+EntityManagerHelper  .  refresh  (  coTest  )  ; 
+
+list  .  add  (  coTest  )  ; 
+
+Object  [  ]  arrayParam  =  {  list  .  size  (  )  }  ; 
+
+serviceResult  .  setMessage  (  MessageFormat  .  format  (  bundle  .  getString  (  "test.search.success"  )  ,  arrayParam  )  )  ; 
+
+serviceResult  .  setObjResult  (  list  )  ; 
+
+} 
+
+return   serviceResult  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   RestServiceResult   list  (  RestServiceResult   result  )  { 
+
+return   list  (  result  ,  0  ,  0  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   RestServiceResult   list  (  RestServiceResult   serviceResult  ,  int   nRowStart  ,  int   nMaxResults  )  { 
+
+CoTestDAO   coTestDAO  =  new   CoTestDAO  (  )  ; 
+
+List  <  CoTest  >  list  =  coTestDAO  .  findAll  (  nRowStart  ,  nMaxResults  )  ; 
+
+if  (  list  .  size  (  )  ==  0  )  { 
+
+serviceResult  .  setError  (  true  )  ; 
+
+serviceResult  .  setMessage  (  bundle  .  getString  (  "test.list.notFound"  )  )  ; 
+
+}  else  { 
+
+Object  [  ]  array  =  {  list  .  size  (  )  }  ; 
+
+serviceResult  .  setMessage  (  MessageFormat  .  format  (  bundle  .  getString  (  "test.list.success"  )  ,  array  )  )  ; 
+
+serviceResult  .  setObjResult  (  list  )  ; 
+
+if  (  (  nRowStart  >  0  )  ||  (  nMaxResults  >  0  )  )  serviceResult  .  setNumResult  (  coTestDAO  .  findAll  (  )  .  size  (  )  )  ;  else   serviceResult  .  setNumResult  (  list  .  size  (  )  )  ; 
+
+} 
+
+return   serviceResult  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   RestServiceResult   listClone  (  RestServiceResult   result  )  { 
+

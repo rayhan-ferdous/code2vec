@@ -1,0 +1,60 @@
+import   java  .  net  .  URL  ; 
+
+import   java  .  util  .  logging  .  Level  ; 
+
+import   java  .  util  .  logging  .  Logger  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   class   MEExecutorFactory  { 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   IMEExecutor   BuildMEExecutor  (  String   info  ,  gatech  .  mmpm  .  IDomain   idomain  )  throws   ConfigurationException  { 
+
+IMEExecutor   meExecutor  =  null  ; 
+
+String  [  ]  splitInfo  =  info  .  split  (  "@@@"  )  ; 
+
+if  (  (  splitInfo  .  length  <  3  )  ||  (  splitInfo  .  length  >  4  )  )  throw   new   ConfigurationException  (  "Unexpected Format. It should be: MEExecutorClassName@@@MEStoredway@@@MEDirection[@@@DecoratorClassName]"  )  ; 
+

@@ -1,0 +1,20 @@
+stmtDestino  .  setString  (  20  ,  (  pFiltro  .  subsetoresComApenasUmSegmento  ?  "X"  :  ""  )  )  ; 
+
+stmtDestino  .  setString  (  21  ,  (  pFiltro  .  subsetoresComVariosSegmentos  ?  "X"  :  ""  )  )  ; 
+
+stmtDestino  .  setInt  (  22  ,  (  pFiltro  .  subsetor  !=  null  ?  pFiltro  .  subsetor  .  obterCodigo  (  )  :  null  )  )  ; 
+
+stmtDestino  .  setString  (  23  ,  (  pFiltro  .  segmentosComApenasUmaEmpresa  ?  "X"  :  ""  )  )  ; 
+
+stmtDestino  .  setString  (  24  ,  (  pFiltro  .  segmentosComVariasEmpresas  ?  "X"  :  ""  )  )  ; 
+
+stmtDestino  .  setInt  (  25  ,  (  pFiltro  .  segmento  !=  null  ?  pFiltro  .  segmento  .  obterCodigo  (  )  :  null  )  )  ; 
+
+stmtDestino  .  setString  (  26  ,  (  pFiltro  .  empresasComApenasUmPapel  ?  "X"  :  ""  )  )  ; 
+
+stmtDestino  .  setString  (  27  ,  (  pFiltro  .  empresasComVariosPapeis  ?  "X"  :  ""  )  )  ; 
+
+stmtDestino  .  setInt  (  28  ,  (  pFiltro  .  empresa  !=  null  ?  pFiltro  .  empresa  .  obterCodigo  (  )  :  null  )  )  ; 
+
+stmtDestino  .  setInt  (  29  ,  (  pFiltro  .  papel  !=  null  ?  pFiltro  .  papel  .  obterCodigo  (  )  :  null  )  )  ; 
+

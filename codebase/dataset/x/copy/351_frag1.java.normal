@@ -1,0 +1,18 @@
+public   XFile  (  )  { 
+
+creator  =  0x43584d4c  ; 
+
+type  =  0x54455854  ; 
+
+Delimiter  =  44  ; 
+
+xMode  =  0  ; 
+
+isOpen  =  false  ; 
+
+c  =  new   char  [  1  ]  ; 
+
+xMode  =  -  1  ; 
+
+} 
+

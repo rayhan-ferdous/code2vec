@@ -1,0 +1,22 @@
+import   uk  .  ac  .  gla  .  terrier  .  utility  .  Files  ; 
+
+import   uk  .  ac  .  gla  .  terrier  .  utility  .  ApplicationSetup  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   class   SimpleFileCollection   implements   Collection  { 
+

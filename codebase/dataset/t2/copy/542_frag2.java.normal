@@ -1,0 +1,130 @@
+public   String  [  ]  getVideoEncoders  (  )  throws   EncoderException  { 
+
+ArrayList   res  =  new   ArrayList  (  )  ; 
+
+FFMPEGExecutor   ffmpeg  =  locator  .  createExecutor  (  )  ; 
+
+ffmpeg  .  addArgument  (  "-formats"  )  ; 
+
+try  { 
+
+ffmpeg  .  execute  (  )  ; 
+
+RBufferedReader   reader  =  null  ; 
+
+reader  =  new   RBufferedReader  (  new   InputStreamReader  (  ffmpeg  .  getInputStream  (  )  )  )  ; 
+
+String   line  ; 
+
+boolean   evaluate  =  false  ; 
+
+while  (  (  line  =  reader  .  readLine  (  )  )  !=  null  )  { 
+
+if  (  line  .  trim  (  )  .  length  (  )  ==  0  )  { 
+
+continue  ; 
+
+} 
+
+if  (  evaluate  )  { 
+
+Matcher   matcher  =  ENCODER_DECODER_PATTERN  .  matcher  (  line  )  ; 
+
+if  (  matcher  .  matches  (  )  )  { 
+
+String   encoderFlag  =  matcher  .  group  (  2  )  ; 
+
+String   audioVideoFlag  =  matcher  .  group  (  3  )  ; 
+
+if  (  "E"  .  equals  (  encoderFlag  )  &&  "V"  .  equals  (  audioVideoFlag  )  )  { 
+
+String   name  =  matcher  .  group  (  4  )  ; 
+
+res  .  add  (  name  )  ; 
+
+} 
+
+}  else  { 
+
+break  ; 
+
+} 
+
+}  else   if  (  line  .  trim  (  )  .  equals  (  "Codecs:"  )  )  { 
+
+evaluate  =  true  ; 
+
+} 
+
+} 
+
+}  catch  (  IOException   e  )  { 
+
+throw   new   EncoderException  (  e  )  ; 
+
+}  finally  { 
+
+ffmpeg  .  destroy  (  )  ; 
+
+} 
+
+int   size  =  res  .  size  (  )  ; 
+
+String  [  ]  ret  =  new   String  [  size  ]  ; 
+
+for  (  int   i  =  0  ;  i  <  size  ;  i  ++  )  { 
+
+ret  [  i  ]  =  (  String  )  res  .  get  (  i  )  ; 
+
+} 
+
+return   ret  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   String  [  ]  getSupportedEncodingFormats  (  )  throws   EncoderException  { 
+
+ArrayList   res  =  new   ArrayList  (  )  ; 
+
+FFMPEGExecutor   ffmpeg  =  locator  .  createExecutor  (  )  ; 
+
+ffmpeg  .  addArgument  (  "-formats"  )  ; 
+
+try  { 
+
+ffmpeg  .  execute  (  )  ; 
+
+RBufferedReader   reader  =  null  ; 
+
+reader  =  new   RBufferedReader  (  new   InputStreamReader  (  ffmpeg  .  getInputStream  (  )  )  )  ; 
+
+String   line  ; 
+
+boolean   evaluate  =  false  ; 
+
+while  (  (  line  =  reader  .  readLine  (  )  )  !=  null  )  { 
+

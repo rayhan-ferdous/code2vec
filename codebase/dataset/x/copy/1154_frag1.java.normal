@@ -1,0 +1,86 @@
+public   void   requestPatchDump  (  int   bankNum  ,  int   patchNum  )  { 
+
+int   location  =  patchNum  ; 
+
+int   opcode  =  QSConstants  .  OPCODE_MIDI_USER_EFFECTS_DUMP_REQ  ; 
+
+if  (  location  >  QSConstants  .  MAX_LOCATION_PROG  )  { 
+
+location  -=  (  QSConstants  .  MAX_LOCATION_PROG  +  1  )  ; 
+
+opcode  =  QSConstants  .  OPCODE_MIDI_EDIT_EFFECTS_DUMP_REQ  ; 
+
+} 
+
+send  (  sysexRequestDump  .  toSysexMessage  (  getChannel  (  )  ,  new   SysexHandler  .  NameValue  (  "opcode"  ,  opcode  )  ,  new   SysexHandler  .  NameValue  (  "patchNum"  ,  location  )  )  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   sendPatch  (  Patch   p  )  { 
+
+storePatch  (  p  ,  0  ,  QSConstants  .  MAX_LOCATION_PROG  +  1  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   void   storePatch  (  Patch   p  ,  int   bankNum  ,  int   patchNum  )  { 
+
+int   location  =  patchNum  ; 
+
+byte   opcode  =  QSConstants  .  OPCODE_MIDI_USER_EFFECTS_DUMP  ; 
+
+byte   oldOpcode  =  (  (  Patch  )  p  )  .  sysex  [  QSConstants  .  POSITION_OPCODE  ]  ; 
+
+byte   oldLocation  =  (  (  Patch  )  p  )  .  sysex  [  QSConstants  .  POSITION_LOCATION  ]  ; 
+
+if  (  location  >  QSConstants  .  MAX_LOCATION_PROG  )  { 
+
+location  -=  (  QSConstants  .  MAX_LOCATION_PROG  +  1  )  ; 
+
+opcode  =  QSConstants  .  OPCODE_MIDI_EDIT_EFFECTS_DUMP  ; 
+
+} 
+
+(  (  Patch  )  p  )  .  sysex  [  QSConstants  .  POSITION_OPCODE  ]  =  opcode  ; 
+
+(  (  Patch  )  p  )  .  sysex  [  QSConstants  .  POSITION_LOCATION  ]  =  (  byte  )  location  ; 
+
+Logger  .  reportStatus  (  (  (  Patch  )  p  )  .  sysex  )  ; 
+
+sendPatchWorker  (  p  )  ; 
+
+(  (  Patch  )  p  )  .  sysex  [  QSConstants  .  POSITION_OPCODE  ]  =  oldOpcode  ; 
+
+(  (  Patch  )  p  )  .  sysex  [  QSConstants  .  POSITION_LOCATION  ]  =  oldLocation  ; 
+
+} 
+
+} 
+

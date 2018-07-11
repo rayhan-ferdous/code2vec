@@ -1,0 +1,100 @@
+public   Values   getRequestHead  (  )  { 
+
+return   requestHead  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   Values   getRequestPost  (  )  { 
+
+return   requestPost  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   Values   getRequestPostCache  (  )  { 
+
+return   requestPostCache  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   Values   getRequestAll  (  )  { 
+
+return   requestAll  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   Values   getResponseCookie  (  )  { 
+
+return   responseCookie  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   Values   getResponseHead  (  )  { 
+
+return   responseHead  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   Values   getSession  (  )  { 
+
+return   session  ; 
+

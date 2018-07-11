@@ -1,0 +1,34 @@
+private   ByteArrayOutputStream   bigBufferedRead  (  InputStream   is  )  { 
+
+byte  [  ]  buffer  =  new   byte  [  READ_BUFFER_SIZE  *  3  ]  ; 
+
+ByteArrayOutputStream   baos  =  new   ByteArrayOutputStream  (  )  ; 
+
+try  { 
+
+while  (  true  )  { 
+
+int   bytesRead  =  is  .  read  (  buffer  ,  READ_BUFFER_SIZE  ,  READ_BUFFER_SIZE  )  ; 
+
+if  (  bytesRead  >  0  )  { 
+
+baos  .  write  (  buffer  ,  READ_BUFFER_SIZE  ,  bytesRead  )  ; 
+
+}  else  { 
+
+break  ; 
+
+} 
+
+} 
+
+}  catch  (  IOException   ex  )  { 
+
+throw   new   CascadingRuntimeException  (  ex  )  ; 
+
+} 
+
+return   baos  ; 
+
+} 
+

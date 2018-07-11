@@ -1,0 +1,38 @@
+systemClassMap  .  put  (  aName  ,  aName  )  ; 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+protected   static   String   getText  (  IFile   file  )  { 
+
+try  { 
+
+InputStream   in  =  file  .  getContents  (  )  ; 
+
+return   streamToString  (  in  )  ; 
+
+}  catch  (  Exception   e  )  { 
+
+e  .  printStackTrace  (  )  ; 
+
+} 
+
+return  ""  ; 
+

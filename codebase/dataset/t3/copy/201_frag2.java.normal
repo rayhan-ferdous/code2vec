@@ -1,0 +1,36 @@
+public   List  <  Profilefields  >  findprofilefieldByAvaliable  (  byte   avaliable  )  { 
+
+Session   session  =  HibernateUtil  .  getSessionFactory  (  )  .  getCurrentSession  (  )  ; 
+
+Transaction   tr  =  null  ; 
+
+try  { 
+
+tr  =  session  .  beginTransaction  (  )  ; 
+
+Query   query  =  session  .  createQuery  (  "from Profilefields as p where p.available=?"  )  ; 
+
+query  .  setParameter  (  0  ,  avaliable  )  ; 
+
+List  <  Profilefields  >  profilelist  =  query  .  list  (  )  ; 
+
+tr  .  commit  (  )  ; 
+
+return   profilelist  ; 
+
+}  catch  (  HibernateException   e  )  { 
+
+if  (  tr  !=  null  )  { 
+
+tr  .  rollback  (  )  ; 
+
+} 
+
+e  .  printStackTrace  (  )  ; 
+
+} 
+
+return   null  ; 
+
+} 
+

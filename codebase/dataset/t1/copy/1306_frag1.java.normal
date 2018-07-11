@@ -1,0 +1,80 @@
+raf  .  seek  (  rangePosition  )  ; 
+
+raf  .  readFully  (  b  ,  off  ,  lenf  )  ; 
+
+} 
+
+rangePosition  +=  lenf  ; 
+
+return   lenf  ; 
+
+} 
+
+} 
+
+return  -  1  ; 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+public   interface   SignatureEvent  { 
+
+
+
+
+
+
+
+
+
+
+
+public   void   getSignatureDictionary  (  PdfDictionary   sig  )  ; 
+
+} 
+
+
+
+private   int   certificationLevel  =  NOT_CERTIFIED  ; 
+
+
+
+
+
+
+
+
+
+
+
+public   int   getCertificationLevel  (  )  { 
+
+return   this  .  certificationLevel  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   void   setCertificationLevel  (  int   certificationLevel  )  { 
+
+this  .  certificationLevel  =  certificationLevel  ; 
+

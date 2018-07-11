@@ -1,0 +1,28 @@
+public   Link   getMecoDocByURL  (  String   url  )  { 
+
+Link   mecoDoc  =  null  ; 
+
+try  { 
+
+String   sql  =  "select * from mecodoc where link = '"  +  url  +  "'"  ; 
+
+PreparedStatement   ps  =  dbAccess  .  prepareStatement  (  sql  )  ; 
+
+ResultSet   rs  =  dbAccess  .  ExecQuery  (  ps  )  ; 
+
+if  (  rs  !=  null  &&  rs  .  next  (  )  )  { 
+
+mecoDoc  =  new   Link  (  new   Integer  (  rs  .  getInt  (  "id"  )  )  .  longValue  (  )  ,  null  ,  null  ,  rs  .  getString  (  "Title"  )  ,  rs  .  getString  (  "link"  )  ,  rs  .  getTimestamp  (  "date"  )  ,  0F  ,  0L  )  ; 
+
+} 
+
+}  catch  (  SQLException   ex  )  { 
+
+ex  .  printStackTrace  (  )  ; 
+
+} 
+
+return   mecoDoc  ; 
+
+} 
+

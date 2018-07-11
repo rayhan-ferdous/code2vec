@@ -1,0 +1,40 @@
+public   short   getEndPageNumber  (  )  { 
+
+IViewCursor   viewCursor  =  textDocument  .  getViewCursorService  (  )  .  getViewCursor  (  )  ; 
+
+IPageCursor   pageCursor  =  viewCursor  .  getPageCursor  (  )  ; 
+
+if  (  pageCursor  !=  null  )  { 
+
+viewCursor  .  goToRange  (  getEnd  (  )  ,  false  )  ; 
+
+return   pageCursor  .  getPage  (  )  ; 
+
+} 
+
+return  -  1  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   void   insertPageBreak  (  )  throws   NOAException  { 
+

@@ -1,0 +1,34 @@
+private   synchronized   void   validate  (  String   sourceName  )  throws   SAXException  { 
+
+logger  .  debug  (  "Validating:"  +  sourceName  )  ; 
+
+if  (  !  capabilities  .  getVersion  (  )  .  isValid  (  )  )  throw   new   SAXException  (  "Invalid or unsupported WMS version "  +  capabilities  .  getVersion  (  )  +  " for "  +  sourceName  )  ; 
+
+if  (  capabilities  .  getMapRequest  (  )  .  Url  ==  null  )  throw   new   SAXException  (  "Invalid or NULL GetMap URL for "  +  sourceName  )  ; 
+
+WMS_Capabilities  .  Service   service  =  capabilities  .  getService  (  )  ; 
+
+if  (  service  .  Name  ==  null  )  throw   new   SAXException  (  "Invalid Service name for "  +  sourceName  )  ; 
+
+ArrayList  <  Layer  >  layers  =  capabilities  .  getLayers  (  )  ; 
+
+parsedCount  =  layers  .  size  (  )  ; 
+
+for  (  Iterator  <  Layer  >  iterator  =  layers  .  iterator  (  )  ;  iterator  .  hasNext  (  )  ;  )  { 
+
+Layer   l  =  iterator  .  next  (  )  ; 
+
+if  (  l  .  Name  ==  null  ||  !  l  .  bbox  .  isValid  (  )  ||  (  l  .  CRS  ==  null  &&  l  .  SRS  ==  null  )  )  { 
+
+logger  .  debug  (  "Removing layer "  +  l  .  Name  +  ". Missing name, bbox or CRS."  )  ; 
+
+iterator  .  remove  (  )  ; 
+
+} 
+
+} 
+
+logger  .  debug  (  "Completed "  +  sourceName  +  " - Capabilities:\n"  +  getCapabilities  (  )  )  ; 
+
+} 
+

@@ -1,0 +1,14 @@
+newlinks  .  add  (  "http://www.cluetrain.com/"  )  ; 
+
+newlinks  .  add  (  "http://yihongs-research.blogspot.com/2008/01/macroscopic-regularity-over-microscopic.html"  )  ; 
+
+newlinks  .  add  (  "http://www.blogmarketingtactics.com/social-bookmarking/social-bookmarking-top-links.html"  )  ; 
+
+newlinks  .  add  (  "http://del.icio.us/post?v=4;url='+encodeURIComponent(location.href)+';title='+encodeURIComponent(document.title)"  )  ; 
+
+newlinks  .  add  (  "http://tinyurl.com/create.php?url='+location.href)"  )  ; 
+
+newlinks  .  add  (  "http://www.programmableweb.com/reference"  )  ; 
+
+newlinks  .  add  (  "http://mikeg.typepad.com/perceptions/social_software/index.html"  )  ; 
+

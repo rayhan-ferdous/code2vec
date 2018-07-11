@@ -1,0 +1,20 @@
+public   Object   getValueAt  (  int   pRow  ,  String   pColumn  )  { 
+
+TrxDetailVO   vo  =  fTableData  [  fSortOrder  [  pRow  ]  ]  ; 
+
+if  (  "id"  .  equals  (  pColumn  )  )  return   new   Long  (  vo  .  getId  (  )  )  ; 
+
+if  (  "trxID"  .  equals  (  pColumn  )  )  return   new   Long  (  vo  .  getTrxID  (  )  )  ; 
+
+if  (  "referenceID"  .  equals  (  pColumn  )  )  return   new   Long  (  vo  .  getReferenceID  (  )  )  ; 
+
+if  (  "typeID"  .  equals  (  pColumn  )  )  return   new   Long  (  vo  .  getTypeID  (  )  )  ; 
+
+if  (  "typeName"  .  equals  (  pColumn  )  )  return   vo  .  getTypeName  (  )  ; 
+
+if  (  "modified"  .  equals  (  pColumn  )  )  return   vo  .  getModified  (  )  ; 
+
+return   null  ; 
+
+} 
+

@@ -1,0 +1,48 @@
+KeyStrList3  .  add  (  "PromptForFileName"  )  ; 
+
+KeyStrList3  .  add  (  "PtInRect"  )  ; 
+
+KeyStrList3  .  add  (  "RadToDeg"  )  ; 
+
+KeyStrList3  .  add  (  "Random"  )  ; 
+
+KeyStrList3  .  add  (  "RandomRange"  )  ; 
+
+KeyStrList3  .  add  (  "RecodeDate"  )  ; 
+
+KeyStrList3  .  add  (  "RecodeTime"  )  ; 
+
+KeyStrList3  .  add  (  "Rect"  )  ; 
+
+KeyStrList3  .  add  (  "RemoveDir"  )  ; 
+
+KeyStrList3  .  add  (  "RenameFile"  )  ; 
+
+KeyStrList3  .  add  (  "Round"  )  ; 
+
+KeyStrList3  .  add  (  "SeekEof"  )  ; 
+
+KeyStrList3  .  add  (  "SeekEoln"  )  ; 
+
+KeyStrList3  .  add  (  "SelectDirectory"  )  ; 
+
+KeyStrList3  .  add  (  "SetCurrentDir"  )  ; 
+
+KeyStrList3  .  add  (  "Sin"  )  ; 
+
+KeyStrList3  .  add  (  "SizeOf"  )  ; 
+
+KeyStrList3  .  add  (  "Slice"  )  ; 
+
+KeyStrList3  .  add  (  "Sqr"  )  ; 
+
+KeyStrList3  .  add  (  "Sqrt"  )  ; 
+
+KeyStrList3  .  add  (  "StringOfChar"  )  ; 
+
+KeyStrList3  .  add  (  "StringReplace"  )  ; 
+
+KeyStrList3  .  add  (  "StringToWideChar"  )  ; 
+
+KeyStrList3  .  add  (  "StrToCurr"  )  ; 
+

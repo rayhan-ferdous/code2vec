@@ -1,0 +1,46 @@
+public   void   cosSetLogLevelDetail  (  java  .  lang  .  String   logger  ,  tcg  .  syscontrol  .  cos  .  CosLogLevelEnum   loglevel  )  { 
+
+while  (  true  )  { 
+
+if  (  !  this  .  _is_local  (  )  )  { 
+
+org  .  omg  .  CORBA  .  portable  .  InputStream   _is  =  null  ; 
+
+try  { 
+
+org  .  omg  .  CORBA  .  portable  .  OutputStream   _os  =  _request  (  "cosSetLogLevelDetail"  ,  false  )  ; 
+
+_os  .  write_string  (  logger  )  ; 
+
+tcg  .  syscontrol  .  cos  .  CosLogLevelEnumHelper  .  write  (  _os  ,  loglevel  )  ; 
+
+_is  =  _invoke  (  _os  )  ; 
+
+return  ; 
+
+}  catch  (  org  .  omg  .  CORBA  .  portable  .  RemarshalException   _rx  )  { 
+
+}  catch  (  org  .  omg  .  CORBA  .  portable  .  ApplicationException   _ax  )  { 
+
+String   _id  =  _ax  .  getId  (  )  ; 
+
+throw   new   RuntimeException  (  "Unexpected exception "  +  _id  )  ; 
+
+}  finally  { 
+
+this  .  _releaseReply  (  _is  )  ; 
+
+} 
+
+}  else  { 
+
+org  .  omg  .  CORBA  .  portable  .  ServantObject   _so  =  _servant_preinvoke  (  "cosSetLogLevelDetail"  ,  _opsClass  )  ; 
+
+if  (  _so  ==  null  )  throw   new   org  .  omg  .  CORBA  .  UNKNOWN  (  "local invocations not supported!"  )  ; 
+
+ICosProcessManagerOperations   _localServant  =  (  ICosProcessManagerOperations  )  _so  .  servant  ; 
+
+try  { 
+
+_localServant  .  cosSetLogLevelDetail  (  logger  ,  loglevel  )  ; 
+

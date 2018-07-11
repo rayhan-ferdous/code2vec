@@ -1,0 +1,74 @@
+public   NotificationChain   basicSetContext  (  DynamicValue   newContext  ,  NotificationChain   msgs  )  { 
+
+DynamicValue   oldContext  =  context  ; 
+
+context  =  newContext  ; 
+
+if  (  eNotificationRequired  (  )  )  { 
+
+ENotificationImpl   notification  =  new   ENotificationImpl  (  this  ,  Notification  .  SET  ,  ActionstepPackage  .  ORIGINATE_CALL__CONTEXT  ,  oldContext  ,  newContext  )  ; 
+
+if  (  msgs  ==  null  )  msgs  =  notification  ;  else   msgs  .  add  (  notification  )  ; 
+
+} 
+
+return   msgs  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   setContext  (  DynamicValue   newContext  )  { 
+
+if  (  newContext  !=  context  )  { 
+
+NotificationChain   msgs  =  null  ; 
+
+if  (  context  !=  null  )  msgs  =  (  (  InternalEObject  )  context  )  .  eInverseRemove  (  this  ,  EOPPOSITE_FEATURE_BASE  -  ActionstepPackage  .  ORIGINATE_CALL__CONTEXT  ,  null  ,  msgs  )  ; 
+
+if  (  newContext  !=  null  )  msgs  =  (  (  InternalEObject  )  newContext  )  .  eInverseAdd  (  this  ,  EOPPOSITE_FEATURE_BASE  -  ActionstepPackage  .  ORIGINATE_CALL__CONTEXT  ,  null  ,  msgs  )  ; 
+
+msgs  =  basicSetContext  (  newContext  ,  msgs  )  ; 
+
+if  (  msgs  !=  null  )  msgs  .  dispatch  (  )  ; 
+
+}  else   if  (  eNotificationRequired  (  )  )  eNotify  (  new   ENotificationImpl  (  this  ,  Notification  .  SET  ,  ActionstepPackage  .  ORIGINATE_CALL__CONTEXT  ,  newContext  ,  newContext  )  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   DynamicValue   getData  (  )  { 
+
+return   data  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   NotificationChain   basicSetData  (  DynamicValue   newData  ,  NotificationChain   msgs  )  { 
+

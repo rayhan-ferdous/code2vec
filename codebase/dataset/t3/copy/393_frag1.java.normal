@@ -1,0 +1,14 @@
+ServerHandler   srvHdl  =  new   ServerHandler  (  )  ; 
+
+IServer   server  =  new   Server  (  srvHdl  )  ; 
+
+server  .  start  (  )  ; 
+
+IBlockingConnection   clientCon  =  new   BlockingConnection  (  "localhost"  ,  server  .  getLocalPort  (  )  )  ; 
+
+QAUtil  .  sleep  (  1000  )  ; 
+
+INonBlockingConnection   serverCon  =  srvHdl  .  getConection  (  )  ; 
+
+serverCon  .  write  (  QAUtil  .  generateByteArray  (  4  )  )  ; 
+

@@ -1,0 +1,74 @@
+import   xml  .  completion  .  CompletionInfo  ; 
+
+import   xml  .  gui  .  XmlModeToolBar  ; 
+
+import   xml  .  parser  .  MyEntityResolver  .  IOExceptionWithLocation  ; 
+
+import   errorlist  .  DefaultErrorSource  ; 
+
+import   errorlist  .  ErrorSource  ; 
+
+import   static   xml  .  Debug  .  *  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   class   XercesParserImpl   extends   XmlParser  { 
+
+
+
+public   static   String   COMPLETION_INFO_CACHE_ENTRY  =  "CompletionInfo"  ; 
+
+
+
+private   View   view  =  null  ; 
+
+
+
+private   Map  <  View  ,  JPanel  >  panels  =  new   HashMap  <  View  ,  JPanel  >  (  )  ; 
+
+
+
+public   XercesParserImpl  (  )  { 
+
+super  (  "xml"  )  ; 
+
+} 
+
+
+
+@  Override 
+
+public   void   activate  (  View   view  )  { 
+
+this  .  view  =  view  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   SideKickParsedData   parse  (  Buffer   buffer  ,  DefaultErrorSource   errorSource  )  { 
+
+long   start  =  System  .  currentTimeMillis  (  )  ; 
+
+Log  .  log  (  Log  .  NOTICE  ,  XercesParserImpl  .  class  ,  "parsing started @"  +  start  )  ; 
+

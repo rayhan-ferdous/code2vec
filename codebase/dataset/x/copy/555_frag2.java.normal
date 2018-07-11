@@ -1,0 +1,46 @@
+char   c  ; 
+
+do  { 
+
+c  =  readChar  (  dis  )  ; 
+
+}  while  (  Character  .  isWhitespace  (  c  )  )  ; 
+
+do  { 
+
+sb  .  append  (  c  )  ; 
+
+c  =  readChar  (  dis  )  ; 
+
+}  while  (  !  Character  .  isWhitespace  (  c  )  )  ; 
+
+return   sb  .  toString  (  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private   char   readChar  (  DataInputStream   dis  )  throws   IOException  { 
+
+return  (  char  )  dis  .  readByte  (  )  ; 
+

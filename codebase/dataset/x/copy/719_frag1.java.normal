@@ -1,0 +1,8 @@
+String   contentType  =  getServletConfig  (  )  .  getServletContext  (  )  .  getMimeType  (  fileName  )  ; 
+
+if  (  contentType  ==  null  )  { 
+
+int   pos  =  fileName  .  lastIndexOf  (  "."  )  ; 
+
+if  (  pos  >=  0  )  contentType  =  (  String  )  c_fileTypes  .  get  (  fileName  .  substring  (  pos  +  1  )  )  ; 
+

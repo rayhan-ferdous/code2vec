@@ -1,0 +1,38 @@
+public   RestServiceResult   update  (  RestServiceResult   serviceResult  ,  CoParagraphBaseKnowledge   coParagraphBaseKnowledge  )  { 
+
+CoParagraphBaseKnowledgeDAO   coParagraphBaseKnowledgeDAO  =  new   CoParagraphBaseKnowledgeDAO  (  )  ; 
+
+try  { 
+
+EntityManagerHelper  .  beginTransaction  (  )  ; 
+
+coParagraphBaseKnowledgeDAO  .  update  (  coParagraphBaseKnowledge  )  ; 
+
+EntityManagerHelper  .  commit  (  )  ; 
+
+EntityManagerHelper  .  refresh  (  coParagraphBaseKnowledge  )  ; 
+
+Object  [  ]  args  =  {  coParagraphBaseKnowledge  .  getKnowledgeId  (  )  }  ; 
+
+if  (  bundle  !=  null  )  { 
+
+serviceResult  .  setMessage  (  MessageFormat  .  format  (  bundle  .  getString  (  "paragraphBaseKnowledge.update.success"  )  ,  args  )  )  ; 
+
+} 
+
+}  catch  (  PersistenceException   e  )  { 
+
+EntityManagerHelper  .  rollback  (  )  ; 
+
+log  .  error  (  "Error al actualizar el knowledge: "  +  e  .  getMessage  (  )  )  ; 
+
+serviceResult  .  setError  (  true  )  ; 
+
+serviceResult  .  setMessage  (  MessageFormat  .  format  (  bundle  .  getString  (  "paragraphBaseKnowledge.update.error"  )  ,  e  .  getMessage  (  )  )  )  ; 
+
+} 
+
+return   serviceResult  ; 
+
+} 
+

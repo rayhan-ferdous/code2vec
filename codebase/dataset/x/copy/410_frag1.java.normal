@@ -1,0 +1,46 @@
+import   sfljtse  .  tsf  .  coreLayer  .  quotes  .  timeframes  .  ATimeFrame  ; 
+
+import   sfljtse  .  tsf  .  coreLayer  .  utils  .  FileUtils  ; 
+
+import   sfljtse  .  tsf  .  coreLayer  .  settings  .  Settings  ; 
+
+import   sun  .  management  .  FileSystem  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   class   YahooFetcher   extends   AQuoteFetcher  { 
+
+
+
+private   boolean   debug  =  true  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+private   String   provider  =  "http://quote.yahoo.com/d/quotes.csv?s="  ; 
+
+
+
+private   String   tags  =  "&f=sl1d1t1ohgv&e=.csv"  ; 
+

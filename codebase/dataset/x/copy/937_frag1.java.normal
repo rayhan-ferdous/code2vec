@@ -1,0 +1,24 @@
+public   static   void   unMarkTab  (  Component   tab  )  { 
+
+int   idx  =  tabHolder  .  indexOfComponent  (  tab  )  ; 
+
+if  (  idx  >  -  1  )  { 
+
+Component   tabComponent  =  tabHolder  .  getTabComponentAt  (  idx  )  ; 
+
+if  (  tabComponent  !=  null  )  { 
+
+Font   f  =  tabComponent  .  getFont  (  )  .  deriveFont  (  Font  .  PLAIN  )  ; 
+
+if  (  f  !=  null  )  { 
+
+tabComponent  .  setFont  (  f  )  ; 
+
+} 
+
+} 
+
+} 
+
+} 
+

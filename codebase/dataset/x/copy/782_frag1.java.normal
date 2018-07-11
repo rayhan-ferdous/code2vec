@@ -1,0 +1,106 @@
+names  [  GETSTATICDOUBLEFIELD  ]  =  new   String  (  "GetStaticDoubleField"  )  ; 
+
+names  [  SETSTATICOBJECTFIELD  ]  =  new   String  (  "SetStaticObjectField"  )  ; 
+
+names  [  SETSTATICBOOLEANFIELD  ]  =  new   String  (  "SetStaticBooleanField"  )  ; 
+
+names  [  SETSTATICBYTEFIELD  ]  =  new   String  (  "SetStaticByteField"  )  ; 
+
+names  [  SETSTATICCHARFIELD  ]  =  new   String  (  "SetStaticCharField"  )  ; 
+
+names  [  SETSTATICSHORTFIELD  ]  =  new   String  (  "SetStaticShortField"  )  ; 
+
+names  [  SETSTATICINTFIELD  ]  =  new   String  (  "SetStaticIntField"  )  ; 
+
+names  [  SETSTATICLONGFIELD  ]  =  new   String  (  "SetStaticLongField"  )  ; 
+
+names  [  SETSTATICFLOATFIELD  ]  =  new   String  (  "SetStaticFloatField"  )  ; 
+
+names  [  SETSTATICDOUBLEFIELD  ]  =  new   String  (  "SetStaticDoubleField"  )  ; 
+
+names  [  NEWSTRING  ]  =  new   String  (  "NewString"  )  ; 
+
+names  [  GETSTRINGLENGTH  ]  =  new   String  (  "GetStringLength"  )  ; 
+
+names  [  GETSTRINGCHARS  ]  =  new   String  (  "GetStringChars"  )  ; 
+
+names  [  RELEASESTRINGCHARS  ]  =  new   String  (  "ReleaseStringChars"  )  ; 
+
+names  [  NEWSTRINGUTF  ]  =  new   String  (  "NewStringUTF"  )  ; 
+
+names  [  GETSTRINGUTFLENGTH  ]  =  new   String  (  "GetStringUTFLength"  )  ; 
+
+names  [  GETSTRINGUTFCHARS  ]  =  new   String  (  "GetStringUTFChars"  )  ; 
+
+names  [  RELEASESTRINGUTFCHARS  ]  =  new   String  (  "ReleaseStringUTFChars"  )  ; 
+
+names  [  GETARRAYLENGTH  ]  =  new   String  (  "GetArrayLength"  )  ; 
+
+names  [  NEWOBJECTARRAY  ]  =  new   String  (  "NewObjectArray"  )  ; 
+
+names  [  GETOBJECTARRAYELEMENT  ]  =  new   String  (  "GetObjectArrayElement"  )  ; 
+
+names  [  SETOBJECTARRAYELEMENT  ]  =  new   String  (  "SetObjectArrayElement"  )  ; 
+
+names  [  NEWBOOLEANARRAY  ]  =  new   String  (  "NewBooleanArray"  )  ; 
+
+names  [  NEWBYTEARRAY  ]  =  new   String  (  "NewByteArray"  )  ; 
+
+names  [  NEWCHARARRAY  ]  =  new   String  (  "NewCharArray"  )  ; 
+
+names  [  NEWSHORTARRAY  ]  =  new   String  (  "NewShortArray"  )  ; 
+
+names  [  NEWINTARRAY  ]  =  new   String  (  "NewIntArray"  )  ; 
+
+names  [  NEWLONGARRAY  ]  =  new   String  (  "NewLongArray"  )  ; 
+
+names  [  NEWFLOATARRAY  ]  =  new   String  (  "NewFloatArray"  )  ; 
+
+names  [  NEWDOUBLEARRAY  ]  =  new   String  (  "NewDoubleArray"  )  ; 
+
+names  [  GETBOOLEANARRAYELEMENTS  ]  =  new   String  (  "GetBooleanArrayElements"  )  ; 
+
+names  [  GETBYTEARRAYELEMENTS  ]  =  new   String  (  "GetByteArrayElements"  )  ; 
+
+names  [  GETCHARARRAYELEMENTS  ]  =  new   String  (  "GetCharArrayElements"  )  ; 
+
+names  [  GETSHORTARRAYELEMENTS  ]  =  new   String  (  "GetShortArrayElements"  )  ; 
+
+names  [  GETINTARRAYELEMENTS  ]  =  new   String  (  "GetIntArrayElements"  )  ; 
+
+names  [  GETLONGARRAYELEMENTS  ]  =  new   String  (  "GetLongArrayElements"  )  ; 
+
+names  [  GETFLOATARRAYELEMENTS  ]  =  new   String  (  "GetFloatArrayElements"  )  ; 
+
+names  [  GETDOUBLEARRAYELEMENTS  ]  =  new   String  (  "GetDoubleArrayElements"  )  ; 
+
+names  [  RELEASEBOOLEANARRAYELEMENTS  ]  =  new   String  (  "ReleaseBooleanArrayElements"  )  ; 
+
+names  [  RELEASEBYTEARRAYELEMENTS  ]  =  new   String  (  "ReleaseByteArrayElements"  )  ; 
+
+names  [  RELEASECHARARRAYELEMENTS  ]  =  new   String  (  "ReleaseCharArrayElements"  )  ; 
+
+names  [  RELEASESHORTARRAYELEMENTS  ]  =  new   String  (  "ReleaseShortArrayElements"  )  ; 
+
+names  [  RELEASEINTARRAYELEMENTS  ]  =  new   String  (  "ReleaseIntArrayElements"  )  ; 
+
+names  [  RELEASELONGARRAYELEMENTS  ]  =  new   String  (  "ReleaseLongArrayElements"  )  ; 
+
+names  [  RELEASEFLOATARRAYELEMENTS  ]  =  new   String  (  "ReleaseFloatArrayElements"  )  ; 
+
+names  [  RELEASEDOUBLEARRAYELEMENTS  ]  =  new   String  (  "ReleaseDoubleArrayElements"  )  ; 
+
+names  [  GETBOOLEANARRAYREGION  ]  =  new   String  (  "GetBooleanArrayRegion"  )  ; 
+
+names  [  GETBYTEARRAYREGION  ]  =  new   String  (  "GetByteArrayRegion"  )  ; 
+
+names  [  GETCHARARRAYREGION  ]  =  new   String  (  "GetCharArrayRegion"  )  ; 
+
+names  [  GETSHORTARRAYREGION  ]  =  new   String  (  "GetShortArrayRegion"  )  ; 
+
+names  [  GETINTARRAYREGION  ]  =  new   String  (  "GetIntArrayRegion"  )  ; 
+
+names  [  GETLONGARRAYREGION  ]  =  new   String  (  "GetLongArrayRegion"  )  ; 
+
+names  [  GETFLOATARRAYREGION  ]  =  new   String  (  "GetFloatArrayRegion"  )  ; 
+

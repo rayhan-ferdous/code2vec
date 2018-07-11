@@ -1,0 +1,36 @@
+public   TestZFailureThreadedCM  (  String   name  )  { 
+
+super  (  name  )  ; 
+
+Map  <  String  ,  Object  >  map  =  new   HashMap  <  String  ,  Object  >  (  )  ; 
+
+map  .  put  (  FactoryCreator  .  KEY_NUM_THREADS  ,  10  )  ; 
+
+FactoryCreator   creator  =  FactoryCreator  .  createFactory  (  null  )  ; 
+
+execFactory  =  creator  .  createExecSvcFactory  (  map  )  ; 
+
+ChannelServiceFactory   basic  =  ChannelServiceFactory  .  createFactory  (  null  )  ; 
+
+Map  <  String  ,  Object  >  props  =  new   HashMap  <  String  ,  Object  >  (  )  ; 
+
+props  .  put  (  ChannelServiceFactory  .  KEY_IMPLEMENTATION_CLASS  ,  ChannelServiceFactory  .  VAL_PACKET_CHANNEL_MGR  )  ; 
+
+props  .  put  (  ChannelServiceFactory  .  KEY_CHILD_CHANNELMGR_FACTORY  ,  basic  )  ; 
+
+ChannelServiceFactory   packetFactory  =  ChannelServiceFactory  .  createFactory  (  props  )  ; 
+
+Map  <  String  ,  Object  >  props2  =  new   HashMap  <  String  ,  Object  >  (  )  ; 
+
+props2  .  put  (  ChannelServiceFactory  .  KEY_IMPLEMENTATION_CLASS  ,  ChannelServiceFactory  .  VAL_THREAD_CHANNEL_MGR  )  ; 
+
+props2  .  put  (  ChannelServiceFactory  .  KEY_CHILD_CHANNELMGR_FACTORY  ,  packetFactory  )  ; 
+
+factory  =  ChannelServiceFactory  .  createFactory  (  props2  )  ; 
+
+procFactory  =  creator  .  createPacketProcFactory  (  null  )  ; 
+
+factoryHolder  =  new   Settings  (  null  ,  procFactory  )  ; 
+
+} 
+

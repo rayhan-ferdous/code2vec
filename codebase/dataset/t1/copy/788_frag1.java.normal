@@ -1,0 +1,18 @@
+for  (  yc  =  0  ,  yti  =  0  ;  yc  <  screenHeight  ;  yc  +=  VideoCard  .  Y_TILESIZE  ,  yti  ++  )  { 
+
+for  (  xc  =  0  ,  xti  =  0  ;  xc  <  screenWidth  ;  xc  +=  VideoCard  .  X_TILESIZE  ,  xti  ++  )  { 
+
+if  (  (  videocard  .  getTileUpdate  (  xti  ,  yti  )  )  )  { 
+
+for  (  r  =  0  ;  r  <  VideoCard  .  Y_TILESIZE  ;  r  ++  )  { 
+
+y  =  yc  +  r  ; 
+
+if  (  videocard  .  crtControllerRegister  .  scanDoubling  !=  0  )  y  >  >=  1  ; 
+
+for  (  c  =  0  ;  c  <  VideoCard  .  X_TILESIZE  ;  c  ++  )  { 
+
+x  =  xc  +  c  ; 
+
+if  (  videocard  .  sequencer  .  dotClockRate  !=  0  )  x  >  >=  1  ; 
+

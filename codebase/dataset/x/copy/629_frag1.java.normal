@@ -1,0 +1,42 @@
+}  catch  (  SQLException   ex  )  { 
+
+throw   new   HamboFatalException  (  MSG_SQL_FAILED  ,  ex  )  ; 
+
+}  finally  { 
+
+if  (  con  !=  null  )  { 
+
+con  .  release  (  )  ; 
+
+} 
+
+} 
+
+return   user  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   User   findUser  (  String   userId  )  throws   HamboFatalException  { 
+
+DBConnection   con  =  null  ; 
+
+User   user  =  null  ; 
+
+try  { 
+
+con  =  DBServiceManager  .  allocateConnection  (  )  ; 
+
+String   sql  =  "select "  +  TABLE_COLUMNS  +  "  from user_UserAccount where userid=?"  ; 
+

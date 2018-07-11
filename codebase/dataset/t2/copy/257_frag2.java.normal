@@ -1,0 +1,56 @@
+ops  [  0x231  ]  =  new   OP  (  )  { 
+
+
+
+public   final   int   call  (  )  { 
+
+final   short   rm  =  Fetchb  (  )  ; 
+
+if  (  rm  >=  0xc0  )  { 
+
+Reg   r  =  Modrm  .  GetEArd  [  rm  ]  ; 
+
+r  .  dword  =  XORD  (  Modrm  .  Getrd  [  rm  ]  .  dword  ,  r  .  dword  )  ; 
+
+}  else  { 
+
+int   eaa  =  getEaa  (  rm  )  ; 
+
+Memory  .  mem_writed  (  eaa  ,  XORD  (  Modrm  .  Getrd  [  rm  ]  .  dword  ,  Memory  .  mem_readd  (  eaa  )  )  )  ; 
+
+} 
+
+return   HANDLED  ; 
+
+} 
+
+}  ; 
+
+ops  [  0x233  ]  =  new   OP  (  )  { 
+
+
+
+public   final   int   call  (  )  { 
+
+final   short   rm  =  Fetchb  (  )  ; 
+
+Reg   r  =  Modrm  .  Getrd  [  rm  ]  ; 
+
+if  (  rm  >=  0xc0  )  { 
+
+r  .  dword  =  XORD  (  Modrm  .  GetEArd  [  rm  ]  .  dword  ,  r  .  dword  )  ; 
+
+}  else  { 
+
+r  .  dword  =  XORD  (  Memory  .  mem_readd  (  getEaa  (  rm  )  )  ,  r  .  dword  )  ; 
+
+} 
+
+return   HANDLED  ; 
+
+} 
+
+}  ; 
+
+ops  [  0x235  ]  =  new   OP  (  )  { 
+

@@ -1,0 +1,46 @@
+import   java  .  util  .  Enumeration  ; 
+
+import   java  .  util  .  regex  .  Pattern  ; 
+
+import   javax  .  servlet  .  http  .  HttpServletRequest  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   class   BotDetector  { 
+
+
+
+private   static   final   String   CONFIG  =  "META-INF/org/pustefixframework/http/bot-user-agents.txt"  ; 
+
+
+
+private   static   final   Pattern   pattern  =  getBotPattern  (  )  ; 
+
+
+
+public   static   boolean   isBot  (  HttpServletRequest   request  )  { 
+
+String   userAgent  =  request  .  getHeader  (  "User-Agent"  )  ; 
+
+if  (  userAgent  ==  null  )  { 
+

@@ -1,0 +1,2 @@
+if  (  xref  !=  null  )  writeXref  (  indent  +  TAB  +  TAB  +  TAB  ,  xref  .  getDbName  (  )  ,  xref  .  getIdValue  (  )  ,  xref  .  getVersion  (  )  ,  false  ,  -  1  ,  pw  )  ;  else   logger  .  warn  (  "couldn't find primary xref for transcript with uniquename "  +  transcript  .  getId  (  )  )  ; 
+

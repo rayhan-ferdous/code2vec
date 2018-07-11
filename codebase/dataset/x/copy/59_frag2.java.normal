@@ -1,0 +1,20 @@
+jButtonConvert  .  setToolTipText  (  "<html>Convert NCR and Escape<br/>Sequence to Unicode</html>"  )  ; 
+
+jButtonConvert  .  setPreferredSize  (  new   java  .  awt  .  Dimension  (  20  ,  20  )  )  ; 
+
+jButtonConvert  .  addActionListener  (  new   java  .  awt  .  event  .  ActionListener  (  )  { 
+
+
+
+public   void   actionPerformed  (  java  .  awt  .  event  .  ActionEvent   evt  )  { 
+
+jButtonConvertActionPerformed  (  evt  )  ; 
+
+} 
+
+}  )  ; 
+
+jPanelSpinner  .  add  (  jButtonConvert  )  ; 
+
+jPanelSpinner  .  add  (  Box  .  createHorizontalStrut  (  10  )  )  ; 
+

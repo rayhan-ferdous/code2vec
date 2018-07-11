@@ -1,0 +1,44 @@
+}  else   lmse  .  printStackTrace  (  )  ; 
+
+} 
+
+return  (  default_source  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   void   addLocationMarkerSource  (  LocationMarkerSource   source  )  { 
+
+if  (  location_sources_  ==  null  )  location_sources_  =  new   Vector  (  )  ; 
+
+location_sources_  .  add  (  source  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   LocationMarkerSource   getTargetLocationMarkerSource  (  )  { 
+
+return  (  location_target_  )  ; 
+

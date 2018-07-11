@@ -1,0 +1,32 @@
+protected   Map  <  String  ,  Double  >  setupCache  (  String   filename  )  throws   NumberFormatException  ,  IOException  { 
+
+File   cacheFile  =  new   File  (  filename  )  ; 
+
+if  (  cacheFile  .  canRead  (  )  )  { 
+
+BufferedReader   reader  =  new   BufferedReader  (  new   FileReader  (  filename  )  )  ; 
+
+Map  <  String  ,  Double  >  cache  =  new   HashMap  <  String  ,  Double  >  (  )  ; 
+
+String   line  ; 
+
+while  (  (  line  =  reader  .  readLine  (  )  )  !=  null  )  { 
+
+int   lastSpaceIndex  =  line  .  lastIndexOf  (  ' '  )  ; 
+
+String   token  =  line  .  substring  (  0  ,  lastSpaceIndex  )  ; 
+
+double   count  =  Double  .  parseDouble  (  line  .  substring  (  lastSpaceIndex  +  1  )  )  ; 
+
+cache  .  put  (  token  ,  count  )  ; 
+
+} 
+
+reader  .  close  (  )  ; 
+
+} 
+
+return   cache  ; 
+
+} 
+

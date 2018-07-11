@@ -1,0 +1,22 @@
+Connection   conn  =  null  ; 
+
+try  { 
+
+conn  =  getConnection  (  )  ; 
+
+Statement   st  =  getStatement  (  conn  )  ; 
+
+if  (  m_logger  .  isDebugEnabled  (  )  )  { 
+
+m_logger  .  debug  (  m_lastSQL  )  ; 
+
+} 
+
+executeUpdateAsync  (  st  ,  localSQL  )  ; 
+
+}  catch  (  Exception   ex  )  { 
+
+m_logger  .  error  (  ex  )  ; 
+
+throw   new   DataAccessException  (  "Unable to set user preferences"  ,  ex  )  ; 
+

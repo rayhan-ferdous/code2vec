@@ -1,0 +1,14 @@
+ReferenceType   type  =  object  .  referenceType  (  )  ; 
+
+List   methods  =  type  .  methodsByName  (  "size"  ,  "()I"  )  ; 
+
+if  (  methods  .  size  (  )  ==  0  )  { 
+
+throw   new   IllegalArgumentException  (  "no size() method"  )  ; 
+
+} 
+
+Method   sizeMeth  =  (  Method  )  methods  .  get  (  0  )  ; 
+
+IntegerValue   size  =  (  IntegerValue  )  Classes  .  invokeMethod  (  object  ,  type  ,  thread  ,  sizeMeth  ,  EMPTY_LIST  ,  timeout  )  ; 
+

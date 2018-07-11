@@ -1,0 +1,26 @@
+import   fr  .  univartois  .  cril  .  xtext  .  alloyplugin  .  api  .  Util  ; 
+
+import   fr  .  univartois  .  cril  .  xtext  .  alloyplugin  .  preferences  .  AlloyPreferencePage  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   class   MultiPageEditor   extends   MultiPageEditorPart   implements   IResourceChangeListener  { 
+

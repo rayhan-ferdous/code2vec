@@ -1,0 +1,18 @@
+public   String   toString  (  )  { 
+
+if  (  m_Classifiers  ==  null  )  { 
+
+return  "RotationForest: No model built yet."  ; 
+
+} 
+
+StringBuffer   text  =  new   StringBuffer  (  )  ; 
+
+text  .  append  (  "All the base classifiers: \n\n"  )  ; 
+
+for  (  int   i  =  0  ;  i  <  m_Classifiers  .  length  ;  i  ++  )  text  .  append  (  m_Classifiers  [  i  ]  .  toString  (  )  +  "\n\n"  )  ; 
+
+return   text  .  toString  (  )  ; 
+
+} 
+

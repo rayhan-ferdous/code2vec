@@ -1,0 +1,50 @@
+public   static   final   int   PERMISSION_USER_ADMIN  =  -  1  ; 
+
+
+
+
+
+public   static   final   int   PERMISSION_PRODUCT_ADMIN  =  1  ; 
+
+
+
+
+
+public   static   final   int   PERMISSION_CREATE  =  2  ; 
+
+
+
+
+
+public   static   final   int   PERMISSION_EDIT  =  3  ; 
+
+
+
+
+
+public   static   final   int   PERMISSION_CLOSE  =  4  ; 
+
+
+
+
+
+public   static   final   int   PERMISSION_ASSIGN_SELF  =  5  ; 
+
+
+
+
+
+public   static   final   int   PERMISSION_ASSIGN_OTHERS  =  6  ; 
+
+
+
+
+
+public   static   final   int   PERMISSION_VIEW_ALL  =  7  ; 
+
+
+
+
+
+public   static   final   int   PERMISSION_VIEW_USERS  =  8  ; 
+

@@ -1,0 +1,14 @@
+QueueEntry  (  ByteBuffer   entry  ,  long   ledgerId  ,  long   entryId  ,  WriteCallback   cb  ,  Object   ctx  )  { 
+
+this  .  entry  =  entry  .  duplicate  (  )  ; 
+
+this  .  cb  =  cb  ; 
+
+this  .  ctx  =  ctx  ; 
+
+this  .  ledgerId  =  ledgerId  ; 
+
+this  .  entryId  =  entryId  ; 
+
+} 
+

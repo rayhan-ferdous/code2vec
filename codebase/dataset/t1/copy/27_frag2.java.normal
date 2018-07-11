@@ -1,0 +1,32 @@
+case  'Û'  : 
+
+out  .  append  (  "&Ucirc;"  )  ; 
+
+break  ; 
+
+case  'Ü'  : 
+
+out  .  append  (  "&Uuml;"  )  ; 
+
+break  ; 
+
+case  'Ý'  : 
+
+out  .  append  (  "&Yacute;"  )  ; 
+
+break  ; 
+
+case  'Þ'  : 
+
+out  .  append  (  "&THORN;"  )  ; 
+
+break  ; 
+
+case  'ß'  : 
+
+out  .  append  (  "&szlig;"  )  ; 
+
+break  ; 
+
+case  'à'  : 
+

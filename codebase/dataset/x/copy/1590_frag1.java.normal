@@ -1,0 +1,32 @@
+import   org  .  processmining  .  framework  .  ui  .  ComponentFrame  ; 
+
+import   org  .  processmining  .  framework  .  ui  .  MainUI  ; 
+
+import   org  .  processmining  .  framework  .  ui  .  Message  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   class   RedesignAnalysisUI   extends   JPanel   implements   Provider  { 
+

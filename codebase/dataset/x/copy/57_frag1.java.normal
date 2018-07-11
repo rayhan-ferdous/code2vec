@@ -1,0 +1,20 @@
+jLabel1  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+dismissButton  =  new   javax  .  swing  .  JButton  (  )  ; 
+
+jLabel2  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel3  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+titleTextField  =  new   javax  .  swing  .  JTextField  (  )  ; 
+
+URLTextField  =  new   javax  .  swing  .  JTextField  (  )  ; 
+
+importButton  =  new   javax  .  swing  .  JButton  (  )  ; 
+
+importFromWebButton  =  new   javax  .  swing  .  JButton  (  )  ; 
+
+ExportButton  =  new   javax  .  swing  .  JButton  (  )  ; 
+
+jMenuBar1  =  new   javax  .  swing  .  JMenuBar  (  )  ; 
+

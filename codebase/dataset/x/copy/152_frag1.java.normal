@@ -1,0 +1,56 @@
+public   static   boolean   copy  (  final   String   from  ,  final   String   to  ,  final   String   what  )  { 
+
+return   copy  (  new   File  (  from  ,  what  )  ,  new   File  (  to  ,  what  )  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   boolean   copy  (  final   File   from  ,  final   File   to  ,  final   String   what  )  { 
+
+return   copy  (  new   File  (  from  ,  what  )  ,  new   File  (  to  ,  what  )  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   boolean   copy  (  final   String   from  ,  final   String   to  )  { 
+

@@ -1,0 +1,12 @@
+Pool   pool  =  new   Pool  (  path  )  ; 
+
+ExtendedStreamTokenizer   est  =  new   ExtendedStreamTokenizer  (  inputStream  ,  '#'  ,  false  )  ; 
+
+est  .  expectString  (  "tmat"  )  ; 
+
+numMatrices  =  est  .  getInt  (  "numMatrices"  )  ; 
+
+numStates  =  est  .  getInt  (  "numStates"  )  ; 
+
+logger  .  fine  (  "with "  +  numMatrices  +  " and "  +  numStates  +  " states, in "  +  (  sparseForm  ?  "sparse"  :  "dense"  )  +  " form"  )  ; 
+

@@ -1,0 +1,30 @@
+private   String   readString  (  long   offset  )  { 
+
+try  { 
+
+ipFile  .  seek  (  offset  )  ; 
+
+int   i  ; 
+
+for  (  i  =  0  ,  buf  [  i  ]  =  ipFile  .  readByte  (  )  ;  buf  [  i  ]  !=  0  ;  buf  [  ++  i  ]  =  ipFile  .  readByte  (  )  )  { 
+
+; 
+
+} 
+
+if  (  i  !=  0  )  { 
+
+return   getString  (  buf  ,  0  ,  i  ,  "GBK"  )  ; 
+
+} 
+
+}  catch  (  IOException   e  )  { 
+
+log  .  error  (  e  .  getMessage  (  )  )  ; 
+
+} 
+
+return  ""  ; 
+
+} 
+

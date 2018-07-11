@@ -1,0 +1,112 @@
+public   jnamed  (  String   conffile  )  throws   IOException  { 
+
+FileInputStream   fs  ; 
+
+try  { 
+
+fs  =  new   FileInputStream  (  conffile  )  ; 
+
+}  catch  (  Exception   e  )  { 
+
+System  .  out  .  println  (  "Cannot open "  +  conffile  )  ; 
+
+return  ; 
+
+} 
+
+cache  =  null  ; 
+
+znames  =  new   Hashtable  (  )  ; 
+
+TSIGs  =  new   Hashtable  (  )  ; 
+
+BufferedReader   br  =  new   BufferedReader  (  new   InputStreamReader  (  fs  )  )  ; 
+
+String   line  =  null  ; 
+
+while  (  (  line  =  br  .  readLine  (  )  )  !=  null  )  { 
+
+StringTokenizer   st  =  new   StringTokenizer  (  line  )  ; 
+
+if  (  !  st  .  hasMoreTokens  (  )  )  continue  ; 
+
+String   keyword  =  st  .  nextToken  (  )  ; 
+
+if  (  !  st  .  hasMoreTokens  (  )  )  { 
+
+System  .  out  .  println  (  "Invalid line: "  +  line  )  ; 
+
+continue  ; 
+
+} 
+
+if  (  keyword  .  equals  (  "primary"  )  )  addZone  (  st  .  nextToken  (  )  )  ;  else   if  (  keyword  .  equals  (  "cache"  )  )  cache  =  new   Cache  (  st  .  nextToken  (  )  )  ;  else   if  (  keyword  .  equals  (  "key"  )  )  addTSIG  (  st  .  nextToken  (  )  ,  st  .  nextToken  (  )  )  ; 
+
+} 
+
+if  (  cache  ==  null  )  { 
+
+System  .  out  .  println  (  "no cache specified"  )  ; 
+
+System  .  exit  (  -  1  )  ; 
+
+} 
+
+addUDP  (  (  short  )  12345  )  ; 
+
+addTCP  (  (  short  )  12345  )  ; 
+
+} 
+
+
+
+; 
+
+
+
+public   void   addZone  (  String   zonefile  )  throws   IOException  { 
+
+Zone   newzone  =  new   Zone  (  zonefile  ,  cache  )  ; 
+
+znames  .  put  (  newzone  .  getOrigin  (  )  ,  newzone  )  ; 
+
+} 
+
+
+
+; 
+
+
+
+public   void   addTSIG  (  String   name  ,  String   key  )  { 
+
+TSIGs  .  put  (  new   Name  (  name  )  ,  base64  .  fromString  (  key  )  )  ; 
+
+} 
+
+
+
+public   Zone   findBestZone  (  Name   name  )  { 
+
+Zone   foundzone  =  null  ; 
+
+Name   tname  =  name  ; 
+
+do  { 
+
+foundzone  =  (  Zone  )  znames  .  get  (  tname  )  ; 
+
+if  (  foundzone  !=  null  )  return   foundzone  ; 
+
+tname  =  new   Name  (  tname  ,  1  )  ; 
+
+}  while  (  !  tname  .  equals  (  Name  .  root  )  )  ; 
+
+return   null  ; 
+
+} 
+
+
+
+public   RRset   findExactMatch  (  Name   name  ,  short   type  ,  short   dclass  ,  boolean   glue  )  { 
+

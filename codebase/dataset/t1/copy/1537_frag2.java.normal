@@ -1,0 +1,90 @@
+if  (  type  ==  Type  .  SIG  )  { 
+
+type  =  Type  .  ANY  ; 
+
+flags  |=  FLAG_SIGONLY  ; 
+
+} 
+
+Zone   zone  =  findBestZone  (  name  )  ; 
+
+if  (  zone  !=  null  )  sr  =  zone  .  findRecords  (  name  ,  type  )  ;  else  { 
+
+Cache   cache  =  getCache  (  dclass  )  ; 
+
+sr  =  cache  .  lookupRecords  (  name  ,  type  ,  Credibility  .  NORMAL  )  ; 
+
+} 
+
+if  (  sr  .  isUnknown  (  )  )  { 
+
+addCacheNS  (  response  ,  getCache  (  dclass  )  ,  name  )  ; 
+
+} 
+
+if  (  sr  .  isNXDOMAIN  (  )  )  { 
+
+response  .  getHeader  (  )  .  setRcode  (  Rcode  .  NXDOMAIN  )  ; 
+
+if  (  zone  !=  null  )  { 
+
+addSOA  (  response  ,  zone  )  ; 
+
+if  (  iterations  ==  0  )  response  .  getHeader  (  )  .  setFlag  (  Flags  .  AA  )  ; 
+
+} 
+
+rcode  =  Rcode  .  NXDOMAIN  ; 
+
+}  else   if  (  sr  .  isNXRRSET  (  )  )  { 
+
+if  (  zone  !=  null  )  { 
+
+addSOA  (  response  ,  zone  )  ; 
+
+if  (  iterations  ==  0  )  response  .  getHeader  (  )  .  setFlag  (  Flags  .  AA  )  ; 
+
+} 
+
+}  else   if  (  sr  .  isDelegation  (  )  )  { 
+
+RRset   nsRecords  =  sr  .  getNS  (  )  ; 
+
+addRRset  (  nsRecords  .  getName  (  )  ,  response  ,  nsRecords  ,  Section  .  AUTHORITY  ,  flags  )  ; 
+
+}  else   if  (  sr  .  isCNAME  (  )  )  { 
+
+RRset   rrset  =  new   RRset  (  )  ; 
+
+CNAMERecord   cname  =  sr  .  getCNAME  (  )  ; 
+
+rrset  .  addRR  (  cname  )  ; 
+
+addRRset  (  name  ,  response  ,  rrset  ,  Section  .  ANSWER  ,  flags  )  ; 
+
+if  (  zone  !=  null  &&  iterations  ==  0  )  response  .  getHeader  (  )  .  setFlag  (  Flags  .  AA  )  ; 
+
+rcode  =  addAnswer  (  response  ,  cname  .  getTarget  (  )  ,  type  ,  dclass  ,  iterations  +  1  ,  flags  )  ; 
+
+}  else   if  (  sr  .  isDNAME  (  )  )  { 
+
+RRset   rrset  =  new   RRset  (  )  ; 
+
+DNAMERecord   dname  =  sr  .  getDNAME  (  )  ; 
+
+rrset  .  addRR  (  dname  )  ; 
+
+addRRset  (  name  ,  response  ,  rrset  ,  Section  .  ANSWER  ,  flags  )  ; 
+
+Name   newname  ; 
+
+try  { 
+
+newname  =  name  .  fromDNAME  (  dname  )  ; 
+
+}  catch  (  NameTooLongException   e  )  { 
+
+return   Rcode  .  YXDOMAIN  ; 
+
+} 
+

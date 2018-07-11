@@ -1,0 +1,20 @@
+private   static   Cipher   getCipherInstance  (  String   name  ,  Key   key  ,  int   mode  ,  SecureRandom   random  )  { 
+
+Cipher   cipher  =  null  ; 
+
+try  { 
+
+cipher  =  Cipher  .  getInstance  (  name  ,  getCipherProvider  (  )  )  ; 
+
+cipher  .  init  (  mode  ,  key  ,  random  )  ; 
+
+}  catch  (  Exception   ex  )  { 
+
+Assert  .  fail  (  ex  )  ; 
+
+} 
+
+return   cipher  ; 
+
+} 
+

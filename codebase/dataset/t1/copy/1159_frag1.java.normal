@@ -1,0 +1,88 @@
+public   class   Base64  { 
+
+
+
+
+
+public   static   final   int   NO_OPTIONS  =  0  ; 
+
+
+
+
+
+public   static   final   int   ENCODE  =  1  ; 
+
+
+
+
+
+public   static   final   int   DECODE  =  0  ; 
+
+
+
+
+
+public   static   final   int   GZIP  =  2  ; 
+
+
+
+
+
+public   static   final   int   DONT_BREAK_LINES  =  8  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   final   int   URL_SAFE  =  16  ; 
+
+
+
+
+
+
+
+
+
+
+
+public   static   final   int   ORDERED  =  32  ; 
+
+
+
+
+
+private   static   final   int   MAX_LINE_LENGTH  =  76  ; 
+
+
+
+
+
+private   static   final   byte   EQUALS_SIGN  =  (  byte  )  '='  ; 
+
+
+
+
+
+private   static   final   byte   NEW_LINE  =  (  byte  )  '\n'  ; 
+
+
+
+
+
+private   static   final   String   PREFERRED_ENCODING  =  "UTF-8"  ; 
+

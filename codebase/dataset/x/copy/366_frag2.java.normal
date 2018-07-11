@@ -1,0 +1,34 @@
+if  (  cacheFile  .  exists  (  )  )  cacheFile  .  delete  (  )  ; 
+
+tmpFile  .  renameTo  (  cacheFile  )  ; 
+
+tmpFile  =  null  ; 
+
+}  finally  { 
+
+lock  =  false  ; 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   setFlags  (  long   uid  ,  Flags   f  ,  boolean   value  )  throws   IOException  { 
+
+BufferedWriter   out  =  null  ; 
+
+try  { 
+
+out  =  openCacheFile  (  )  ; 
+
+out  .  write  (  Long  .  toString  (  uid  )  )  ; 
+

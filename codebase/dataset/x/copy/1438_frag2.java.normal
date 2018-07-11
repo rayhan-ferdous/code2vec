@@ -1,0 +1,8 @@
+if  (  name  .  equals  (  "description"  )  )  help  =  "Attribute description"  ; 
+
+if  (  name  .  equals  (  "label"  )  )  help  =  "Attribute label"  ; 
+
+if  (  name  .  equals  (  "unit"  )  )  help  =  "Attribute unit"  ; 
+
+if  (  name  .  equals  (  "standard_unit"  )  )  help  =  "Conversion factor to MKSA unit"  ; 
+

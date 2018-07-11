@@ -1,0 +1,20 @@
+verbose  =  true  ; 
+
+} 
+
+} 
+
+if  (  DriverName  .  length  (  )  ==  0  ||  DBUrl  .  length  (  )  ==  0  )  { 
+
+System  .  out  .  println  (  "usage: java TestBench -driver [driver_class_name] -url [url_to_db] -user [username] -password [password] [-v] [-init] [-tpc n] [-clients n]"  )  ; 
+
+System  .  out  .  println  (  )  ; 
+
+System  .  out  .  println  (  "-v          verbose error messages"  )  ; 
+
+System  .  out  .  println  (  "-init       initialize the tables"  )  ; 
+
+System  .  out  .  println  (  "-tpc        transactions per client"  )  ; 
+
+System  .  out  .  println  (  "-clients    number of simultaneous clients"  )  ; 
+

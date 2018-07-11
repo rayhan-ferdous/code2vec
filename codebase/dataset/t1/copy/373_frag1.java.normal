@@ -1,0 +1,20 @@
+private   TransformerHandler   getTransformerHandler  (  SAXTransformerFactory   tf  ,  Templates   tpl  ,  String   dsprompt  )  throws   TransformerConfigurationException  ,  IOException  { 
+
+TransformerHandler   th  =  tf  .  newTransformerHandler  (  tpl  )  ; 
+
+th  .  setResult  (  new   StreamResult  (  System  .  out  )  )  ; 
+
+Transformer   t  =  th  .  getTransformer  (  )  ; 
+
+t  .  setParameter  (  "maxlen"  ,  maxlen  )  ; 
+
+t  .  setParameter  (  "vallen"  ,  vallen  )  ; 
+
+t  .  setParameter  (  "vallen"  ,  vallen  )  ; 
+
+t  .  setParameter  (  "dsprompt"  ,  dsprompt  )  ; 
+
+return   th  ; 
+
+} 
+

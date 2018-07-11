@@ -1,0 +1,34 @@
+return   id  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   String   bytesToHex  (  byte  [  ]  data  )  { 
+
+StringBuffer   buf  =  new   StringBuffer  (  )  ; 
+
+for  (  int   i  =  0  ;  i  <  data  .  length  ;  i  ++  )  { 
+
+buf  .  append  (  byteToHex  (  data  [  i  ]  )  )  ; 
+
+} 
+
+return  (  buf  .  toString  (  )  )  ; 
+

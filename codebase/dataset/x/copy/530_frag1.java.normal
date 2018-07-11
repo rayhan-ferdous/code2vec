@@ -1,0 +1,52 @@
+if  (  logger  .  isDebugEnabled  (  )  )  { 
+
+logger  .  debug  (  str  +  " [TC]->[SC] "  +  ret  )  ; 
+
+} 
+
+return   ret  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   String   simpToTrad  (  String   str  )  { 
+
+return   simpToTrad  (  str  ,  true  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   String   tradToSimp  (  String   str  )  { 
+
+return   tradToSimp  (  str  ,  true  )  ; 
+

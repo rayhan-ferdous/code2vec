@@ -1,0 +1,60 @@
+public   static   void   main  (  String   args  [  ]  )  { 
+
+try  { 
+
+int   arg  =  0  ; 
+
+boolean   doHtml  ; 
+
+if  (  arg  <  args  .  length  &&  args  [  arg  ]  .  equals  (  "-html"  )  )  { 
+
+arg  +=  1  ; 
+
+doHtml  =  true  ; 
+
+}  else  { 
+
+doHtml  =  false  ; 
+
+} 
+
+OutputStream   out  ; 
+
+if  (  args  .  length  >  arg  )  { 
+
+out  =  new   java  .  io  .  FileOutputStream  (  args  [  arg  ]  )  ; 
+
+}  else  { 
+
+out  =  System  .  out  ; 
+
+} 
+
+if  (  doHtml  )  { 
+
+encode  (  BaseNanoList  .  getBaseNanoList  (  )  ,  NanoListPresenter  .  class  .  getResource  (  "PresentNanoList.xsl"  )  ,  out  )  ; 
+
+}  else  { 
+
+NanoListPresenter   encoder  =  new   NanoListPresenter  (  out  )  ; 
+
+encoder  .  encodeBaseNanoList  (  BaseNanoList  .  getBaseNanoList  (  )  )  ; 
+
+encoder  .  flush  (  )  ; 
+
+} 
+
+if  (  out  !=  System  .  out  )  { 
+
+out  .  close  (  )  ; 
+
+} 
+
+}  catch  (  Exception   ex  )  { 
+
+ex  .  printStackTrace  (  )  ; 
+
+} 
+
+} 
+

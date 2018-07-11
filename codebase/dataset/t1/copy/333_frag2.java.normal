@@ -1,0 +1,90 @@
+public   static   com  .  googlecode  .  protobuf  .  netty  .  example  .  Calculator  .  CalcRequest   parseFrom  (  com  .  google  .  protobuf  .  ByteString   data  )  throws   com  .  google  .  protobuf  .  InvalidProtocolBufferException  { 
+
+return   newBuilder  (  )  .  mergeFrom  (  data  )  .  buildParsed  (  )  ; 
+
+} 
+
+
+
+public   static   com  .  googlecode  .  protobuf  .  netty  .  example  .  Calculator  .  CalcRequest   parseFrom  (  com  .  google  .  protobuf  .  ByteString   data  ,  com  .  google  .  protobuf  .  ExtensionRegistryLite   extensionRegistry  )  throws   com  .  google  .  protobuf  .  InvalidProtocolBufferException  { 
+
+return   newBuilder  (  )  .  mergeFrom  (  data  ,  extensionRegistry  )  .  buildParsed  (  )  ; 
+
+} 
+
+
+
+public   static   com  .  googlecode  .  protobuf  .  netty  .  example  .  Calculator  .  CalcRequest   parseFrom  (  byte  [  ]  data  )  throws   com  .  google  .  protobuf  .  InvalidProtocolBufferException  { 
+
+return   newBuilder  (  )  .  mergeFrom  (  data  )  .  buildParsed  (  )  ; 
+
+} 
+
+
+
+public   static   com  .  googlecode  .  protobuf  .  netty  .  example  .  Calculator  .  CalcRequest   parseFrom  (  byte  [  ]  data  ,  com  .  google  .  protobuf  .  ExtensionRegistryLite   extensionRegistry  )  throws   com  .  google  .  protobuf  .  InvalidProtocolBufferException  { 
+
+return   newBuilder  (  )  .  mergeFrom  (  data  ,  extensionRegistry  )  .  buildParsed  (  )  ; 
+
+} 
+
+
+
+public   static   com  .  googlecode  .  protobuf  .  netty  .  example  .  Calculator  .  CalcRequest   parseFrom  (  java  .  io  .  InputStream   input  )  throws   java  .  io  .  IOException  { 
+
+return   newBuilder  (  )  .  mergeFrom  (  input  )  .  buildParsed  (  )  ; 
+
+} 
+
+
+
+public   static   com  .  googlecode  .  protobuf  .  netty  .  example  .  Calculator  .  CalcRequest   parseFrom  (  java  .  io  .  InputStream   input  ,  com  .  google  .  protobuf  .  ExtensionRegistryLite   extensionRegistry  )  throws   java  .  io  .  IOException  { 
+
+return   newBuilder  (  )  .  mergeFrom  (  input  ,  extensionRegistry  )  .  buildParsed  (  )  ; 
+
+} 
+
+
+
+public   static   com  .  googlecode  .  protobuf  .  netty  .  example  .  Calculator  .  CalcRequest   parseDelimitedFrom  (  java  .  io  .  InputStream   input  )  throws   java  .  io  .  IOException  { 
+
+return   newBuilder  (  )  .  mergeDelimitedFrom  (  input  )  .  buildParsed  (  )  ; 
+
+} 
+
+
+
+public   static   com  .  googlecode  .  protobuf  .  netty  .  example  .  Calculator  .  CalcRequest   parseDelimitedFrom  (  java  .  io  .  InputStream   input  ,  com  .  google  .  protobuf  .  ExtensionRegistryLite   extensionRegistry  )  throws   java  .  io  .  IOException  { 
+
+return   newBuilder  (  )  .  mergeDelimitedFrom  (  input  ,  extensionRegistry  )  .  buildParsed  (  )  ; 
+
+} 
+
+
+
+public   static   com  .  googlecode  .  protobuf  .  netty  .  example  .  Calculator  .  CalcRequest   parseFrom  (  com  .  google  .  protobuf  .  CodedInputStream   input  )  throws   java  .  io  .  IOException  { 
+
+return   newBuilder  (  )  .  mergeFrom  (  input  )  .  buildParsed  (  )  ; 
+
+} 
+
+
+
+public   static   com  .  googlecode  .  protobuf  .  netty  .  example  .  Calculator  .  CalcRequest   parseFrom  (  com  .  google  .  protobuf  .  CodedInputStream   input  ,  com  .  google  .  protobuf  .  ExtensionRegistryLite   extensionRegistry  )  throws   java  .  io  .  IOException  { 
+
+return   newBuilder  (  )  .  mergeFrom  (  input  ,  extensionRegistry  )  .  buildParsed  (  )  ; 
+
+} 
+
+
+
+public   static   Builder   newBuilder  (  )  { 
+
+return   Builder  .  create  (  )  ; 
+
+} 
+
+
+
+public   Builder   newBuilderForType  (  )  { 
+

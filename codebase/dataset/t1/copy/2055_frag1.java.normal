@@ -1,0 +1,10 @@
+progressMonitor  .  beginTask  (  Messages  .  ModelDiagramEditorUtil_CreateDiagramProgressTask  ,  3  )  ; 
+
+final   Resource   diagramResource  =  editingDomain  .  getResourceSet  (  )  .  createResource  (  diagramURI  )  ; 
+
+final   Resource   modelResource  =  editingDomain  .  getResourceSet  (  )  .  createResource  (  modelURI  )  ; 
+
+final   String   diagramName  =  diagramURI  .  lastSegment  (  )  ; 
+
+AbstractTransactionalCommand   command  =  new   AbstractTransactionalCommand  (  editingDomain  ,  Messages  .  ModelDiagramEditorUtil_CreateDiagramCommandLabel  ,  Collections  .  EMPTY_LIST  )  { 
+

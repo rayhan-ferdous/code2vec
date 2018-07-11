@@ -1,0 +1,26 @@
+public   String   _right  (  String   rText  ,  int   rColWidth  )  { 
+
+return   _align  (  rText  ,  " "  ,  rColWidth  ,  'r'  )  ; 
+
+} 
+
+
+
+
+
+public   String   _center  (  String   rText  ,  int   rColWidth  )  { 
+
+return   _align  (  rText  ,  " "  ,  rColWidth  ,  'c'  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   String   _align  (  String   rText  ,  String   rBackText  ,  int   rColWidth  ,  char   rAlignment  )  { 
+

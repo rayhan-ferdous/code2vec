@@ -1,0 +1,46 @@
+import   javax  .  swing  .  event  .  *  ; 
+
+import   javax  .  swing  .  text  .  *  ; 
+
+import   de  .  teamwork  .  ctcp  .  *  ; 
+
+import   de  .  teamwork  .  ctcp  .  msgutils  .  *  ; 
+
+import   de  .  teamwork  .  irc  .  *  ; 
+
+import   de  .  teamwork  .  irc  .  msgutils  .  *  ; 
+
+import   de  .  teamwork  .  jaicwain  .  App  ; 
+
+import   de  .  teamwork  .  jaicwain  .  gui  .  *  ; 
+
+import   de  .  teamwork  .  jaicwain  .  options  .  *  ; 
+
+import   de  .  teamwork  .  jaicwain  .  session  .  irc  .  *  ; 
+
+import   de  .  teamwork  .  util  .  swing  .  JHistoryTextField  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   class   TabbedChannelContainer   extends   JComponent   implements   ExtendedPanelContainer  ,  ChangeListener  { 
+

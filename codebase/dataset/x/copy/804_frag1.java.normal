@@ -1,0 +1,44 @@
+bpset  .  setBreakpoint  (  bpSaved  )  ; 
+
+} 
+
+stillrunning  =  continueCheckingForSignal  (  thread  ,  printMode  ,  allThreads  )  ; 
+
+return   stillrunning  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   boolean   pcontinueToReturn  (  int   thread  ,  int   printMode  )  { 
+
+int   addr  =  reg  .  hardwareIP  (  )  ; 
+
+boolean   stillrunning  ; 
+
+breakpoint   bpSaved  =  bpset  .  lookup  (  addr  )  ; 
+
+threadstep  .  setLinkBreakpoint  (  thread  )  ; 
+
+bpset  .  clearBreakpoint  (  bpSaved  )  ; 
+

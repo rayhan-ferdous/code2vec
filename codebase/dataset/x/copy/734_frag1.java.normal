@@ -1,0 +1,26 @@
+MessageDigest   digest  =  MessageDigest  .  getInstance  (  hashingAlgorithm  )  ; 
+
+result  =  new   String  (  digest  .  digest  (  plainTextPassword  .  getBytes  (  charsetName  )  )  ,  charsetName  )  ; 
+
+return   result  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   boolean   isUserIdValid  (  final   int   userId  )  { 
+
+if  (  userId  >  Constants  .  INVALID_USER_ID  )  return   true  ;  else   return   false  ; 
+

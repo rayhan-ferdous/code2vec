@@ -1,0 +1,66 @@
+lineLength  =  0  ; 
+
+return  '\n'  ; 
+
+}  else  { 
+
+lineLength  ++  ; 
+
+int   b  =  buffer  [  position  ++  ]  ; 
+
+if  (  position  >=  bufferLength  )  position  =  -  1  ; 
+
+return   b  &  0xFF  ; 
+
+} 
+
+}  else  { 
+
+throw   new   java  .  io  .  IOException  (  "Error in Base64 code reading stream."  )  ; 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   int   read  (  byte  [  ]  dest  ,  int   off  ,  int   len  )  throws   java  .  io  .  IOException  { 
+
+int   i  ; 
+
+int   b  ; 
+
+for  (  i  =  0  ;  i  <  len  ;  i  ++  )  { 
+
+b  =  read  (  )  ; 
+

@@ -1,0 +1,32 @@
+public   synchronized   void   release  (  )  { 
+
+if  (  fileLock  !=  null  )  { 
+
+try  { 
+
+fileLock  .  release  (  )  ; 
+
+}  catch  (  IOException   e  )  { 
+
+} 
+
+fileLock  =  null  ; 
+
+} 
+
+if  (  fileStream  !=  null  )  { 
+
+try  { 
+
+fileStream  .  close  (  )  ; 
+
+}  catch  (  IOException   e  )  { 
+
+} 
+
+fileStream  =  null  ; 
+
+} 
+
+} 
+

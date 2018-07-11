@@ -1,0 +1,14 @@
+FilePart  (  String   name  ,  ServletInputStream   in  ,  String   boundary  ,  String   contentType  ,  String   fileName  ,  String   filePath  )  throws   IOException  { 
+
+super  (  name  )  ; 
+
+this  .  fileName  =  fileName  ; 
+
+this  .  filePath  =  filePath  ; 
+
+this  .  contentType  =  contentType  ; 
+
+partInput  =  new   PartInputStream  (  in  ,  boundary  )  ; 
+
+} 
+

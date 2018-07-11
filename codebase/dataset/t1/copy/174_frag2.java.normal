@@ -1,0 +1,28 @@
+protected   static   final   void   insertionsort  (  float  [  ]  a  ,  int  [  ]  b  ,  int   p  ,  int   r  )  { 
+
+for  (  int   j  =  p  +  1  ;  j  <=  r  ;  ++  j  )  { 
+
+float   key  =  a  [  j  ]  ; 
+
+int   val  =  b  [  j  ]  ; 
+
+int   i  =  j  -  1  ; 
+
+while  (  i  >=  p  &&  a  [  i  ]  >  key  )  { 
+
+a  [  i  +  1  ]  =  a  [  i  ]  ; 
+
+b  [  i  +  1  ]  =  b  [  i  ]  ; 
+
+--  i  ; 
+
+} 
+
+a  [  i  +  1  ]  =  key  ; 
+
+b  [  i  +  1  ]  =  val  ; 
+
+} 
+
+} 
+

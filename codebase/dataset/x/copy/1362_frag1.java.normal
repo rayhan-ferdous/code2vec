@@ -1,0 +1,44 @@
+private   void   showErrorDialog  (  String   operation  ,  String   filename  ,  Throwable   e  )  { 
+
+MessageBox   box  =  new   MessageBox  (  shell  ,  SWT  .  ICON_ERROR  )  ; 
+
+String   errorMessage  =  ""  ; 
+
+if  (  e  !=  null  )  { 
+
+if  (  e   instanceof   SWTException  )  { 
+
+SWTException   swte  =  (  SWTException  )  e  ; 
+
+errorMessage  =  swte  .  getMessage  (  )  ; 
+
+if  (  swte  .  throwable  !=  null  )  { 
+
+errorMessage  +=  ":\n"  +  swte  .  throwable  .  toString  (  )  ; 
+
+} 
+
+}  else   if  (  e   instanceof   SWTError  )  { 
+
+SWTError   swte  =  (  SWTError  )  e  ; 
+
+errorMessage  =  swte  .  getMessage  (  )  ; 
+
+if  (  swte  .  throwable  !=  null  )  { 
+
+errorMessage  +=  ":\n"  +  swte  .  throwable  .  toString  (  )  ; 
+
+} 
+
+}  else  { 
+
+errorMessage  =  e  .  toString  (  )  ; 
+
+} 
+
+} 
+
+box  .  open  (  )  ; 
+
+} 
+

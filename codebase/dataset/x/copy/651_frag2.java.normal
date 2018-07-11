@@ -1,0 +1,36 @@
+public   String   valueBeforeMD5  =  ""  ; 
+
+
+
+public   String   valueAfterMD5  =  ""  ; 
+
+
+
+private   static   Random   myRand  ; 
+
+
+
+private   static   SecureRandom   mySecureRand  ; 
+
+
+
+private   static   String   s_id  ; 
+
+
+
+static  { 
+
+mySecureRand  =  new   SecureRandom  (  )  ; 
+
+long   secureInitializer  =  mySecureRand  .  nextLong  (  )  ; 
+
+myRand  =  new   Random  (  secureInitializer  )  ; 
+
+try  { 
+
+s_id  =  InetAddress  .  getLocalHost  (  )  .  toString  (  )  ; 
+
+}  catch  (  UnknownHostException   e  )  { 
+
+e  .  printStackTrace  (  )  ; 
+

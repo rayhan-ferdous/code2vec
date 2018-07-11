@@ -1,0 +1,34 @@
+String   unescaped  =  replace  (  input  ,  "&"  ,  "&amp;"  )  ; 
+
+unescaped  =  replace  (  unescaped  ,  "<"  ,  "&lt;"  )  ; 
+
+unescaped  =  replace  (  unescaped  ,  ">"  ,  "&gt;"  )  ; 
+
+return   unescaped  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   String   escapeMetaAndLink  (  String   input  )  { 
+
+if  (  input  ==  null  )  { 
+
+return   null  ; 
+
+} 
+
+String   cleanedInput  =  input  .  replaceAll  (  "<[mM][eE][tT][aA]"  ,  "&lt;meta"  )  ; 
+

@@ -1,0 +1,44 @@
+public   String   savePage  (  String   docCode  ,  String   docLink  )  { 
+
+String   newUrlToReturn  =  docLink  ; 
+
+File   dir  =  new   File  (  targetDirectory  )  ; 
+
+if  (  !  dir  .  exists  (  )  )  { 
+
+dir  .  mkdirs  (  )  ; 
+
+} 
+
+String   title  =  Util  .  getHTMLPart  (  docCode  ,  HTMLElementName  .  TITLE  )  ; 
+
+if  (  title  ==  null  ||  title  .  length  (  )  ==  0  )  { 
+
+title  =  docLink  ; 
+
+} 
+
+title  =  Util  .  normalizeUrlForFileName  (  title  )  +  HTML_FILE_EXTENSION  ; 
+
+File   page  =  new   File  (  Util  .  appendDirPath  (  targetDirectory  ,  title  )  )  ; 
+
+try  { 
+
+Writer   out  =  new   OutputStreamWriter  (  new   FileOutputStream  (  page  )  ,  Util  .  getHTMLencoding  (  docCode  )  )  ; 
+
+out  .  write  (  docCode  )  ; 
+
+out  .  close  (  )  ; 
+
+newUrlToReturn  =  Util  .  getRelativePath  (  page  .  getAbsolutePath  (  )  ,  targetDirectory  )  ; 
+
+}  catch  (  IOException   e  )  { 
+
+return   newUrlToReturn  ; 
+
+} 
+
+return   newUrlToReturn  ; 
+
+} 
+

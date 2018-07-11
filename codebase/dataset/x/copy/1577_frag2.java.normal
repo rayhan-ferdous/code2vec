@@ -1,0 +1,38 @@
+private   JMenuItem   getAddSelectedHistoryMenuItem  (  )  { 
+
+debug  .  print  (  ""  )  ; 
+
+if  (  addSelectedHistoryMenuItem  ==  null  )  { 
+
+addSelectedHistoryMenuItem  =  new   JMenuItem  (  )  ; 
+
+addSelectedHistoryMenuItem  .  setText  (  "Add selected to history file"  )  ; 
+
+addSelectedHistoryMenuItem  .  addActionListener  (  new   ActionListener  (  )  { 
+
+
+
+public   void   actionPerformed  (  ActionEvent   e  )  { 
+
+String   tivoName  =  getSelectedTivoName  (  )  ; 
+
+if  (  tivoName  !=  null  )  { 
+
+tivoTabs  .  get  (  tivoName  )  .  autoSelectedHistoryCB  (  )  ; 
+
+}  else  { 
+
+log  .  error  (  "This command must be run from a TiVo tab with selected tivo shows."  )  ; 
+
+} 
+
+} 
+
+}  )  ; 
+
+} 
+
+return   addSelectedHistoryMenuItem  ; 
+
+} 
+

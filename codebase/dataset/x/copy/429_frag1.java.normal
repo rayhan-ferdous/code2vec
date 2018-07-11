@@ -1,0 +1,98 @@
+public   class   DefaultModelReader   extends   AbstractModelReader  { 
+
+
+
+
+
+private   DescriptionModel   model  ; 
+
+
+
+
+
+private   ClassDescription   currentClassDescription  ; 
+
+
+
+
+
+private   BeanInfo   currentBeanInfo  ; 
+
+
+
+
+
+private   URL   baseURL  ; 
+
+
+
+
+
+private   String   source  ; 
+
+
+
+
+
+private   MultiplexMappingInfo   multiplexInfo  ; 
+
+
+
+
+
+private   ArrayList   multiplexTypeInfos  ; 
+
+
+
+
+
+private   ArrayList   propertyList  ; 
+
+
+
+
+
+private   ArrayList   constructorList  ; 
+
+
+
+
+
+
+
+
+
+public   DefaultModelReader  (  )  { 
+
+super  (  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   synchronized   DescriptionModel   load  (  final   String   file  )  throws   IOException  ,  ObjectDescriptionException  { 
+
+this  .  model  =  new   DescriptionModel  (  )  ; 
+
+this  .  baseURL  =  new   File  (  file  )  .  toURL  (  )  ; 
+

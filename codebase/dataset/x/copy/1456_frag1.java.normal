@@ -1,0 +1,40 @@
+if  (  special  !=  null  )  { 
+
+_stk  .  push  (  special  )  ; 
+
+}  else  { 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   Object   objectStringInput  (  String   _inscheme  )  throws   SchemeException  { 
+
+incomingDataLen  +=  _inscheme  .  length  (  )  ; 
+
+incomingLinesIndex  ++  ; 
+
+InputPort   inp  =  new   InputPort  (  new   StringReader  (  _inscheme  )  )  ; 
+
+StringWriter   _strOut  =  new   StringWriter  (  )  ; 
+
+PrintWriter   _outWriter  =  new   PrintWriter  (  new   BufferedWriter  (  _strOut  )  )  ; 
+

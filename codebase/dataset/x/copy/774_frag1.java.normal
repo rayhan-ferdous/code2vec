@@ -1,0 +1,12 @@
+private   Config   createInvalidChannelTypeConfig  (  )  { 
+
+Config   config  =  new   Config  (  )  ; 
+
+config  .  setValue  (  "comms.channels.count"  ,  "1"  )  ; 
+
+config  .  setValue  (  "comms.channels.0.type"  ,  "blah"  )  ; 
+
+return   config  ; 
+
+} 
+

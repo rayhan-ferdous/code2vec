@@ -1,0 +1,14 @@
+public   void   run  (  )  { 
+
+try  { 
+
+doGetUpdateFromNetwork  (  )  ; 
+
+}  catch  (  UpdateException   e  )  { 
+
+setErrorState  (  e  )  ; 
+
+} 
+
+} 
+

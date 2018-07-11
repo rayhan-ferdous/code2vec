@@ -1,0 +1,28 @@
+public   static   String   getRelativeOf  (  URL   baseLocation  ,  String   relativeFile  )  { 
+
+String   urlPath  =  baseLocation  .  getPath  (  )  ; 
+
+if  (  baseLocation  .  toString  (  )  .  startsWith  (  "jar"  )  )  { 
+
+JarURLConnection   jarConnection  ; 
+
+try  { 
+
+jarConnection  =  (  JarURLConnection  )  baseLocation  .  openConnection  (  )  ; 
+
+urlPath  =  jarConnection  .  getEntryName  (  )  ; 
+
+}  catch  (  IOException   e  )  { 
+
+e  .  printStackTrace  (  )  ; 
+
+return   null  ; 
+
+} 
+
+} 
+
+return   getRelativeOf  (  new   File  (  urlPath  )  .  getParentFile  (  )  ,  relativeFile  )  ; 
+
+} 
+

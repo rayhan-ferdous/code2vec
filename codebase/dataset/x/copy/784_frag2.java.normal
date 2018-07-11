@@ -1,0 +1,44 @@
+return   new   DrawingView  [  ]  {  view  (  )  }  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+public   void   toolDone  (  )  { 
+
+setTool  (  fDefaultToolButton  .  tool  (  )  ,  fDefaultToolButton  .  name  (  )  )  ; 
+
+setSelected  (  fDefaultToolButton  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   void   figureSelectionChanged  (  DrawingView   view  )  { 
+
+setupAttributes  (  )  ; 
+
+} 
+
+
+
+public   void   viewSelectionChanged  (  DrawingView   oldView  ,  DrawingView   newView  )  { 
+

@@ -1,0 +1,92 @@
+private   void   processDir  (  final   File   dir  )  { 
+
+this  .  cancel  =  false  ; 
+
+if  (  cancel  )  return  ; 
+
+this  .  setCurrentFile  (  dir  )  ; 
+
+final   SortedFile   sortedFile  =  new   SortedFile  (  dir  )  ; 
+
+sortedFiles  .  add  (  sortedFile  )  ; 
+
+try  { 
+
+FileUtils  .  checkCanReadDir  (  dir  )  ; 
+
+}  catch  (  final   IOException   e  )  { 
+
+sortedFile  .  setErrorMsg  (  e  .  getMessage  (  )  )  ; 
+
+return  ; 
+
+} 
+
+if  (  configuration  .  getProcessAction  (  )  ==  ProcessAction  .  MOVE  )  { 
+
+try  { 
+
+FileUtils  .  checkCanWriteDir  (  dir  ,  false  )  ; 
+
+}  catch  (  final   IOException   e  )  { 
+
+sortedFile  .  setErrorMsg  (  e  .  getMessage  (  )  )  ; 
+
+return  ; 
+
+} 
+
+} 
+
+final   File  [  ]  files  =  dir  .  listFiles  (  )  ; 
+
+if  (  files  !=  null  )  { 
+
+if  (  files  .  length  !=  0  )  { 
+
+for  (  final   File   file  :  files  )  { 
+
+if  (  cancel  )  break  ; 
+
+if  (  file  .  isDirectory  (  )  )  { 
+
+if  (  configuration  .  isRecursive  (  )  )  { 
+
+processDir  (  file  )  ; 
+
+}  else  { 
+
+final   SortedFile   ignoredSortedFile  =  new   SortedFile  (  file  )  ; 
+
+sortedFiles  .  add  (  ignoredSortedFile  )  ; 
+
+ignoredSortedFile  .  setErrorMsg  (  DIR_IGNORED_ERR_MSG  )  ; 
+
+} 
+
+}  else  { 
+
+processFile  (  file  )  ; 
+
+} 
+
+} 
+
+}  else  { 
+
+sortedFile  .  setErrorMsg  (  DIR_EMPTY_ERR_MSG  )  ; 
+
+} 
+
+}  else  { 
+
+final   String   msg  =  MessageFormat  .  format  (  DIR_NOT_DIR_ERR_MSG  ,  dir  .  getAbsolutePath  (  )  )  ; 
+
+sortedFile  .  setErrorMsg  (  msg  )  ; 
+
+logger  .  warn  (  msg  )  ; 
+
+} 
+
+} 
+

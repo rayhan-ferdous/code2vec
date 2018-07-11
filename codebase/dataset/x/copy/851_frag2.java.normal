@@ -1,0 +1,14 @@
+public   static   Object   getPropertyValue  (  final   Object   anObject  ,  String   aPropertyName  )  { 
+
+try  { 
+
+return   getGetter  (  anObject  ,  aPropertyName  )  .  invoke  (  anObject  ,  null  )  ; 
+
+}  catch  (  Exception   e  )  { 
+
+throw   new   GuiaException  (  e  )  ; 
+
+} 
+
+} 
+

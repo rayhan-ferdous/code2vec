@@ -1,0 +1,12 @@
+public   static   synchronized   CMessageDigestFile   getInstance  (  )  { 
+
+if  (  instance  ==  null  )  { 
+
+instance  =  new   CMessageDigestFile  (  )  ; 
+
+} 
+
+return   instance  ; 
+
+} 
+

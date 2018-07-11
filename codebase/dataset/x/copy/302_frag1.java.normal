@@ -1,0 +1,40 @@
+class   CopyThread   extends   Thread  { 
+
+
+
+private   File   dest  ; 
+
+
+
+private   String   filename  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   CopyThread  (  File   dest  ,  String   filename  )  { 
+
+this  .  dest  =  dest  ; 
+
+this  .  filename  =  filename  ; 
+
+} 
+
+
+
+public   void   run  (  )  { 
+
+try  { 
+
+InputStream   is  =  Statics  .  class  .  getResourceAsStream  (  filename  )  ; 
+
+FileOutputStream   fos  =  new   FileOutputStream  (  dest  )  ; 
+

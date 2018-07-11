@@ -1,0 +1,42 @@
+jLabel9  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jComboBox2  =  new   javax  .  swing  .  JComboBox  (  )  ; 
+
+jTextField1  =  new   javax  .  swing  .  JTextField  (  )  ; 
+
+jLabel10  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jButton1  =  new   javax  .  swing  .  JButton  (  )  ; 
+
+jLabel11  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel12  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel13  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel14  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel15  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel_dm1  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel_period1  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel_existingCandName1  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel_existingCandClass1  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel_existingType1  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jComboBox_harmtype  =  new   javax  .  swing  .  JComboBox  (  )  ; 
+
+jLabel_nearbyPossHarmonic  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel16  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jLabel17  =  new   javax  .  swing  .  JLabel  (  )  ; 
+
+jButton3  =  new   javax  .  swing  .  JButton  (  )  ; 
+
+jPanel7  =  new   javax  .  swing  .  JPanel  (  )  ; 
+

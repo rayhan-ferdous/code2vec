@@ -1,0 +1,16 @@
+}  else  { 
+
+rollback  (  )  ; 
+
+noInsert  --  ; 
+
+sql  =  new   StringBuffer  (  "UPDATE I_BPartner i "  +  "SET I_IsImported='E', I_ErrorMsg=I_ErrorMsg||"  )  .  append  (  "'Cannot Update BP Contact, ' "  )  .  append  (  "WHERE I_BPartner_ID="  )  .  append  (  impBP  .  getI_BPartner_ID  (  )  )  ; 
+
+DB  .  executeUpdateEx  (  sql  .  toString  (  )  ,  get_TrxName  (  )  )  ; 
+
+continue  ; 
+
+} 
+
+}  else   if  (  impBP  .  getContactName  (  )  !=  null  ||  impBP  .  getEMail  (  )  !=  null  )  { 
+

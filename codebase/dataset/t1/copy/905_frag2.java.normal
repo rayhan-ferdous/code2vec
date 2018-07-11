@@ -1,0 +1,48 @@
+protected   boolean   sameSenoneSequence  (  int  [  ]  ssid1  ,  int  [  ]  ssid2  )  { 
+
+if  (  ssid1  .  length  ==  ssid2  .  length  )  { 
+
+for  (  int   i  =  0  ;  i  <  ssid1  .  length  ;  i  ++  )  { 
+
+if  (  ssid1  [  i  ]  !=  ssid2  [  i  ]  )  { 
+
+return   false  ; 
+
+} 
+
+} 
+
+return   true  ; 
+
+}  else  { 
+
+return   false  ; 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+protected   SenoneSequence   getSenoneSequence  (  int  [  ]  stateid  )  { 
+
+Senone  [  ]  senones  =  new   Senone  [  stateid  .  length  ]  ; 
+
+for  (  int   i  =  0  ;  i  <  stateid  .  length  ;  i  ++  )  { 
+

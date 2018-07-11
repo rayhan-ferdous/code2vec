@@ -1,0 +1,54 @@
+return   result  ; 
+
+} 
+
+
+
+private   static   java  .  util  .  Hashtable   memory  =  new   java  .  util  .  Hashtable  (  )  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   boolean   saveState  (  String   _filename  )  { 
+
+if  (  model  ==  null  )  { 
+
+return   false  ; 
+
+} 
+
+try  { 
+
+java  .  io  .  OutputStream   out  ; 
+
+if  (  _filename  .  startsWith  (  "ejs:"  )  )  { 
+
+out  =  new   java  .  io  .  ByteArrayOutputStream  (  )  ; 
+

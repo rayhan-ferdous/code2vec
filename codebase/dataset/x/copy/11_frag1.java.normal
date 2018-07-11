@@ -1,0 +1,36 @@
+if  (  allow  (  ID3V2  ,  type  )  )  { 
+
+if  (  id3v2  .  tagExists  (  )  )  { 
+
+size  +=  id3v2  .  getSize  (  )  ; 
+
+} 
+
+} 
+
+return   size  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private   boolean   allow  (  int   tagVersion  )  { 
+
+return   this  .  allow  (  tagVersion  ,  tagType  )  ; 
+

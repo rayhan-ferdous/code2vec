@@ -1,0 +1,26 @@
+protected   void   setUp  (  )  throws   Exception  { 
+
+super  .  setUp  (  )  ; 
+
+props  =  new   Properties  (  )  ; 
+
+InputStream   pin  =  getClass  (  )  .  getClassLoader  (  )  .  getResourceAsStream  (  "test.ogg.properties"  )  ; 
+
+props  .  load  (  pin  )  ; 
+
+basefile  =  (  String  )  props  .  getProperty  (  "basefile"  )  ; 
+
+baseurl  =  (  String  )  props  .  getProperty  (  "baseurl"  )  ; 
+
+name  =  (  String  )  props  .  getProperty  (  "filename"  )  ; 
+
+filename  =  basefile  +  name  ; 
+
+String   stream  =  (  String  )  props  .  getProperty  (  "stream"  )  ; 
+
+if  (  stream  !=  null  )  fileurl  =  stream  ;  else   fileurl  =  baseurl  +  name  ; 
+
+out  =  System  .  out  ; 
+
+} 
+

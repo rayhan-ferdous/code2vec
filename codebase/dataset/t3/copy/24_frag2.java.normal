@@ -1,0 +1,40 @@
+private   void   findClassesInDirPackage  (  String   packageName  ,  String   packagePath  ,  final   boolean   recursive  ,  Set  <  Class  <  ?  >  >  classes  )  { 
+
+File   dir  =  new   File  (  packagePath  )  ; 
+
+if  (  !  dir  .  exists  (  )  ||  !  dir  .  isDirectory  (  )  )  { 
+
+return  ; 
+
+} 
+
+File  [  ]  dirfiles  =  dir  .  listFiles  (  new   FileFilter  (  )  { 
+
+
+
+public   boolean   accept  (  File   file  )  { 
+
+return  (  recursive  &&  file  .  isDirectory  (  )  )  ||  (  file  .  getName  (  )  .  endsWith  (  ".class"  )  )  ; 
+
+} 
+
+}  )  ; 
+
+for  (  File   file  :  dirfiles  )  { 
+
+if  (  file  .  isDirectory  (  )  )  { 
+
+findClassesInDirPackage  (  packageName  +  "."  +  file  .  getName  (  )  ,  file  .  getAbsolutePath  (  )  ,  recursive  ,  classes  )  ; 
+
+}  else  { 
+
+String   className  =  file  .  getName  (  )  .  substring  (  0  ,  file  .  getName  (  )  .  length  (  )  -  6  )  ; 
+
+add  (  packageName  ,  classes  ,  className  )  ; 
+
+} 
+
+} 
+
+} 
+

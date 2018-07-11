@@ -1,0 +1,14 @@
+private   org  .  omg  .  CORBA  .  portable  .  OutputStream   _OB_op_for_consumers  (  org  .  omg  .  CORBA  .  portable  .  InputStream   in  ,  org  .  omg  .  CORBA  .  portable  .  ResponseHandler   handler  )  { 
+
+org  .  omg  .  CORBA  .  portable  .  OutputStream   out  =  null  ; 
+
+org  .  omg  .  CosTypedEventChannelAdmin  .  TypedConsumerAdmin   _ob_r  =  for_consumers  (  )  ; 
+
+out  =  handler  .  createReply  (  )  ; 
+
+org  .  omg  .  CosTypedEventChannelAdmin  .  TypedConsumerAdminHelper  .  write  (  out  ,  _ob_r  )  ; 
+
+return   out  ; 
+
+} 
+

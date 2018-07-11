@@ -1,0 +1,42 @@
+public   AclFeed   getAclFeed  (  String   resourceId  )  throws   Exception  { 
+
+if  (  resourceId  ==  null  )  { 
+
+throw   new   DocumentListException  (  "null resourceId"  )  ; 
+
+} 
+
+URL   url  =  buildUrl  (  URL_DEFAULT  +  URL_DOCLIST_FEED  +  "/"  +  resourceId  +  URL_ACL  )  ; 
+
+return   service  .  getFeed  (  url  ,  AclFeed  .  class  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   AclEntry   addAclRole  (  AclRole   role  ,  AclScope   scope  ,  String   resourceId  )  throws   Exception  { 
+

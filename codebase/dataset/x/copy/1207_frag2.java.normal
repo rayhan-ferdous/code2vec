@@ -1,0 +1,36 @@
+public   void   run  (  )  { 
+
+File   startingFile  =  removeOutgroup  (  inputFile  )  ; 
+
+int   userChoice  =  userSortPercentage  (  )  ; 
+
+values  =  new   BinningAndFred  (  startingFile  ,  log  ,  narr  ,  userChoice  )  ; 
+
+values  .  run  (  )  ; 
+
+hClimbResult  =  null  ; 
+
+try  { 
+
+hClimbResult  =  hillClimbing  (  values  .  getValue  (  )  )  ; 
+
+}  catch  (  IOException   e  )  { 
+
+e  .  printStackTrace  (  )  ; 
+
+} 
+
+runNpopConfidenceInterval  (  )  ; 
+
+runSigmaConfidenceInterval  (  )  ; 
+
+runOmegaConfidenceInterval  (  )  ; 
+
+runDriftConfidenceInterval  (  )  ; 
+
+readyForCI  =  true  ; 
+
+printResults  (  )  ; 
+
+} 
+

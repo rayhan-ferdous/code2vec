@@ -1,0 +1,28 @@
+public   boolean   truncate  (  long   zxid  )  throws   IOException  { 
+
+FileTxnIterator   itr  =  new   FileTxnIterator  (  this  .  logDir  ,  zxid  )  ; 
+
+PositionInputStream   input  =  itr  .  inputStream  ; 
+
+long   pos  =  input  .  getPosition  (  )  ; 
+
+RandomAccessFile   raf  =  new   RandomAccessFile  (  itr  .  logFile  ,  "rw"  )  ; 
+
+raf  .  setLength  (  pos  )  ; 
+
+raf  .  close  (  )  ; 
+
+while  (  itr  .  goToNextLog  (  )  )  { 
+
+if  (  !  itr  .  logFile  .  delete  (  )  )  { 
+
+LOG  .  warn  (  "Unable to truncate "  +  itr  .  logFile  )  ; 
+
+} 
+
+} 
+
+return   true  ; 
+
+} 
+

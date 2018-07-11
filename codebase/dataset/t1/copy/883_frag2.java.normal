@@ -1,0 +1,20 @@
+public   String   _getProperty  (  String   rName  )  { 
+
+String   result  =  ""  ; 
+
+if  (  !  writer__iPropertiesInitialised  )  { 
+
+writer__initProperties  (  )  ; 
+
+} 
+
+if  (  writer__iProperties  .  containsKey  (  rName  )  )  { 
+
+result  =  (  String  )  writer__iProperties  .  get  (  rName  )  ; 
+
+} 
+
+return   result  ; 
+
+} 
+

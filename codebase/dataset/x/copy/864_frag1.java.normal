@@ -1,0 +1,28 @@
+super  .  commit  (  transaction  )  ; 
+
+} 
+
+} 
+
+
+
+protected   void   rollback  (  Transaction   transaction  )  { 
+
+if  (  status  !=  DELETED  )  { 
+
+assertNotFloating  (  )  ; 
+
+super  .  rollback  (  transaction  )  ; 
+
+} 
+
+} 
+
+
+
+
+
+public   final   void   makePersistent  (  )  { 
+
+getTable  (  )  .  create  (  this  )  ; 
+

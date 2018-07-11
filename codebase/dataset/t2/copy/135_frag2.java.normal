@@ -1,0 +1,40 @@
+private   String   getTypeValue  (  XMLElement   output_element  )  { 
+
+Vector   elements  =  output_element  .  getChildren  (  )  ; 
+
+String   value  =  null  ; 
+
+for  (  int   i  =  0  ;  i  <  elements  .  size  (  )  &&  value  ==  null  ;  i  ++  )  { 
+
+XMLElement   element  =  (  XMLElement  )  elements  .  elementAt  (  i  )  ; 
+
+if  (  element  .  getType  (  )  .  equals  (  "value"  )  )  { 
+
+value  =  element  .  getCharData  (  )  ; 
+
+} 
+
+} 
+
+return   value  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private   boolean   setTagValue  (  SeqFeatureI   sf  ,  XMLElement   output_element  ,  String   type  )  { 
+

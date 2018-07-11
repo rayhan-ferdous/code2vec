@@ -1,0 +1,18 @@
+private   void   close  (  )  { 
+
+if  (  is  !=  null  )  { 
+
+try  { 
+
+is  .  close  (  )  ; 
+
+}  catch  (  Exception   e  )  { 
+
+} 
+
+} 
+
+is  =  null  ; 
+
+} 
+

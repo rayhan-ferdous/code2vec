@@ -1,0 +1,102 @@
+private   java  .  lang  .  String   description  ; 
+
+
+
+private   java  .  lang  .  String   tags  ; 
+
+
+
+private   java  .  lang  .  String   author  ; 
+
+
+
+private   java  .  lang  .  String   origin  ; 
+
+
+
+private   java  .  util  .  Date   sortDate  ; 
+
+
+
+private   java  .  util  .  Date   releaseDate  ; 
+
+
+
+private   java  .  util  .  Date   releaseSysDate  ; 
+
+
+
+private   java  .  util  .  Date   checkTime  ; 
+
+
+
+private   java  .  util  .  Date   disableTime  ; 
+
+
+
+private   java  .  lang  .  Long   visitTotal  ; 
+
+
+
+private   java  .  lang  .  Long   visitToday  ; 
+
+
+
+private   java  .  lang  .  Long   visitWeek  ; 
+
+
+
+private   java  .  lang  .  Long   visitMonth  ; 
+
+
+
+private   java  .  lang  .  Long   visitQuarter  ; 
+
+
+
+private   java  .  lang  .  Long   visitYear  ; 
+
+
+
+private   java  .  util  .  Date   statDate  ; 
+
+
+
+private   java  .  lang  .  String   outerUrl  ; 
+
+
+
+private   java  .  lang  .  String   contentResPath  ; 
+
+
+
+private   java  .  lang  .  Integer   pageCount  ; 
+
+
+
+private   java  .  lang  .  String   tplContent  ; 
+
+
+
+private   java  .  lang  .  Integer   checkStep  ; 
+
+
+
+private   java  .  lang  .  Integer   topLevel  ; 
+
+
+
+private   java  .  lang  .  Integer   commentCount  ; 
+
+
+
+private   java  .  lang  .  String   checkOpinion  ; 
+
+
+
+private   java  .  lang  .  String   relatedIds  ; 
+
+
+
+private   java  .  lang  .  Boolean   hasTitleImg  ; 
+

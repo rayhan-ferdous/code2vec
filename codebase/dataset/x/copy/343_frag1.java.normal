@@ -1,0 +1,34 @@
+return   getAsAttributes  (  getProperties  (  cache  ,  artifact  )  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   Properties   getProperties  (  File   cache  ,  Artifact   artifact  )  throws   RepositoryException  { 
+
+File   local  =  new   File  (  cache  ,  artifact  .  getPath  (  )  +  "."  +  META  )  ; 
+
+if  (  !  local  .  exists  (  )  )  { 
+
+final   String   error  =  "Cannot load metadata due to missing resurce."  ; 
+
+Throwable   cause  =  new   FileNotFoundException  (  local  .  toString  (  )  )  ; 
+

@@ -1,0 +1,56 @@
+import   java  .  io  .  OutputStream  ; 
+
+import   java  .  net  .  URL  ; 
+
+import   java  .  net  .  URLConnection  ; 
+
+import   org  .  apache  .  commons  .  io  .  IOUtils  ; 
+
+import   marla  .  ide  .  problem  .  MarlaException  ; 
+
+
+
+
+
+
+
+
+
+
+
+public   class   Updater   implements   Runnable  { 
+
+
+
+
+
+
+
+
+
+private   final   String   updateURL  ; 
+
+
+
+
+
+
+
+
+
+private   static   boolean   hasExited  =  false  ; 
+
+
+
+
+
+
+
+
+
+
+
+private   Updater  (  String   updateLocation  )  { 
+
+updateURL  =  updateLocation  ; 
+

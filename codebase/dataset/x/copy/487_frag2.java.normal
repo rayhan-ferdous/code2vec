@@ -1,0 +1,38 @@
+if  (  remoteFile  .  length  (  )  >  0  )  { 
+
+byte  [  ]  unzippedXml  =  FileAccess  .  readZipFileBinary  (  remoteFile  )  ; 
+
+FileAccess  .  writeByteArray  (  unzippedXml  ,  remoteFile  )  ; 
+
+return   checkLocalMessage  (  remoteFile  )  ; 
+
+}  else  { 
+
+return   false  ; 
+
+} 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private   String   composeDownKey  (  int   index  )  { 
+
+String   key  ; 
+
+if  (  secure  )  { 
+
+key  =  new   StringBuffer  (  )  .  append  (  publicKey  )  .  append  (  "/"  )  .  append  (  board  .  getBoardFilename  (  )  )  .  append  (  "/"  )  .  append  (  message  .  getDate  (  )  )  .  append  (  "-"  )  .  append  (  index  )  .  append  (  ".xml"  )  .  toString  (  )  ; 
+

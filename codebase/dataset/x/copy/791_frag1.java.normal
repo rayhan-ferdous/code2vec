@@ -1,0 +1,44 @@
+import   java  .  io  .  InputStreamReader  ; 
+
+import   java  .  io  .  PrintWriter  ; 
+
+import   java  .  util  .  logging  .  Level  ; 
+
+import   java  .  util  .  logging  .  Logger  ; 
+
+
+
+
+
+
+
+
+
+
+
+class   OutputTracer   extends   Thread  { 
+
+
+
+
+
+private   static   Logger   logger_  =  Logger  .  getLogger  (  "DTFLogger"  )  ; 
+
+
+
+
+
+private   static   String   VM_CRASH_TEXT  =  "# HotSpot Virtual Machine Error"  ; 
+
+
+
+
+
+private   BufferedReader   stream_  ; 
+
+
+
+
+
+private   PrintWriter   trace_  ; 
+

@@ -1,0 +1,12 @@
+int   out_len  =  in_len  *  4  ; 
+
+if  (  bytebuffer  ==  null  ||  bytebuffer  .  capacity  (  )  <  out_len  )  { 
+
+bytebuffer  =  ByteBuffer  .  allocate  (  out_len  )  .  order  (  ByteOrder  .  LITTLE_ENDIAN  )  ; 
+
+floatbuffer  =  bytebuffer  .  asFloatBuffer  (  )  ; 
+
+} 
+
+floatbuffer  .  position  (  0  )  ; 
+

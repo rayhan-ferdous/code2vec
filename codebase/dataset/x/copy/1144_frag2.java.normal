@@ -1,0 +1,76 @@
+List  <  List  <  String  >  >  table  =  new   ArrayList  <  List  <  String  >  >  (  )  ; 
+
+List  <  String  >  row1  =  new   ArrayList  <  String  >  (  )  ; 
+
+row1  .  add  (  "5"  )  ; 
+
+row1  .  add  (  "2"  )  ; 
+
+List  <  String  >  row2  =  new   ArrayList  <  String  >  (  )  ; 
+
+row2  .  add  (  "3"  )  ; 
+
+row2  .  add  (  "4"  )  ; 
+
+table  .  add  (  row1  )  ; 
+
+table  .  add  (  row2  )  ; 
+
+assertTrue  (  found  (  table  ,  "3"  )  )  ; 
+
+assertFalse  (  found  (  table  ,  "8"  )  )  ; 
+
+} 
+
+
+
+private   boolean   found  (  List  <  List  <  String  >  >  table  ,  String   target  )  { 
+
+boolean   found  =  false  ; 
+
+search  :  for  (  List  <  String  >  row  :  table  )  { 
+
+for  (  String   value  :  row  )  { 
+
+if  (  value  .  equals  (  target  )  )  { 
+
+found  =  true  ; 
+
+break   search  ; 
+
+} 
+
+} 
+
+} 
+
+return   found  ; 
+
+} 
+
+
+
+public   void   testCasting  (  )  { 
+
+List   students  =  new   ArrayList  (  )  ; 
+
+students  .  add  (  new   Student  (  "a"  )  )  ; 
+
+students  .  add  (  new   Student  (  "b"  )  )  ; 
+
+List   names  =  new   ArrayList  (  )  ; 
+
+Iterator   it  =  students  .  iterator  (  )  ; 
+
+while  (  it  .  hasNext  (  )  )  { 
+
+Student   student  =  (  Student  )  it  .  next  (  )  ; 
+
+names  .  add  (  student  .  getLastName  (  )  )  ; 
+
+} 
+
+assertEquals  (  "a"  ,  names  .  get  (  0  )  )  ; 
+
+assertEquals  (  "b"  ,  names  .  get  (  1  )  )  ; 
+

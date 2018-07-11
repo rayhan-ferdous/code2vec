@@ -1,0 +1,26 @@
+TrayIconPopupCheckItemW  (  JCheckBoxMenuItem   jItem  )  { 
+
+super  (  jItem  .  getText  (  )  )  ; 
+
+this  .  jItem  =  jItem  ; 
+
+try  { 
+
+ActionListener  [  ]  la  =  (  ActionListener  [  ]  )  jItem  .  getListeners  (  ActionListener  .  class  )  ; 
+
+for  (  int   i  =  0  ;  la  !=  null  &&  i  <  la  .  length  ;  i  ++  )  { 
+
+addActionListener  (  la  [  i  ]  )  ; 
+
+} 
+
+}  catch  (  Exception   e  )  { 
+
+Activator  .  log  .  error  (  "Failed to get actionlisteners"  ,  e  )  ; 
+
+} 
+
+jItem  .  addChangeListener  (  this  )  ; 
+
+} 
+

@@ -1,0 +1,60 @@
+pw  .  println  (  "   FDR write_addrr_5_inst (.C(write_clock),"  )  ; 
+
+pw  .  println  (  "                           .R(write_reset_in),"  )  ; 
+
+pw  .  println  (  "                           .D(write_addr[5]),"  )  ; 
+
+pw  .  println  (  "                           .Q(write_addrr[5]));   "  )  ; 
+
+pw  .  println  (  "   "  )  ; 
+
+pw  .  println  (  "   FDR write_addrr_6_inst (.C(write_clock),"  )  ; 
+
+pw  .  println  (  "                           .R(write_reset_in),"  )  ; 
+
+pw  .  println  (  "                           .D(write_addr[6]),"  )  ; 
+
+pw  .  println  (  "                           .Q(write_addrr[6]));   "  )  ; 
+
+pw  .  println  (  "   "  )  ; 
+
+pw  .  println  (  "   FDR write_addrr_7_inst (.C(write_clock),"  )  ; 
+
+pw  .  println  (  "                           .R(write_reset_in),"  )  ; 
+
+pw  .  println  (  "                           .D(write_addr[7]),"  )  ; 
+
+pw  .  println  (  "                           .Q(write_addrr[7]));   "  )  ; 
+
+pw  .  println  (  "   "  )  ; 
+
+pw  .  println  (  "   FDR write_addrr_8_inst (.C(write_clock),"  )  ; 
+
+pw  .  println  (  "                           .R(write_reset_in),"  )  ; 
+
+pw  .  println  (  "                           .D(write_addr[8]),"  )  ; 
+
+pw  .  println  (  "                           .Q(write_addrr[8]));      "  )  ; 
+
+pw  .  println  (  ""  )  ; 
+
+pw  .  println  (  "   assign       fifostatus_write_int = write_addrr - ra_writesync;"  )  ; 
+
+pw  .  println  (  ""  )  ; 
+
+pw  .  println  (  "   FDRE write_fifo_status_0_inst (.C(write_clock),"  )  ; 
+
+pw  .  println  (  "                                  .CE(!full),"  )  ; 
+
+pw  .  println  (  "                                  .R(write_reset_in),"  )  ; 
+
+pw  .  println  (  "                                  .D(fifostatus_write_int[0]),"  )  ; 
+
+pw  .  println  (  "                                  .Q(write_fifo_status[0]));   "  )  ; 
+
+pw  .  println  (  "   "  )  ; 
+
+pw  .  println  (  "   FDRE write_fifo_status_1_inst (.C(write_clock),"  )  ; 
+
+pw  .  println  (  "                                  .CE(!full),"  )  ; 
+

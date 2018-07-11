@@ -1,0 +1,76 @@
+public   TelcoblocksDiagramEditor  (  )  { 
+
+super  (  true  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+protected   String   getContextID  (  )  { 
+
+return   CONTEXT_ID  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+protected   PaletteRoot   createPaletteRoot  (  PaletteRoot   existingPaletteRoot  )  { 
+
+PaletteRoot   root  =  super  .  createPaletteRoot  (  existingPaletteRoot  )  ; 
+
+new   TelcoblocksPaletteFactory  (  )  .  fillPalette  (  root  )  ; 
+
+return   root  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+protected   PreferencesHint   getPreferencesHint  (  )  { 
+
+return   TelcoblocksServiciosDiagramEditorPlugin  .  DIAGRAM_PREFERENCES_HINT  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   String   getContributorId  (  )  { 
+
+return   TelcoblocksServiciosDiagramEditorPlugin  .  ID  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   Object   getAdapter  (  Class   type  )  { 
+

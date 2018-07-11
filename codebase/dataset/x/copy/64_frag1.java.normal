@@ -1,0 +1,32 @@
+for  (  int   ii  =  0  ;  ii  <  repositories  .  length  ;  ii  ++  )  { 
+
+l_repos  .  append  (  repositories  [  ii  ]  )  .  append  (  ','  )  ; 
+
+} 
+
+throw   new   RepositoryException  (  "None of the repositories ["  +  l_repos  .  toString  (  )  +  "] contained the metadata properties for "  +  artifact  ,  l_throwable  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   Properties   getProperties  (  URL   url  )  throws   IOException  { 
+
+InputStream   l_in  =  null  ; 
+
+Properties   l_props  =  new   Properties  (  )  ; 
+

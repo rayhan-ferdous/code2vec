@@ -1,0 +1,76 @@
+public   WebmlDiagramEditor  (  )  { 
+
+super  (  true  )  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+protected   String   getContextID  (  )  { 
+
+return   CONTEXT_ID  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+protected   PaletteRoot   createPaletteRoot  (  PaletteRoot   existingPaletteRoot  )  { 
+
+PaletteRoot   root  =  super  .  createPaletteRoot  (  existingPaletteRoot  )  ; 
+
+new   WebmlPaletteFactory  (  )  .  fillPalette  (  root  )  ; 
+
+return   root  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+protected   PreferencesHint   getPreferencesHint  (  )  { 
+
+return   WebmlDiagramEditorPlugin  .  DIAGRAM_PREFERENCES_HINT  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   String   getContributorId  (  )  { 
+
+return   WebmlDiagramEditorPlugin  .  ID  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+public   Object   getAdapter  (  Class   type  )  { 
+

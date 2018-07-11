@@ -1,0 +1,62 @@
+import   org  .  jdom  .  JDOMException  ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   class   InterfaceD_Client   extends   Interface_Client  { 
+
+
+
+private   String   _interfaceDServerURI  ; 
+
+
+
+public   InterfaceD_Client  (  String   interfaceDServerURI  )  { 
+
+_interfaceDServerURI  =  interfaceDServerURI  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public   static   String   executePost  (  String   urlStr  ,  Map   paramsMap  ,  WorkItemRecord   attribute  )  throws   IOException  { 
+
+StringBuffer   result  =  new   StringBuffer  (  )  ; 
+
+HttpURLConnection   connection  =  null  ; 
+
+URL   url  =  new   URL  (  urlStr  )  ; 
+
+connection  =  (  HttpURLConnection  )  url  .  openConnection  (  )  ; 
+

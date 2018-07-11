@@ -1,0 +1,20 @@
+if  (  destinationFile  .  exists  (  )  )  { 
+
+if  (  destinationFile  .  isFile  (  )  )  { 
+
+if  (  !  destinationFile  .  canWrite  (  )  )  throw   new   IOException  (  "FileCopy: destination file is unwriteable: "  +  destinationFile  .  getCanonicalPath  (  )  )  ; 
+
+}  else   throw   new   IOException  (  "FileCopy: destination is not a file: "  +  destinationFile  .  getCanonicalPath  (  )  )  ; 
+
+}  else  { 
+
+File   parentdir  =  destinationFile  .  getParentFile  (  )  ; 
+
+if  (  parentdir  ==  null  ||  !  parentdir  .  exists  (  )  )  throw   new   IOException  (  "FileCopy: destination directory doesn't exist: "  +  destinationFile  .  getCanonicalPath  (  )  )  ; 
+
+if  (  !  parentdir  .  canWrite  (  )  )  throw   new   IOException  (  "FileCopy: destination directory is unwriteable: "  +  destinationFile  .  getCanonicalPath  (  )  )  ; 
+
+} 
+
+destination  =  new   FileOutputStream  (  destinationFile  )  ; 
+

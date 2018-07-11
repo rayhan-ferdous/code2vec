@@ -1,0 +1,12 @@
+ZipInputStream   zis  =  new   ZipInputStream  (  data  )  ; 
+
+ZipEntry   ze  =  null  ; 
+
+String   shpfile  =  ""  ; 
+
+String   type  =  ""  ; 
+
+while  (  (  ze  =  zis  .  getNextEntry  (  )  )  !=  null  )  { 
+
+System  .  out  .  println  (  "ze.file: "  +  ze  .  getName  (  )  )  ; 
+

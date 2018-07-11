@@ -1,0 +1,8 @@
+resArray  [  i  ]  =  new   ShoppingCartItem  (  )  ; 
+
+resArray  [  i  ]  .  setCustomer_id  (  res  .  getInt  (  "customer_id"  )  )  ; 
+
+resArray  [  i  ]  .  setDate_start  (  res  .  getDate  (  "date_start"  )  )  ; 
+
+resArray  [  i  ]  .  setDate_stop  (  res  .  getDate  (  "date_stop"  )  )  ; 
+

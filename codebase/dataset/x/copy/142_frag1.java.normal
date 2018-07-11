@@ -1,0 +1,24 @@
+public   Disconnect_Request  (  byte  [  ]  _Disconnect_Request  )  throws   EICLException  { 
+
+ByteArrayInputStream   bais  =  new   ByteArrayInputStream  (  _Disconnect_Request  )  ; 
+
+channelid  =  (  short  )  bais  .  read  (  )  ; 
+
+reserved  =  (  short  )  bais  .  read  (  )  ; 
+
+byte  [  ]  buffer  =  new   byte  [  8  ]  ; 
+
+try  { 
+
+bais  .  read  (  buffer  )  ; 
+
+}  catch  (  IOException   ex  )  { 
+
+throw   new   EICLException  (  ex  .  getMessage  (  )  )  ; 
+
+} 
+
+endpoint  =  new   HPAI  (  buffer  )  ; 
+
+} 
+

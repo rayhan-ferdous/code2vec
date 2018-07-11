@@ -1,0 +1,20 @@
+public   static   DataStore   getInstance  (  )  { 
+
+synchronized  (  DataStore  .  class  )  { 
+
+if  (  instance  ==  null  )  { 
+
+instance  =  new   DataStore  (  )  ; 
+
+return   instance  ; 
+
+}  else  { 
+
+return   instance  ; 
+
+} 
+
+} 
+
+} 
+

@@ -1,0 +1,32 @@
+public   void   testResourceDuplicate  (  )  throws   Exception  { 
+
+assertTrue  (  "JNDI is required"  ,  wrapper  .  isJNDIAvailable  )  ; 
+
+boolean   isThrows  =  false  ; 
+
+ResourceDao   resourceDao  =  wrapper  .  generateResourceDao  (  )  ; 
+
+ResourceDao   insertionResult  =  wrapper  .  create  (  "/"  ,  resourceDao  )  ; 
+
+assertEquals  (  "Insertion insertionResult should be equvivalent"  ,  insertionResult  .  getName  (  )  ,  resourceDao  .  getName  (  )  )  ; 
+
+assertTrue  (  insertionResult  .  getDescription  (  )  .  equals  (  resourceDao  .  getDescription  (  )  )  )  ; 
+
+try  { 
+
+ResourceDao   insertionResult2  =  wrapper  .  create  (  "/"  ,  resourceDao  )  ; 
+
+assertEquals  (  "Insertion insertionResult should be equvivalent"  ,  insertionResult2  .  getName  (  )  ,  resourceDao  .  getName  (  )  )  ; 
+
+assertTrue  (  insertionResult2  .  getDescription  (  )  .  equals  (  resourceDao  .  getDescription  (  )  )  )  ; 
+
+}  catch  (  ResourceAlreadyExistException   e  )  { 
+
+isThrows  =  true  ; 
+
+} 
+
+assertTrue  (  "Exception sould be throwed"  ,  isThrows  )  ; 
+
+} 
+

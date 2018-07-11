@@ -1,0 +1,56 @@
+public   static   Matrix   read  (  BufferedReader   input  )  throws   java  .  io  .  IOException  { 
+
+StreamTokenizer   tokenizer  =  new   StreamTokenizer  (  input  )  ; 
+
+tokenizer  .  resetSyntax  (  )  ; 
+
+tokenizer  .  wordChars  (  0  ,  255  )  ; 
+
+tokenizer  .  whitespaceChars  (  0  ,  ' '  )  ; 
+
+tokenizer  .  eolIsSignificant  (  true  )  ; 
+
+java  .  util  .  Vector  <  Object  >  v  =  new   java  .  util  .  Vector  <  Object  >  (  )  ; 
+
+while  (  tokenizer  .  nextToken  (  )  ==  StreamTokenizer  .  TT_EOL  )  ; 
+
+if  (  tokenizer  .  ttype  ==  StreamTokenizer  .  TT_EOF  )  throw   new   java  .  io  .  IOException  (  "Unexpected EOF on matrix read."  )  ; 
+
+do  { 
+
+v  .  addElement  (  Double  .  valueOf  (  tokenizer  .  sval  )  )  ; 
+
+}  while  (  tokenizer  .  nextToken  (  )  ==  StreamTokenizer  .  TT_WORD  )  ; 
+
+int   n  =  v  .  size  (  )  ; 
+
+double   row  [  ]  =  new   double  [  n  ]  ; 
+
+for  (  int   j  =  0  ;  j  <  n  ;  j  ++  )  row  [  j  ]  =  (  (  Double  )  v  .  elementAt  (  j  )  )  .  doubleValue  (  )  ; 
+
+v  .  removeAllElements  (  )  ; 
+
+v  .  addElement  (  row  )  ; 
+
+while  (  tokenizer  .  nextToken  (  )  ==  StreamTokenizer  .  TT_WORD  )  { 
+
+v  .  addElement  (  row  =  new   double  [  n  ]  )  ; 
+
+int   j  =  0  ; 
+
+do  { 
+
+if  (  j  >=  n  )  throw   new   java  .  io  .  IOException  (  "Row "  +  v  .  size  (  )  +  " is too long."  )  ; 
+
+row  [  j  ++  ]  =  Double  .  valueOf  (  tokenizer  .  sval  )  .  doubleValue  (  )  ; 
+
+}  while  (  tokenizer  .  nextToken  (  )  ==  StreamTokenizer  .  TT_WORD  )  ; 
+
+if  (  j  <  n  )  throw   new   java  .  io  .  IOException  (  "Row "  +  v  .  size  (  )  +  " is too short."  )  ; 
+
+} 
+
+int   m  =  v  .  size  (  )  ; 
+
+double  [  ]  [  ]  A  =  new   double  [  m  ]  [  ]  ; 
+

@@ -1,0 +1,42 @@
+if  (  stillrunning  &&  bpSaved  !=  null  )  bpset  .  setBreakpoint  (  bpSaved  )  ; 
+
+return   stillrunning  ; 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private   boolean   continueCheckingForSignal  (  int   thread  ,  int   printMode  ,  boolean   allThreads  )  { 
+
+if  (  lastSignal  [  thread  ]  ==  0  )  mcontinue  (  0  )  ;  else  { 
+
+int   sig  =  lastSignal  [  thread  ]  ; 
+
+lastSignal  [  thread  ]  =  0  ; 
+
+mcontinue  (  sig  )  ; 
+
+} 
+
+try  { 
+
+pwait  (  allThreads  )  ; 
+

@@ -1,0 +1,26 @@
+public   void   writer__save  (  String   rFilePath  ,  String   rContent  )  throws   Exception  { 
+
+StringReader   sr  =  new   StringReader  (  rContent  )  ; 
+
+BufferedReader   br  =  new   BufferedReader  (  sr  )  ; 
+
+FileWriter   fw  =  new   FileWriter  (  rFilePath  )  ; 
+
+BufferedWriter   bw  =  new   BufferedWriter  (  fw  )  ; 
+
+String   line  ; 
+
+while  (  null  !=  (  line  =  br  .  readLine  (  )  )  )  { 
+
+bw  .  write  (  line  )  ; 
+
+bw  .  newLine  (  )  ; 
+
+} 
+
+bw  .  close  (  )  ; 
+
+br  .  close  (  )  ; 
+
+} 
+
