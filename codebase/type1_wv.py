@@ -26,7 +26,7 @@ for i in range(1, 2368):
     print 'pair', i
 
     try:
-        'input data'
+        '''input data'''
         file1 = open('dataset/' + folder + '/copy/' + str(i) + '_frag1.java.normal')
         file2 = open('dataset/' + folder + '/copy/' + str(i) + '_frag2.java.normal')
 
