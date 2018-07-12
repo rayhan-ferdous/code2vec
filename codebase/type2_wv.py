@@ -251,7 +251,7 @@ for i in range(file_start, file_end):
     # 'euc_com,euc_un,city_com,city_un,hamm_com,hamm_un,cheby_com,cheby_un,cos_com,cos_un,jacc,type\n'
     result_line = ','.join([str(euclidean_common), str(euclidean_uncommon), str(cityblock_common), str(cityblock_uncommon),
                    str(hamming_common), str(hamming_uncommon), str(chebyshev_common), str(chebyshev_uncommon),
-                   str(cosine_common), str(cosine_uncommon), folder])
+                   str(cosine_common), str(cosine_uncommon), str(jaccard), folder])
 
 
 
