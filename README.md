@@ -7,4 +7,4 @@ e.g. in t1 folder, 2_frag1.java and 2_frag2.java refers to the second clone pair
 
 A sample output:
 
-!(sample output)[https://raw.githubusercontent.com/rayhan-ferdous/code2vec/master/sample.png]
+![sample output](https://raw.githubusercontent.com/rayhan-ferdous/code2vec/master/sample.png)
