@@ -4,3 +4,7 @@ each folder has a number of code fragments.
 
 candidate clone pairs are tagged by filenames.
 e.g. in t1 folder, 2_frag1.java and 2_frag2.java refers to the second clone pair in the subfolder dataset. the pair has two code fragments that is referred by the tag frag1 and frag2 in the filename.
+
+A sample output:
+
+!(sample output)[https://raw.githubusercontent.com/rayhan-ferdous/code2vec/master/sample.png]
